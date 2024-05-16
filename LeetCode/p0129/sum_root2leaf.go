@@ -1,8 +1,8 @@
 package p0129
 
-import binarytree "github.com/sergiovaneg/GoStudy/BinaryTree"
+import "github.com/sergiovaneg/GoStudy/bintree"
 
-type TreeNode = binarytree.TreeNode[int]
+type TreeNode = bintree.TreeNode[int]
 
 func growAndAdd(root *TreeNode, acc *int, num int) {
 	num = num*10 + root.Val

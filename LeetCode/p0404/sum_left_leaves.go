@@ -1,8 +1,8 @@
 package p0404
 
-import binarytree "github.com/sergiovaneg/GoStudy/BinaryTree"
+import "github.com/sergiovaneg/GoStudy/bintree"
 
-type TreeNode = binarytree.TreeNode[int]
+type TreeNode = bintree.TreeNode[int]
 
 func recursiveLeftSum(branch *TreeNode) int {
 	if branch.Left == nil && branch.Right == nil {

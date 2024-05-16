@@ -1,8 +1,8 @@
 package p0988
 
-import binarytree "github.com/sergiovaneg/GoStudy/BinaryTree"
+import "github.com/sergiovaneg/GoStudy/bintree"
 
-type TreeNode = binarytree.TreeNode[int]
+type TreeNode = bintree.TreeNode[int]
 
 func lexiCompare(s1, s2 string) bool {
 	l1, l2 := len(s1), len(s2)

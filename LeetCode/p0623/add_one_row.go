@@ -1,8 +1,8 @@
 package p0623
 
-import binarytree "github.com/sergiovaneg/GoStudy/BinaryTree"
+import "github.com/sergiovaneg/GoStudy/bintree"
 
-type TreeNode = binarytree.TreeNode[int]
+type TreeNode = bintree.TreeNode[int]
 
 func traverseAndInsert(root *TreeNode, val_addr *int, depth int) {
 	if depth == 1 {
