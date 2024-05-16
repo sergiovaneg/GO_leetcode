@@ -2,15 +2,37 @@ package main
 
 import (
 	"bufio"
+	"bytes"
 	"fmt"
+	"io"
 	"log"
 	"os"
 	"regexp"
 	"slices"
 	"strconv"
+	"sync"
 )
 
-func isDigit(r rune) bool {
+func lineCounter(r io.Reader) (int, error) {
+	buf := make([]byte, 512*1024)
+	count := 0
+	lineSep := []byte{'\n'}
+
+	for {
+		c, err := r.Read(buf)
+		count += bytes.Count(buf[:c], lineSep)
+
+		switch {
+		case err == io.EOF:
+			return count, nil
+
+		case err != nil:
+			return count, err
+		}
+	}
+}
+
+func isDigit(r byte) bool {
 	return r >= '0' && r <= '9'
 }
 
@@ -39,40 +61,45 @@ func matchNumber(num string) int {
 	}
 }
 
-func getValue(line string) int {
-	re := regexp.MustCompile(
+func getValue(byteArray []byte) int {
+	re_fwd := regexp.MustCompile(
 		"(?:f(?:ive|our)|s(?:even|ix)|t(?:hree|wo)|(?:ni|o)ne|eight)")
-
-	idx0, idx1 := -1, -1
-	var num0, num1 string
-
-	runeArray := []rune(line)
-	idx0 = slices.IndexFunc(runeArray, isDigit)
-	if idx0 != -1 {
-		slices.Reverse(runeArray)
-		idx1 = len(line) - slices.IndexFunc(runeArray, isDigit) - 1
-
-		num0 = re.FindString(line[:idx0])
-		if matches := re.FindAllString(line[idx1+1:], -1); matches != nil {
-			num1 = matches[len(matches)-1]
-		}
-	} else {
-		if matches := re.FindAllString(line, -1); matches != nil {
-			num0 = matches[0]
-			num1 = matches[len(matches)-1]
-		}
-	}
+	re_bwd := regexp.MustCompile(
+		"(?:(?:evi|ruo)f|(?:neve|xi)s|(?:eerh|ow)t|en(?:in|o)|thgie)")
 
 	var d0, d1 int
-	if num0 != "" {
-		d0 = matchNumber(num0)
+	var match []byte
+
+	idx := slices.IndexFunc(byteArray, isDigit)
+	if idx != -1 {
+		match = re_fwd.Find(byteArray[:idx])
+		if match != nil {
+			d0 = matchNumber(string(match))
+		} else {
+			d0, _ = strconv.Atoi(string(byteArray[idx]))
+		}
+
+		slices.Reverse(byteArray)
+		idx = slices.IndexFunc(byteArray, isDigit)
+
+		match = re_bwd.Find(byteArray[:idx])
+		if match != nil {
+			aux := make([]byte, len(match))
+			copy(aux, match)
+			slices.Reverse(aux)
+			d1 = matchNumber(string(aux))
+		} else {
+			d1, _ = strconv.Atoi(string(byteArray[idx]))
+		}
 	} else {
-		d0, _ = strconv.Atoi(string(line[idx0]))
-	}
-	if num1 != "" {
-		d1 = matchNumber(num1)
-	} else {
-		d1, _ = strconv.Atoi(string(line[idx1]))
+		d0 = matchNumber(string(re_fwd.Find(byteArray)))
+		slices.Reverse(byteArray)
+
+		match := re_bwd.Find(byteArray)
+		aux := make([]byte, len(match))
+		copy(aux, match)
+		slices.Reverse(aux)
+		d1 = matchNumber(string(aux))
 	}
 
 	return d0*10 + d1
@@ -88,9 +115,22 @@ func main() {
 	scanner := bufio.NewScanner(file)
 	var res int
 
+	var wg sync.WaitGroup
+	n, _ := lineCounter(file)
+	file.Seek(0, 0)
+	c := make(chan int, n+1)
+
 	for scanner.Scan() {
-		val := getValue(scanner.Text())
-		fmt.Println(val)
+		wg.Add(1)
+		go func(line string) {
+			defer wg.Done()
+			c <- getValue([]byte(line))
+		}(scanner.Text())
+	}
+	wg.Wait()
+	close(c)
+
+	for val := range c {
 		res += val
 	}
 
