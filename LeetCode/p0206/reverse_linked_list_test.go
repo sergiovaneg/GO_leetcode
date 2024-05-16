@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/sergiovaneg/GoStudy/LeetCode/p0206"
-	lists "github.com/sergiovaneg/GoStudy/Lists"
+	"github.com/sergiovaneg/GoStudy/lists"
 )
 
 func TestReverseList(t *testing.T) {

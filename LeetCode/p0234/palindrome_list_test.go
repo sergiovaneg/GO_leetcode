@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/sergiovaneg/GoStudy/LeetCode/p0234"
-	lists "github.com/sergiovaneg/GoStudy/Lists"
+	"github.com/sergiovaneg/GoStudy/lists"
 )
 
 func TestIsPalindrome(t *testing.T) {

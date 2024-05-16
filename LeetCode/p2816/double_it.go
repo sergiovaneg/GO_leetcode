@@ -1,6 +1,6 @@
 package p2816
 
-import lists "github.com/sergiovaneg/GoStudy/Lists"
+import "github.com/sergiovaneg/GoStudy/lists"
 
 type ListNode = lists.SinglyLinkedNode[int]
 

@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/sergiovaneg/GoStudy/LeetCode/p1669"
-	lists "github.com/sergiovaneg/GoStudy/Lists"
+	"github.com/sergiovaneg/GoStudy/lists"
 )
 
 func TestMergeInBetween(t *testing.T) {

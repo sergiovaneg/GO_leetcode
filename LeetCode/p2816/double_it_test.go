@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/sergiovaneg/GoStudy/LeetCode/p2816"
-	lists "github.com/sergiovaneg/GoStudy/Lists"
+	"github.com/sergiovaneg/GoStudy/lists"
 )
 
 type ListNode = lists.SinglyLinkedNode[int]
