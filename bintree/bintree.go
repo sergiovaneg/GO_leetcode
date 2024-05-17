@@ -70,13 +70,6 @@ func MakeBinaryTree[T comparable](elements []T, null T) *TreeNode[T] {
 	return root
 }
 
-func CompareBinaryTree[T comparable](root1, root2 *TreeNode[T]) bool {
-	if root1 == nil || root2 == nil {
-		return root1 == root2
-	}
-	return root1.Val == root2.Val && CompareBinaryTree(root1.Left, root2.Left) && CompareBinaryTree(root1.Right, root2.Right)
-}
-
 func GetMaxDepth[T any](root *TreeNode[T]) int {
 	var rec_level func(*TreeNode[T], int) int
 	rec_level = func(root *TreeNode[T], depth int) int {

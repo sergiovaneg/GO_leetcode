@@ -1,6 +1,7 @@
 package p0623_test
 
 import (
+	"reflect"
 	"testing"
 
 	"github.com/sergiovaneg/GoStudy/LeetCode/p0623"
@@ -17,7 +18,7 @@ func TestAddOneRow(t *testing.T) {
 		[]int{4, 2, 6, 3, 1, 5}, null), 1, 2)
 	expected = bintree.MakeBinaryTree(
 		[]int{4, 1, 1, 2, null, null, 6, 3, 1, 5}, null)
-	if !bintree.CompareBinaryTree(res, expected) {
+	if !reflect.DeepEqual(res, expected) {
 		t.Fatalf("Expected:\n%v\nGot:\n%v", expected, res)
 	}
 
@@ -27,7 +28,7 @@ func TestAddOneRow(t *testing.T) {
 		[]int{4, 2, null, 3, 1}, null), 1, 3)
 	expected = bintree.MakeBinaryTree(
 		[]int{4, 2, null, 1, 1, 3, null, null, 1}, null)
-	if !bintree.CompareBinaryTree(res, expected) {
+	if !reflect.DeepEqual(res, expected) {
 		t.Fatalf("Expected:\n%v\nGot:\n%v", expected, res)
 	}
 }
