@@ -2,35 +2,16 @@ package main
 
 import (
 	"bufio"
-	"bytes"
 	"fmt"
-	"io"
 	"log"
 	"os"
 	"regexp"
 	"slices"
 	"strconv"
 	"sync"
+
+	"github.com/sergiovaneg/GoStudy/utils"
 )
-
-func lineCounter(r io.Reader) (int, error) {
-	buf := make([]byte, 512*1024)
-	count := 0
-	lineSep := []byte{'\n'}
-
-	for {
-		c, err := r.Read(buf)
-		count += bytes.Count(buf[:c], lineSep)
-
-		switch {
-		case err == io.EOF:
-			return count, nil
-
-		case err != nil:
-			return count, err
-		}
-	}
-}
 
 func isDigit(r byte) bool {
 	return r >= '0' && r <= '9'
@@ -116,7 +97,7 @@ func main() {
 	var res int
 
 	var wg sync.WaitGroup
-	n, _ := lineCounter(file)
+	n, _ := utils.LineCounter(file)
 	file.Seek(0, 0)
 	c := make(chan int, n+1)
 
