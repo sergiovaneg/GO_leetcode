@@ -90,7 +90,6 @@ func main() {
 
 	var wg sync.WaitGroup
 	n, _ := utils.LineCounter(file)
-	file.Seek(0, 0)
 	c := make(chan int, n+1)
 
 	for scanner.Scan() {
