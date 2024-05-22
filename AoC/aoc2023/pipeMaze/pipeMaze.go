@@ -147,6 +147,12 @@ func processMazeRow(mazeRow []rune, pathRow []bool) {
 			flagBuffer[0] = flagBuffer[0] != canGo(mazeRow[j], 'N')
 			flagBuffer[1] = flagBuffer[1] != canGo(mazeRow[j], 'S')
 			if flagBuffer[0] && flagBuffer[1] {
+				/*
+					I have only gone inside the polygon once I have encountered a pipe
+					going up and another one going down (projected as a vertical pipe).
+					Consecutive pipes going in the same direction take me out of the
+					enclosure.
+				*/
 				inside = !inside
 				flagBuffer[0] = false
 				flagBuffer[1] = false
