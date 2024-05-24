@@ -13,7 +13,7 @@ import (
 )
 
 type DP struct {
-	memory  map[[3]int]int
+	memory  map[[3]int]uint
 	springs []int
 	groups  []int
 }
@@ -123,7 +123,7 @@ func modAndTest(springs, groups []int, cnt *int) {
 */
 
 // Key: (springIdx, groupIdx, accumulated group length)
-func (dP *DP) f(key [3]int) int {
+func (dP *DP) f(key [3]int) uint {
 	value, isKey := dP.memory[key]
 
 	if isKey {
@@ -140,7 +140,7 @@ func (dP *DP) f(key [3]int) int {
 		}
 	}
 
-	var result int
+	var result uint
 
 	// Assume working spring
 	if dP.springs[key[0]] >= 0 {
@@ -160,12 +160,12 @@ func (dP *DP) f(key [3]int) int {
 	return result
 }
 
-func countArrangements(line string) int {
+func countArrangements(line string) uint {
 	springs, groups := getArrays(line)
 
 	//modAndTest(springs, groups, cnt)
 	dP := DP{
-		memory:  make(map[[3]int]int),
+		memory:  make(map[[3]int]uint),
 		springs: duplicateArrays(springs, []int{0}, numCopies),
 		groups:  duplicateArrays(groups, []int{}, numCopies),
 	}
@@ -188,7 +188,7 @@ func main() {
 	}
 
 	var wg sync.WaitGroup
-	c := make(chan int, n)
+	c := make(chan uint, n)
 
 	wg.Add(n)
 	for scanner.Scan() {
@@ -200,7 +200,7 @@ func main() {
 	wg.Wait()
 	close(c)
 
-	result := 0
+	var result uint
 	for val := range c {
 		result += val
 	}
