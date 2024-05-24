@@ -12,12 +12,6 @@ import (
 	"github.com/sergiovaneg/GoStudy/utils"
 )
 
-type DP struct {
-	memory  map[[3]int]uint
-	springs []int
-	groups  []int
-}
-
 const numCopies = 4
 
 func getArrays(line string) ([]int, []int) {
@@ -62,115 +56,80 @@ func duplicateArrays(arr, sep []int, n int) []int {
 	return newArr
 }
 
-/* Attempt without DP
-func modAndTest(springs, groups []int, cnt *int) {
-	// Check if this is a valid finished configuration
-	if len(groups) == 0 {
-		// Check there are no broken springs later on
-		if slices.Index(springs, -1) == -1 {
-			*cnt++
-		}
-		return
-	}
-
-	// Check for potential valid placings
-	groupSize := groups[0]
-	if len(springs) < groupSize {
-		return
-	}
-
-	for idx := 0; idx < len(springs)-groupSize+1; {
-		if springs[idx] == 1 {
-			idx++
-			continue
-		}
-		isValid := true
-
-		for _, status := range springs[idx : idx+groupSize] {
-			if status == 1 { // Spring in a good condition
-				isValid = false
-				break
-			}
-		}
-
-		if isValid {
-			if idx+groupSize == len(springs) {
-				modAndTest([]int{}, groups[1:], cnt)
-			} else if springs[idx+groups[0]] != -1 {
-				modAndTest(springs[idx+groups[0]+1:], groups[1:], cnt)
-			}
-		}
-
-		// Logic based on current idx being the first in a group of broken springs
-		// (Those scenarios were tested above)
-		if springs[idx] == -1 {
-			return
-		}
-
-		idx++
-		if !isValid {
-			offset := slices.IndexFunc(
-				springs[idx:],
-				func(x int) bool { return x <= 0 })
-			if offset == -1 {
-				return
-			} else {
-				idx += offset
-			}
-		}
-	}
-}
-*/
-
-// Key: (springIdx, groupIdx, accumulated group length)
-func (dP *DP) f(key [3]int) uint {
-	value, isKey := dP.memory[key]
-
-	if isKey {
-		return value
-	}
-
-	if key[0] == len(dP.springs) {
-		if key[1] == len(dP.groups) && key[2] == 0 {
-			return 1
-		} else if key[1] == len(dP.groups)-1 && dP.groups[key[1]] == key[2] {
-			return 1
-		} else {
-			return 0
-		}
-	}
-
-	var result uint
-
-	// Assume working spring
-	if dP.springs[key[0]] >= 0 {
-		if key[2] == 0 {
-			result += dP.f([3]int{key[0] + 1, key[1], 0})
-		} else if key[1] < len(dP.groups) && dP.groups[key[1]] == key[2] {
-			result += dP.f([3]int{key[0] + 1, key[1] + 1, 0})
-		}
-	}
-
-	// Assume broken spring
-	if dP.springs[key[0]] <= 0 {
-		result += dP.f([3]int{key[0] + 1, key[1], key[2] + 1})
-	}
-
-	dP.memory[key] = result
-	return result
+type State struct {
+	dot  *State // operational
+	hash *State // broken
 }
 
-func countArrangements(line string) uint {
+type DFA struct {
+	states []State
+}
+
+func NewDFA(groups []int) DFA {
+	var nStates int
+	for _, val := range groups {
+		nStates++
+		nStates += val
+	}
+
+	var dfa DFA
+	dfa.states = make([]State, nStates)
+
+	dfa.states[0].dot = &dfa.states[0]
+	dfa.states[0].hash = &dfa.states[1]
+
+	i := 1
+	for _, size := range groups {
+		for j := 0; j < size-1; i, j = i+1, j+1 {
+			dfa.states[i].hash = &dfa.states[i+1]
+		}
+
+		if i+2 < nStates {
+			dfa.states[i].dot = &dfa.states[i+1]
+			i++
+			dfa.states[i].dot = &dfa.states[i]
+			dfa.states[i].hash = &dfa.states[i+1]
+		}
+		i++
+	}
+
+	dfa.states[nStates-1].dot = &dfa.states[nStates-1]
+
+	return dfa
+}
+
+func (dfa DFA) countArrangements(springs []int) uint {
+	nStates := len(dfa.states)
+	current := make(map[*State]uint, nStates)
+
+	current[&dfa.states[0]] = 1
+
+	for _, springCondition := range springs {
+		next := make(map[*State]uint, nStates)
+
+		for key, value := range current {
+			if springCondition >= 0 && key.dot != nil {
+				next[key.dot] += value
+			}
+			if springCondition <= 0 && key.hash != nil {
+				next[key.hash] += value
+			}
+		}
+
+		current = next
+	}
+
+	return current[&dfa.states[nStates-1]]
+}
+
+func processLine(line string) uint {
 	springs, groups := getArrays(line)
+	springs = duplicateArrays(springs, []int{0}, numCopies)
+	groups = duplicateArrays(groups, []int{}, numCopies)
 
-	//modAndTest(springs, groups, cnt)
-	dP := DP{
-		memory:  make(map[[3]int]uint),
-		springs: duplicateArrays(springs, []int{0}, numCopies),
-		groups:  duplicateArrays(groups, []int{}, numCopies),
-	}
+	dfa := NewDFA(groups)
 
-	return dP.f([3]int{0, 0, 0})
+	return dfa.countArrangements(springs)
 }
 
 func main() {
@@ -194,7 +153,7 @@ func main() {
 	for scanner.Scan() {
 		go func(line string) {
 			defer wg.Done()
-			c <- countArrangements(line)
+			c <- processLine(line)
 		}(scanner.Text())
 	}
 	wg.Wait()
