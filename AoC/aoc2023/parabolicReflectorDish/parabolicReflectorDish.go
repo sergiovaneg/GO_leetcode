@@ -10,7 +10,9 @@ import (
 )
 
 const numIters = 1000000000
-const wordSize = 8
+const bitsPerRune = 8
+
+type Symbols [][]rune
 
 /* Part 1
 func processSymbols(symbols [][]rune) uint {
@@ -35,8 +37,8 @@ func processSymbols(symbols [][]rune) uint {
 }
 */
 
-func encodeState(symbols [][]rune) string {
-	state := ""
+func (symbols Symbols) encodeState() string {
+	var state string
 
 	for _, row := range symbols {
 		var rowBits uint
@@ -47,7 +49,7 @@ func encodeState(symbols [][]rune) string {
 				rowBits += mask
 			}
 
-			if (idx+1)%wordSize == 0 || idx == len(row)-1 {
+			if (idx+1)%bitsPerRune == 0 || idx == len(row)-1 {
 				state += string(rune(rowBits))
 				rowBits = 0
 				mask = 0x01
@@ -60,8 +62,8 @@ func encodeState(symbols [][]rune) string {
 	return state
 }
 
-func decodeState(symbols [][]rune, state string) {
-	m, n := len(symbols), len(symbols[0])
+func (symbols *Symbols) loadState(state string) {
+	m, n := len(*symbols), len((*symbols)[0])
 	stateRunes, stateIdx := []rune(state), 0
 
 	for i, mask := 0, uint(0x01); i < m; i++ {
@@ -69,12 +71,12 @@ func decodeState(symbols [][]rune, state string) {
 			isStone := mask&uint(stateRunes[stateIdx]) != 0
 
 			if isStone {
-				symbols[i][j] = 'O'
-			} else if symbols[i][j] != '#' {
-				symbols[i][j] = '.'
+				(*symbols)[i][j] = 'O'
+			} else if (*symbols)[i][j] != '#' {
+				(*symbols)[i][j] = '.'
 			}
 
-			if (j+1)%wordSize == 0 || j == n-1 {
+			if (j+1)%bitsPerRune == 0 || j == n-1 {
 				stateIdx++
 				mask = 0x01
 			} else {
@@ -84,8 +86,8 @@ func decodeState(symbols [][]rune, state string) {
 	}
 }
 
-func tilt(symbols [][]rune, direction rune) {
-	m, n := len(symbols), len(symbols[0])
+func (symbols *Symbols) tilt(direction rune) {
+	m, n := len(*symbols), len((*symbols)[0])
 
 	var groups [][]uint
 	var i, j int
@@ -121,7 +123,7 @@ func tilt(symbols [][]rune, direction rune) {
 		subgroups, count := make([]uint, 0), uint(0)
 
 		for *inIdx = inStart; *inIdx != inLim; *inIdx += inMod {
-			switch symbols[i][j] {
+			switch (*symbols)[i][j] {
 			case 'O':
 				count++
 			case '#':
@@ -136,19 +138,19 @@ func tilt(symbols [][]rune, direction rune) {
 
 	for *outIdx = outStart; *outIdx != outLim; *outIdx += outMod {
 		for *inIdx = inStart; *inIdx != inLim; *inIdx += inMod {
-			if symbols[i][j] == '#' {
+			if (*symbols)[i][j] == '#' {
 				groups[*outIdx] = groups[*outIdx][1:]
 			} else if groups[*outIdx][0] > 0 {
-				symbols[i][j] = 'O'
+				(*symbols)[i][j] = 'O'
 				groups[*outIdx][0]--
 			} else {
-				symbols[i][j] = '.'
+				(*symbols)[i][j] = '.'
 			}
 		}
 	}
 }
 
-func weighSymbols(symbols [][]rune) uint {
+func (symbols Symbols) weigh() uint {
 	var result uint
 	m := len(symbols)
 
@@ -174,9 +176,9 @@ func getPeriod(iterMap map[string]string, initialState string) int {
 	return counter
 }
 
-func processSymbols(symbols [][]rune) uint {
+func (symbols Symbols) process() uint {
 	iterMap := make(map[string]string, 1)
-	currentState := encodeState(symbols)
+	currentState := symbols.encodeState()
 	period := -1
 
 	for iter := 0; iter < numIters; iter++ {
@@ -190,17 +192,17 @@ func processSymbols(symbols [][]rune) uint {
 				currentState = nextState
 			}
 		} else {
-			tilt(symbols, 'N')
-			tilt(symbols, 'W')
-			tilt(symbols, 'S')
-			tilt(symbols, 'E')
-			iterMap[currentState] = encodeState(symbols)
+			symbols.tilt('N')
+			symbols.tilt('W')
+			symbols.tilt('S')
+			symbols.tilt('E')
+			iterMap[currentState] = symbols.encodeState()
 			currentState = iterMap[currentState]
 		}
 	}
 
-	decodeState(symbols, currentState)
-	return weighSymbols(symbols)
+	symbols.loadState(currentState)
+	return symbols.weigh()
 }
 
 func main() {
@@ -217,10 +219,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	symbols := make([][]rune, 0, n)
+	symbols := make(Symbols, 0, n)
 	for scanner.Scan() {
 		symbols = append(symbols, []rune(scanner.Text()))
 	}
 
-	fmt.Printf("Word size %v: %v\n", wordSize, processSymbols(symbols))
+	fmt.Printf("Word size %v: %v\n", bitsPerRune, symbols.process())
 }
