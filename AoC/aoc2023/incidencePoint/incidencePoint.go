@@ -4,8 +4,11 @@ import (
 	"bufio"
 	"fmt"
 	"log"
+	"math/bits"
 	"os"
 )
+
+const expectedDiff = 1
 
 func processLine(line string) []bool {
 	result := make([]bool, len(line))
@@ -19,18 +22,29 @@ func processLine(line string) []bool {
 	return result
 }
 
-func findSymmetryAxis(n1, n2 []uint, n int) int {
-	shift := n & 0x01
-	for mask := (uint(1) << (n - shift)) - 1; mask != 0; mask, shift = mask>>2, shift+2 {
-		valid := true
-		for idx, num := range n1 {
-			if (num^(n2[idx]>>shift))&mask != 0 {
-				valid = false
-				break
-			}
+func getDiffMatrix(masks []uint) map[[2]int]int {
+	n := len(masks)
+	result := make(map[[2]int]int, (n*(n-1))>>1)
+
+	for idxA, maskA := range masks {
+		for idxB, maskB := range masks[idxA+1:] {
+			result[[2]int{idxA, idxA + idxB + 1}] = bits.OnesCount(maskA ^ maskB)
 		}
-		if valid {
-			return shift
+	}
+
+	return result
+}
+
+func getSymIdx(diffMatrix map[[2]int]int, n int) int {
+	for i := 0; i < n-1; i++ {
+		acc := diffMatrix[[2]int{i, i + 1}]
+
+		for a, b := i-1, i+2; a >= 0 && b < n && acc <= expectedDiff; a, b = a-1, b+1 {
+			acc += diffMatrix[[2]int{a, b}]
+		}
+
+		if acc == expectedDiff {
+			return i
 		}
 	}
 
@@ -39,50 +53,31 @@ func findSymmetryAxis(n1, n2 []uint, n int) int {
 
 func processBatch(buffer [][]bool) uint {
 	// First try horizontal
-	var candidate int
 	m, n := len(buffer), len(buffer[0])
-	numsFwd, numsBwd := make([]uint, m), make([]uint, m)
+	rowMasks, colMasks := make([]uint, m), make([]uint, n)
 
 	for i, row := range buffer {
 		for j, bit := range row {
-			numsFwd[i] <<= 1
+			rowMasks[i] <<= 1
+			colMasks[j] <<= 1
 			if bit {
-				numsFwd[i] += 0x01
-				numsBwd[i] += 1 << j
+				rowMasks[i] += 0x01
+				colMasks[j] += 0x01
 			}
 		}
 	}
 
-	candidate = findSymmetryAxis(numsFwd, numsBwd, n)
+	var candidate int
+
+	rowDiffs := getDiffMatrix(rowMasks)
+	candidate = getSymIdx(rowDiffs, m)
 	if candidate != -1 {
-		return uint(n - n>>1 + candidate>>1)
+		return 100 * uint(candidate+1)
 	}
 
-	candidate = findSymmetryAxis(numsBwd, numsFwd, n)
+	candidate = getSymIdx(getDiffMatrix(colMasks), n)
 	if candidate != -1 {
-		return uint(n>>1 - candidate>>1)
-	}
-
-	numsFwd, numsBwd = make([]uint, n), make([]uint, n)
-
-	for i, row := range buffer {
-		for j, bit := range row {
-			numsFwd[j] <<= 1
-			if bit {
-				numsFwd[j] += 0x01
-				numsBwd[j] += 1 << i
-			}
-		}
-	}
-
-	candidate = findSymmetryAxis(numsFwd, numsBwd, m)
-	if candidate != -1 {
-		return 100 * uint(m-m>>1+candidate>>1)
-	}
-
-	candidate = findSymmetryAxis(numsBwd, numsFwd, m)
-	if candidate != -1 {
-		return 100 * uint(m>>1-candidate>>1)
+		return uint(candidate + 1)
 	}
 
 	return 0
