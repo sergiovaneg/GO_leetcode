@@ -35,7 +35,7 @@ func (cq CellQueue) Less(i, j int) bool {
 	if cq[i].heatLoss != cq[j].heatLoss {
 		return cq[i].heatLoss < cq[j].heatLoss
 	}
-	return cq[i].cs.steps < cq[j].cs.steps
+	return cq[i].cs.steps > cq[j].cs.steps
 }
 
 func (cq CellQueue) Swap(i, j int) {
