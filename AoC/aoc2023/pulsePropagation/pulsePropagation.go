@@ -2,26 +2,32 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"log"
 	"os"
 	"slices"
 	"strings"
+
+	"github.com/sergiovaneg/GoStudy/utils"
 )
 
+const warmUpIters = 1000
+
 type Node struct {
+	name    string
 	class   string
 	memory  []bool
 	inputs  []*Node
 	outputs []*Node
 }
 
+type System []*Node
+
 type Pulse struct {
 	src    *Node
 	target *Node
 	value  bool
 }
-
-type System map[string]*Node
 
 func (node *Node) setClass(class byte) {
 	switch class {
@@ -34,6 +40,35 @@ func (node *Node) setClass(class byte) {
 	}
 }
 
+func (system *System) registerNode(name string, class byte) *Node {
+	node := &Node{
+		name:   name,
+		inputs: make([]*Node, 0),
+	}
+	node.setClass(class)
+	*system = append(*system, node)
+
+	return node
+}
+
+func (system *System) getNode(name string, class byte) *Node {
+	idx := slices.IndexFunc(*system, func(x *Node) bool {
+		return x.name == name
+	})
+
+	if idx == -1 {
+		return system.registerNode(name, class)
+	} else {
+		node := (*system)[idx]
+
+		if class != 0 {
+			node.setClass(class)
+		}
+
+		return node
+	}
+}
+
 func (node *Node) initMemory() {
 	switch node.class {
 	case "flipflop":
@@ -43,19 +78,13 @@ func (node *Node) initMemory() {
 	}
 }
 
-func (system *System) registerNode(name string, class byte) *Node {
-	node := &Node{
-		inputs:  make([]*Node, 0),
-		outputs: make([]*Node, 0),
+func (system System) resetMemory() {
+	for _, node := range system {
+		node.initMemory()
 	}
-	node.setClass(class)
-
-	(*system)[name] = node
-
-	return node
 }
 
-func emit(value bool, src *Node, targets []*Node) []Pulse {
+func (src *Node) emit(value bool, targets []*Node) []Pulse {
 	pulses := make([]Pulse, len(targets))
 
 	for idx, target := range targets {
@@ -72,41 +101,98 @@ func emit(value bool, src *Node, targets []*Node) []Pulse {
 func (node *Node) processPulse(pulse Pulse) []Pulse {
 	switch node.class {
 	case "broadcaster":
-		return emit(pulse.value, node, node.outputs)
+		return node.emit(pulse.value, node.outputs)
 	case "flipflop":
 		if pulse.value {
-			break
+			return nil
 		}
 		node.memory[0] = !node.memory[0]
-		return emit(node.memory[0], node, node.outputs)
+		return node.emit(node.memory[0], node.outputs)
 	case "conjunction":
 		idx := slices.Index(node.inputs, pulse.src)
 		node.memory[idx] = pulse.value
 
-		var value bool
 		for _, mem := range node.memory {
 			if !mem {
-				value = true
-				break
+				return node.emit(true, node.outputs)
 			}
 		}
 
-		return emit(value, node, node.outputs)
+		return node.emit(false, node.outputs)
+	default:
+		return nil
 	}
-
-	return nil
 }
 
-func (system System) broadcast() {
+/* Too many states for memoization to be feasible
+func (system System) encodeState() string {
+	state := ""
+
+	for _, node := range system {
+		if node.class == "flipflop" {
+			if node.memory[0] {
+				state += "1"
+			} else {
+				state += "0"
+			}
+		}
+	}
+
+	return state
+}
+*/
+
+func (system System) broadcast() ([2]uint, bool) {
+	count := [2]uint{1, 0} // A low pulse is always sent at the start
+	bcastIdx := slices.IndexFunc(
+		system,
+		func(x *Node) bool {
+			return x.name == "broadcaster"
+		})
+	if bcastIdx == -1 {
+		return count, false
+	}
+
 	var pulse Pulse
-	queue := system["broadcaster"].processPulse(pulse)
+	var low2rx uint
+	queue := system[bcastIdx].processPulse(pulse)
 	for len(queue) > 0 {
 		pulse, queue = queue[0], queue[1:]
+		if pulse.value {
+			count[1]++
+		} else {
+			count[0]++
+		}
+
+		if pulse.target.name == "rx" && !pulse.value {
+			low2rx++
+		}
+
 		newPulses := pulse.target.processPulse(pulse)
 		if newPulses != nil {
 			queue = append(queue, newPulses...)
 		}
 	}
+
+	return count, low2rx > 0
+}
+
+func (system System) warmUp() (uint, int) {
+	result := [2]uint{0, 0}
+	minPresses := -1
+
+	for i := 0; i < warmUpIters && minPresses == -1; i++ {
+		count, achieved := system.broadcast()
+
+		if achieved {
+			minPresses = i + 1
+		}
+
+		result[0] += count[0]
+		result[1] += count[1]
+	}
+
+	return result[0] * result[1], minPresses
 }
 
 func main() {
@@ -118,7 +204,11 @@ func main() {
 
 	scanner := bufio.NewScanner(file)
 
-	system := make(System)
+	n, err := utils.LineCounter(file)
+	if err != nil {
+		log.Fatal(err)
+	}
+	system := make(System, 0, n)
 	var src *Node
 
 	for scanner.Scan() {
@@ -126,12 +216,7 @@ func main() {
 
 		if srcDst[0] != "broadcaster" {
 			name, class := srcDst[0][1:], srcDst[0][0]
-			src = system[name]
-			if src == nil {
-				src = system.registerNode(name, class)
-			} else {
-				src.setClass(class)
-			}
+			src = system.getNode(name, class)
 		} else {
 			src = system.registerNode("broadcaster", 'b')
 		}
@@ -139,19 +224,12 @@ func main() {
 		outputs := strings.Split(srcDst[1], ", ")
 		src.outputs = make([]*Node, len(outputs))
 		for idx, name := range outputs {
-			out := system[name]
-			if out == nil {
-				out = system.registerNode(name, 0)
-			}
-
+			out := system.getNode(name, 0)
 			src.outputs[idx] = out
 			out.inputs = append(out.inputs, src)
 		}
 	}
 
-	for _, node := range system {
-		node.initMemory()
-	}
-
-	system.broadcast()
+	system.resetMemory()
+	fmt.Println(system.warmUp())
 }
