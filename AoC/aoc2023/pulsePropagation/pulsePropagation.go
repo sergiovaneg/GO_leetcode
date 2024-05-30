@@ -142,7 +142,7 @@ func (system System) encodeState() string {
 }
 */
 
-func (system System) broadcast() ([2]uint, bool) {
+func (system System) broadcast() [2]uint {
 	count := [2]uint{1, 0} // A low pulse is always sent at the start
 	bcastIdx := slices.IndexFunc(
 		system,
@@ -150,11 +150,10 @@ func (system System) broadcast() ([2]uint, bool) {
 			return x.name == "broadcaster"
 		})
 	if bcastIdx == -1 {
-		return count, false
+		return count
 	}
 
 	var pulse Pulse
-	var low2rx uint
 	queue := system[bcastIdx].processPulse(pulse)
 	for len(queue) > 0 {
 		pulse, queue = queue[0], queue[1:]
@@ -164,35 +163,62 @@ func (system System) broadcast() ([2]uint, bool) {
 			count[0]++
 		}
 
-		if pulse.target.name == "rx" && !pulse.value {
-			low2rx++
-		}
-
 		newPulses := pulse.target.processPulse(pulse)
 		if newPulses != nil {
 			queue = append(queue, newPulses...)
 		}
 	}
 
-	return count, low2rx > 0
+	return count
 }
 
-func (system System) warmUp() (uint, int) {
+func (system System) warmUp() uint {
 	result := [2]uint{0, 0}
-	minPresses := -1
 
-	for i := 0; i < warmUpIters && minPresses == -1; i++ {
-		count, achieved := system.broadcast()
-
-		if achieved {
-			minPresses = i + 1
-		}
+	for i := 0; i < warmUpIters; i++ {
+		count := system.broadcast()
 
 		result[0] += count[0]
 		result[1] += count[1]
 	}
 
-	return result[0] * result[1], minPresses
+	return result[0] * result[1]
+}
+
+func (system System) toDotfile() {
+	file, err := os.Create("./graph.dot")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
+
+	file.WriteString("digraph {\n")
+	for _, src := range system {
+		file.WriteString("\t")
+		switch src.class {
+		case "broadcaster":
+			file.WriteString("broadcaster [color=green, shape=circle, ordering=in]\n")
+		case "flipflop":
+			file.WriteString(src.name + " [shape=cylinder]\n")
+		case "conjunction":
+			file.WriteString(src.name + " [shape=invtrapezium]\n")
+		default:
+			file.WriteString(src.name + " [shape=parallelogram, ordering=out]\n")
+		}
+
+		if len(src.outputs) > 0 {
+			file.WriteString("\t" + src.name + " ->")
+			for idx, target := range src.outputs {
+				file.WriteString(" ")
+				if idx == 0 {
+					file.WriteString("{")
+				}
+				file.WriteString(target.name)
+			}
+			file.WriteString("}\n")
+		}
+	}
+	file.WriteString("}\n")
 }
 
 func main() {
@@ -209,10 +235,11 @@ func main() {
 		log.Fatal(err)
 	}
 	system := make(System, 0, n)
-	var src *Node
 
+	var src *Node
 	for scanner.Scan() {
-		srcDst := strings.Split(scanner.Text(), " -> ")
+		line := scanner.Text()
+		srcDst := strings.Split(line, " -> ")
 
 		if srcDst[0] != "broadcaster" {
 			name, class := srcDst[0][1:], srcDst[0][0]
@@ -229,6 +256,8 @@ func main() {
 			out.inputs = append(out.inputs, src)
 		}
 	}
+
+	system.toDotfile()
 
 	system.resetMemory()
 	fmt.Println(system.warmUp())

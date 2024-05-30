@@ -1,0 +1,119 @@
+digraph {
+	pr [shape=invtrapezium]
+	pr -> {pd vx vn cl hm}
+	pd [shape=cylinder]
+	pd -> {pr jp}
+	vx [shape=cylinder]
+	vx -> {ns}
+	vn [shape=invtrapezium]
+	vn -> {kj}
+	cl [shape=cylinder]
+	cl -> {hm}
+	hm [shape=cylinder]
+	hm -> {qb}
+	qb [shape=cylinder]
+	qb -> {bf pr}
+	nm [shape=cylinder]
+	nm -> {dh jv}
+	dh [shape=cylinder]
+	dh -> {jv mc}
+	jv [shape=invtrapezium]
+	jv -> {hj rc kt ln zp hf}
+	lv [shape=cylinder]
+	lv -> {jv tg}
+	tg [shape=cylinder]
+	tg -> {jv}
+	dg [shape=cylinder]
+	dg -> {tm jm}
+	tm [shape=cylinder]
+	tm -> {mh}
+	jm [shape=invtrapezium]
+	jm -> {pb tm zx mk xv nd}
+	mt [shape=cylinder]
+	mt -> {jv zp}
+	zp [shape=cylinder]
+	zp -> {rc}
+	ln [shape=invtrapezium]
+	ln -> {kj}
+	kj [shape=invtrapezium]
+	kj -> {rx}
+	rx [shape=parallelogram, ordering=out]
+	dr [shape=invtrapezium]
+	dr -> {kj}
+	dx [shape=cylinder]
+	dx -> {ts}
+	ts [shape=cylinder]
+	ts -> {ng qs}
+	qs [shape=invtrapezium]
+	qs -> {kf dr sc rg gl dx}
+	kf [shape=cylinder]
+	kf -> {dx}
+	sc [shape=cylinder]
+	sc -> {mv}
+	rg [shape=cylinder]
+	rg -> {qs vq}
+	gl [shape=cylinder]
+	gl -> {kf}
+	mc [shape=cylinder]
+	mc -> {jv lv}
+	vq [shape=cylinder]
+	vq -> {bs qs}
+	kt [shape=cylinder]
+	kt -> {jv mt}
+	lh [shape=cylinder]
+	lh -> {qs dl}
+	dl [shape=cylinder]
+	dl -> {qs}
+	tp [shape=cylinder]
+	tp -> {pf jm}
+	pf [shape=cylinder]
+	pf -> {mf jm}
+	bf [shape=cylinder]
+	bf -> {vx pr}
+	mv [shape=cylinder]
+	mv -> {qs gl}
+	ng [shape=cylinder]
+	ng -> {qs lh}
+	gv [shape=cylinder]
+	gv -> {jm km}
+	km [shape=cylinder]
+	km -> {jm}
+	nd [shape=cylinder]
+	nd -> {dg}
+	ns [shape=cylinder]
+	ns -> {pr pn}
+	pn [shape=cylinder]
+	pn -> {pr cb}
+	jp [shape=cylinder]
+	jp -> {mx pr}
+	xv [shape=cylinder]
+	xv -> {nd jm}
+	hf [shape=cylinder]
+	hf -> {nm}
+	bs [shape=cylinder]
+	bs -> {sc qs}
+	hj [shape=cylinder]
+	hj -> {vc}
+	rc [shape=cylinder]
+	rc -> {hj}
+	mx [shape=cylinder]
+	mx -> {cl pr}
+	mf [shape=cylinder]
+	mf -> {gv jm}
+	zx [shape=invtrapezium]
+	zx -> {kj}
+	tk [shape=cylinder]
+	tk -> {pr}
+	cb [shape=cylinder]
+	cb -> {pr tk}
+	pb [shape=cylinder]
+	pb -> {tp}
+	broadcaster [color=green, shape=circle, ordering=in]
+	broadcaster -> {kt pd xv rg}
+	mk [shape=cylinder]
+	mk -> {pb}
+	vc [shape=cylinder]
+	vc -> {jv hf}
+	mh [shape=cylinder]
+	mh -> {mk jm}
+}
