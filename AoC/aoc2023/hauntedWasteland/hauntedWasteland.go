@@ -35,26 +35,6 @@ func processNode(line string) [3][3]byte {
 	return result
 }
 
-func GCD(a, b int) int {
-	for b != 0 {
-		t := b
-		b = a % b
-		a = t
-	}
-	return a
-}
-
-// find Least Common Multiple (LCM) via GCD
-func LCM(a, b int, integers ...int) int {
-	result := a * b / GCD(a, b)
-
-	for i := 0; i < len(integers); i++ {
-		result = LCM(result, integers[i])
-	}
-
-	return result
-}
-
 func main() {
 	file, err := os.Open("./input.txt")
 	if err != nil {
@@ -119,5 +99,5 @@ func main() {
 		}
 	}
 
-	fmt.Println(LCM(periods[0], periods[1], periods[2:]...))
+	fmt.Println(utils.LCM(periods[0], periods[1], periods[2:]...))
 }

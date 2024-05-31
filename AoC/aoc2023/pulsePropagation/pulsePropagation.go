@@ -221,6 +221,60 @@ func (system System) toDotfile() {
 	file.WriteString("}\n")
 }
 
+func (system System) getMinPulses() uint {
+	system.resetMemory()
+
+	bcaster := system[slices.IndexFunc(
+		system,
+		func(x *Node) bool {
+			return x.name == "broadcaster"
+		})]
+
+	sink := system.getNode("rx", 0).inputs[0]
+	lambda := make([]uint, len(sink.inputs))
+	var counter uint
+
+	isFinished := func() bool {
+		for _, val := range lambda {
+			if val == 0 {
+				return false
+			}
+		}
+		return true
+	}
+
+	var pulse Pulse
+	for !isFinished() {
+		counter++
+		pulse = Pulse{}
+		queue := bcaster.processPulse(pulse)
+		for len(queue) > 0 {
+			pulse, queue = queue[0], queue[1:]
+
+			if pulse.target == sink {
+				idx := slices.Index(sink.inputs, pulse.src)
+				if lambda[idx] > 0 {
+					continue
+				}
+
+				if pulse.value {
+					lambda[idx] = counter
+				}
+			}
+
+			newPulses := pulse.target.processPulse(pulse)
+			if newPulses != nil {
+				queue = append(queue, newPulses...)
+			}
+		}
+	}
+
+	// Mu ended up being just Lambda
+	_, period := utils.ExtLCM(make([]uint, len(lambda)), lambda)
+
+	return period
+}
+
 func main() {
 	file, err := os.Open("./input.txt")
 	if err != nil {
@@ -261,4 +315,6 @@ func main() {
 
 	system.resetMemory()
 	fmt.Println(system.warmUp())
+
+	fmt.Println(system.getMinPulses())
 }
