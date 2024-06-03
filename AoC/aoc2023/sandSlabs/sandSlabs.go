@@ -7,18 +7,19 @@ import (
 	"regexp"
 	"slices"
 	"strconv"
+	"sync"
 
 	"github.com/sergiovaneg/GoStudy/utils"
 )
 
 type Brick [2][3]int
 type BrickStack []Brick
+type Log map[*Brick]bool
 
 type Support struct {
 	bottom []*Brick
 	top    []*Brick
 }
-
 type SupportMap map[*Brick]Support
 
 func parseBrick(line string) Brick {
@@ -36,21 +37,30 @@ func parseBrick(line string) Brick {
 }
 
 func (stack BrickStack) settleStack() SupportMap {
+	n := len(stack)
+
 	slices.SortFunc(stack, func(a, b Brick) int {
 		return b[0][2] - a[0][2]
 	})
 
-	supportMap := make(SupportMap, len(stack))
+	supportMap := make(SupportMap, n)
 
-	for idx := len(stack) - 1; idx >= 0; idx-- {
-		var offset int
+	// First offset is localized
+	offset := stack[n-1][0][2] - 1
+	stack[n-1][0][2] -= offset
+	stack[n-1][1][2] -= offset
+
+	// The rest depend on previous modifications
+	for idx := n - 2; idx >= 0; idx-- {
+		var reference int
 		brick := &stack[idx]
 
 		supporters := make([]*Brick, 0, 1)
-		for supportIdx := range stack[idx:] {
-			x := &stack[idx+supportIdx]
+		for supportIdx := range stack[idx+1:] {
+			x := &stack[idx+supportIdx+1]
 
-			if supportIdx == 0 || (*x)[1][2] < offset { // Early skips
+			// Skip if
+			if (*x)[1][2] < reference {
 				continue
 			}
 
@@ -62,9 +72,9 @@ func (stack BrickStack) settleStack() SupportMap {
 				continue
 			}
 
-			if (*x)[1][2] > offset { // New reference
+			if (*x)[1][2] > reference { // New reference
 				supporters = []*Brick{x}
-				offset = (*x)[1][2]
+				reference = (*x)[1][2]
 			} else { // Append to supporters
 				supporters = append(supporters, x)
 			}
@@ -75,6 +85,7 @@ func (stack BrickStack) settleStack() SupportMap {
 				bottom: supporters,
 				top:    make([]*Brick, 0),
 			}
+
 			for _, x := range supporters {
 				supportMap[x] = Support{
 					bottom: supportMap[x].bottom,
@@ -85,7 +96,7 @@ func (stack BrickStack) settleStack() SupportMap {
 		}
 
 		// Reference -> Offset
-		offset = (*brick)[0][2] - (offset + 1)
+		offset = (*brick)[0][2] - (reference + 1)
 
 		(*brick)[0][2] -= offset
 		(*brick)[1][2] -= offset
@@ -104,7 +115,7 @@ func (sm SupportMap) isSafe(brick *Brick) bool {
 	return true
 }
 
-func (sm SupportMap) wouldFall(brick *Brick, log map[*Brick]bool) bool {
+func (sm SupportMap) wouldFall(brick *Brick, log Log) bool {
 	wouldFall := true
 
 	for _, x := range sm[brick].bottom {
@@ -117,6 +128,18 @@ func (sm SupportMap) wouldFall(brick *Brick, log map[*Brick]bool) bool {
 	return wouldFall
 }
 
+func (sm SupportMap) catchFallen(base *Brick, log Log) []*Brick {
+	queue := make([]*Brick, 0, len(sm[base].top))
+
+	for _, x := range sm[base].top {
+		if sm.wouldFall(x, log) {
+			queue = append(queue, x)
+		}
+	}
+
+	return slices.Clip(queue)
+}
+
 func (sm SupportMap) chainCount(brick *Brick) uint {
 	if len(sm[brick].top) == 0 { // No reaction caused
 		return 0
@@ -124,34 +147,20 @@ func (sm SupportMap) chainCount(brick *Brick) uint {
 
 	var result uint
 
-	// 'brick' logged but not counted
-	log := make(map[*Brick]bool)
-	log[brick] = true
-
-	queue := make([]*Brick, 0, len(sm[brick].top))
-	for _, x := range sm[brick].top {
-		if sm.wouldFall(x, log) {
-			queue = append(queue, x)
-		}
-	}
+	log := make(Log, len(sm))
+	log[brick] = true // Logged but not counted
+	queue := sm.catchFallen(brick, log)
 
 	var x *Brick
 	for len(queue) > 0 {
 		// Pop from queue
 		x, queue = queue[0], queue[1:]
 
-		if log[x] { // Already accounted for
-			continue
-		}
-
 		// Register and add
 		result, log[x] = result+1, true
 
-		for _, y := range sm[x].top {
-			if sm.wouldFall(y, log) {
-				queue = append(queue, y)
-			}
-		}
+		// Queue newly fallen bricks
+		queue = append(queue, sm.catchFallen(x, log)...)
 	}
 
 	return result
@@ -189,9 +198,22 @@ func main() {
 	println(result)
 
 	// Part 2
-	result = 0
+	var wg sync.WaitGroup
+	c := make(chan uint, len(stack))
+
+	wg.Add(len(stack))
 	for idx := range stack {
-		result += supportMap.chainCount(&stack[idx])
+		go func(idx int) {
+			defer wg.Done()
+			c <- supportMap.chainCount(&stack[idx])
+		}(idx)
+	}
+	wg.Wait()
+	close(c)
+
+	result = 0
+	for val := range c {
+		result += val
 	}
 	println(result)
 }
