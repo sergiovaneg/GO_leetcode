@@ -11,7 +11,7 @@ import (
 	"github.com/sergiovaneg/GoStudy/utils"
 )
 
-const ignoreSlopes = true
+const ignoreSlopes = false
 
 type Node struct {
 	coordinates [2]int
@@ -26,6 +26,11 @@ type Walker struct {
 }
 
 type Graph []*Node
+
+type Salesman struct {
+	visited []*Node
+	steps   uint
+}
 
 type HeapNode struct {
 	node *Node
@@ -184,6 +189,7 @@ func (graph Graph) simplifyGraph(start, end *Node) Graph {
 	relevantMap[start] = true
 	relevantMap[end] = true
 
+	// Remove redundant connections
 	for _, node := range graph {
 		uniqueMap := make(map[*Node]uint)
 		for idx, neigh := range node.neighbours {
@@ -198,6 +204,7 @@ func (graph Graph) simplifyGraph(start, end *Node) Graph {
 		}
 	}
 
+	// Remove proxy-nodes
 	for _, node := range graph {
 		for len(node.neighbours) == 1 {
 			if node.neighbours[0] == end {
@@ -225,7 +232,7 @@ func (graph Graph) simplifyGraph(start, end *Node) Graph {
 	})
 }
 
-func (graph Graph) getLongestPath(start, end *Node) uint {
+func (graph Graph) djikstraPath(start, end *Node) uint {
 	pq := &PriorityQueue{HeapNode{
 		node: start,
 		dist: 0,
@@ -256,16 +263,6 @@ func (graph Graph) getLongestPath(start, end *Node) uint {
 	return uint(dist[end])
 }
 
-func (graph Graph) makeUndirected() Graph {
-	for _, node := range graph {
-		for idx, neigh := range node.neighbours {
-			neigh.neighbours = append(neigh.neighbours, node)
-			neigh.distances = append(neigh.distances, node.distances[idx])
-		}
-	}
-	return graph
-}
-
 func (graph Graph) toDot(start, end *Node, name string) {
 	file, err := os.Create("./" + name + ".dot")
 	if err != nil {
@@ -274,7 +271,7 @@ func (graph Graph) toDot(start, end *Node, name string) {
 	defer file.Close()
 
 	if ignoreSlopes {
-		file.WriteString("graph{\n")
+		file.WriteString("strict digraph{\n")
 	} else {
 		file.WriteString("digraph {\n")
 	}
@@ -314,6 +311,104 @@ func (graph Graph) toDot(start, end *Node, name string) {
 	file.WriteString("}\n")
 }
 
+func (graph Graph) makeUndirected() Graph {
+	// Add conditional connections
+	for _, node := range graph {
+		for idx, neighbour := range node.neighbours {
+			neighbour.neighbours = append(neighbour.neighbours, node)
+			neighbour.distances = append(neighbour.distances, node.distances[idx])
+		}
+	}
+
+	// Remove redundant connections
+	for _, node := range graph {
+		uniqueMap := make(map[*Node]uint)
+		for idx, neigh := range node.neighbours {
+			uniqueMap[neigh] = node.distances[idx]
+		}
+
+		node.neighbours = make([]*Node, 0, len(uniqueMap))
+		node.distances = make([]uint, 0, len(uniqueMap))
+		for key, val := range uniqueMap {
+			if key == nil {
+				log.Fatalf("Error in i%vj%v", node.coordinates[0], node.coordinates[1])
+			}
+			node.neighbours = append(node.neighbours, key)
+			node.distances = append(node.distances, val)
+		}
+	}
+
+	return graph
+}
+
+func (graph Graph) bruteForcePath(start, end *Node) uint {
+	n, longest := len(graph), uint(0)
+
+	queue := []Salesman{{
+		visited: make([]*Node, 0, n),
+		steps:   0,
+	}}
+	queue[0].visited = append(queue[0].visited, start)
+
+	var salesman Salesman
+	var optimalPath []*Node
+	for len(queue) > 0 {
+		salesman, queue = queue[0], queue[1:]
+		for {
+			m := len(salesman.visited)
+			current := salesman.visited[m-1]
+			if current == end {
+				if salesman.steps > longest {
+					longest = salesman.steps
+					optimalPath = salesman.visited
+				}
+				break
+			}
+
+			next := make([]*Node, len(current.neighbours))
+			copy(next, current.neighbours)
+			next = slices.DeleteFunc(next,
+				func(x *Node) bool {
+					return slices.Contains(salesman.visited, x)
+				})
+
+			if len(next) == 0 {
+				break
+			}
+
+			if len(next) > 1 {
+				for _, nextNode := range next[1:] {
+					idx := slices.Index(current.neighbours, nextNode)
+					visitedCopy := make([]*Node, m, m+1)
+					copy(visitedCopy, salesman.visited)
+					queue = append(queue, Salesman{
+						visited: append(visitedCopy, nextNode),
+						steps:   salesman.steps + current.distances[idx],
+					})
+				}
+			}
+
+			salesman.visited = append(salesman.visited, next[0])
+			idx := slices.Index(current.neighbours, next[0])
+			salesman.steps += current.distances[idx]
+		}
+	}
+
+	acc := uint(0)
+	m := len(optimalPath)
+	for idx, node := range optimalPath[:m-1] {
+		add := node.distances[slices.Index(
+			node.neighbours, optimalPath[idx+1])]
+		acc += add
+		fmt.Printf("%v -> %v : %v (+%v)\n",
+			optimalPath[idx].coordinates,
+			optimalPath[idx+1].coordinates,
+			acc, add)
+	}
+
+	return longest
+}
+
 func main() {
 	file, err := os.Open("./input.txt")
 	if err != nil {
@@ -350,11 +445,11 @@ func main() {
 	graph := genGraph(hikingMap, start, end)
 	if !ignoreSlopes {
 		graph = graph.simplifyGraph(start, end)
-		graph.toDot(start, end, "graph")
-		println(graph.getLongestPath(start, end))
+		println(graph.djikstraPath(start, end))
+		graph.toDot(start, end, "directed_graph")
 	} else {
 		graph = graph.makeUndirected()
-		graph = graph.simplifyGraph(start, end)
-		graph.toDot(start, end, "undirected")
+		graph.toDot(start, end, "undirected_graph")
+		println(graph.bruteForcePath(start, end))
 	}
 }
