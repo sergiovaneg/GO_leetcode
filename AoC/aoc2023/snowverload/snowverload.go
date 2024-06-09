@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"errors"
 	"log"
 	"math"
 	"os"
@@ -12,12 +13,12 @@ import (
 	"github.com/sergiovaneg/GoStudy/utils"
 )
 
+const nRemove = 3
+
 type Node struct {
 	name string
 	adj  []*Node
 }
-
-type Vertex [2]*Node
 type Graph []*Node
 
 func (g *Graph) addNode(line string) {
@@ -49,7 +50,7 @@ func (g *Graph) addNode(line string) {
 				name: match,
 				adj:  []*Node{root},
 			}
-			*g = append(*g, root)
+			*g = append(*g, other)
 		} else {
 			other = (*g)[otherIdx]
 			other.adj = append(other.adj, root)
@@ -59,7 +60,9 @@ func (g *Graph) addNode(line string) {
 	}
 }
 
-func (g Graph) getLocalBetweenness(s, t *Node) map[Vertex]float64 {
+type Edge [2]*Node
+
+func (g Graph) getLocalBetweenness(s, t *Node) map[Edge]float64 {
 	optimalPaths := make([][]*Node, 0)
 	thr := math.MaxInt
 	queue := [][]*Node{{s}}
@@ -102,8 +105,9 @@ func (g Graph) getLocalBetweenness(s, t *Node) map[Vertex]float64 {
 			currentPath = append(currentPath, nextNodes[0])
 		}
 	}
-	frequency := make(map[Vertex]float64)
-	var vertex Vertex
+
+	frequency := make(map[Edge]float64)
+	var vertex Edge
 	nPaths := float64(len(optimalPaths))
 	for _, path := range optimalPaths {
 		for idx, next := range path[1:] {
@@ -119,38 +123,112 @@ func (g Graph) getLocalBetweenness(s, t *Node) map[Vertex]float64 {
 	return frequency
 }
 
-type VertexCentrality struct {
-	v Vertex
-	c float64
+func (g Graph) removeEdge(e Edge) error {
+	nodeA, nodeB := e[0], e[1]
+	idxA, idxB := slices.Index(nodeA.adj, e[1]), slices.Index(nodeB.adj, e[0])
+	if idxA == -1 || idxB == -1 {
+		return errors.New("edge not in graph")
+	}
+
+	nodeA.adj = slices.Delete(nodeA.adj, idxA, idxA+1)
+	nodeB.adj = slices.Delete(nodeB.adj, idxB, idxB+1)
+
+	return nil
 }
 
-func (g Graph) split() (g1, g2 Graph) {
-	globalCentrality := make([]VertexCentrality, 0)
+func (g Graph) getFullyConnected(node *Node) Graph {
+	gFC := make(Graph, 1, len(g))
+	gFC[0] = node
+
+	for idx := 0; idx < len(gFC); idx++ {
+		for _, candidate := range gFC[idx].adj {
+			if !slices.Contains(gFC, candidate) {
+				gFC = append(gFC, candidate)
+			}
+		}
+	}
+
+	return slices.Clip(gFC)
+}
+
+type EdgeBetweenness struct {
+	edge        Edge
+	betweenness float64
+}
+
+func (g Graph) getGlobalBetweenness() []EdgeBetweenness {
+	globalCentrality := make([]EdgeBetweenness, 0)
 
 	for sIdx, s := range g {
 		for _, t := range g[sIdx+1:] {
 			for vertex, centrality := range g.getLocalBetweenness(s, t) {
 				vIdx := slices.IndexFunc(globalCentrality,
-					func(x VertexCentrality) bool {
-						return x.v == vertex
+					func(x EdgeBetweenness) bool {
+						return x.edge == vertex
 					})
+
 				if vIdx == -1 {
-					globalCentrality = append(globalCentrality, VertexCentrality{
-						v: vertex,
-						c: centrality,
+					globalCentrality = append(globalCentrality, EdgeBetweenness{
+						edge:        vertex,
+						betweenness: centrality,
 					})
 				} else {
-					globalCentrality[vIdx].c += centrality
+					globalCentrality[vIdx].betweenness += centrality
 				}
 			}
 		}
 	}
 
-	slices.SortFunc(globalCentrality, func(a, b VertexCentrality) int {
-		return int(math.Round(b.c - a.c))
-	})
+	return globalCentrality
+}
+
+func (g Graph) split() (g1, g2 Graph) {
+
+	for n := 0; n < nRemove; n++ {
+		globalCentrality := g.getGlobalBetweenness()
+
+		centralEdge := slices.MaxFunc(globalCentrality, func(a, b EdgeBetweenness) int {
+			return int(math.Round(a.betweenness - b.betweenness))
+		}).edge
+
+		err := g.removeEdge(centralEdge)
+		if err != nil {
+			log.Fatal(err)
+		}
+	}
+
+	g1 = g.getFullyConnected(g[0])
+	g2 = make(Graph, 0, len(g)-len(g1))
+	for _, node := range g {
+		if !slices.Contains(g1, node) {
+			g2 = append(g2, node)
+		}
+	}
 
 	return
+}
+
+func (g Graph) toDot(g1, g2 Graph) {
+	file, err := os.Create("./graph.dot")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
+
+	file.WriteString("strict graph {\n")
+	for _, src := range g {
+		if slices.Contains(g1, src) {
+			file.WriteString("\t" + src.name + " [color=green, shape=circle]\n")
+		} else if slices.Contains(g2, src) {
+			file.WriteString("\t" + src.name + " [color=red, shape=circle]\n")
+		} else {
+			file.WriteString("\t" + src.name + " [color=blue, shape=circle]\n")
+		}
+		for _, dst := range src.adj {
+			file.WriteString("\t" + src.name + "--" + dst.name)
+		}
+	}
+	file.WriteString("}\n")
 }
 
 func main() {
@@ -174,4 +252,6 @@ func main() {
 
 	g1, g2 := g.split()
 	println(len(g1) * len(g2))
+
+	g.toDot(g1, g2)
 }

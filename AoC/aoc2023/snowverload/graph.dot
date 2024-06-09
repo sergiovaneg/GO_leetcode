@@ -1,0 +1,17 @@
+strict graph {
+	jqt [color=green, shape=circle]
+	jqt--rhn	jqt--xhk	jqt--ntq	rhn [color=green, shape=circle]
+	rhn--jqt	rhn--xhk	rhn--bvb	rhn--hfx	xhk [color=green, shape=circle]
+	xhk--jqt	xhk--hfx	xhk--rhn	xhk--bvb	xhk--ntq	nvd [color=red, shape=circle]
+	nvd--cmg	nvd--pzl	nvd--qnr	nvd--lhk	rsh [color=red, shape=circle]
+	rsh--frs	rsh--pzl	rsh--lsr	rsh--rzs	frs [color=red, shape=circle]
+	frs--rsh	frs--qnr	frs--lhk	frs--lsr	pzl [color=red, shape=circle]
+	pzl--rsh	pzl--lsr	pzl--nvd	lsr [color=red, shape=circle]
+	lsr--rsh	lsr--pzl	lsr--lhk	lsr--rzs	lsr--frs	hfx [color=green, shape=circle]
+	hfx--xhk	hfx--rhn	hfx--bvb	hfx--ntq	cmg [color=red, shape=circle]
+	cmg--qnr	cmg--nvd	cmg--lhk	cmg--rzs	qnr [color=red, shape=circle]
+	qnr--cmg	qnr--nvd	qnr--rzs	qnr--frs	lhk [color=red, shape=circle]
+	lhk--cmg	lhk--nvd	lhk--lsr	lhk--frs	bvb [color=green, shape=circle]
+	bvb--rhn	bvb--xhk	bvb--hfx	bvb--ntq	ntq [color=green, shape=circle]
+	ntq--jqt	ntq--hfx	ntq--bvb	ntq--xhk	rzs [color=red, shape=circle]
+	rzs--qnr	rzs--cmg	rzs--lsr	rzs--rsh}
