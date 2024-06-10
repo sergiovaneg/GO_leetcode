@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"fmt"
 	"log"
-	"math"
 	"os"
 	"regexp"
 	"strconv"
@@ -22,15 +21,37 @@ func getValue(line string) int {
 	return result
 }
 
+func absInt(x int) int {
+	if x < 0 {
+		return -x
+	}
+	return x
+}
+
+func sqrtInt(x int) int { // Undershoot root
+	y, yk := -1, 1
+	for absInt(y-yk) > 1 {
+		y = yk
+		yk = (y + x/y) >> 1
+	}
+
+	if yk*yk > x {
+		return yk - 1
+	}
+	return yk
+}
+
 func getVictories(duration, record int) int {
-	inRoot := duration*duration - 4*record
+	inRoot := duration*duration - record<<2
 	if inRoot < 0 {
 		return 0
 	}
-	fDuration, fInRoot := float64(duration), float64(inRoot)
-	root := (fDuration - math.Sqrt(fInRoot)) / 2.
+	root := (duration - sqrtInt(inRoot)) >> 1
 
-	return duration - int(math.Floor(root)+1)<<1 + 1
+	// fDuration, fInRoot := float64(duration), float64(inRoot)
+	// fRoot := (fDuration - math.Sqrt(fInRoot)) / 2.
+
+	return duration - root<<1 + 1
 }
 
 func main() {
