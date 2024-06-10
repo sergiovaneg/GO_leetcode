@@ -1,17 +1,8188 @@
 strict graph {
+	ctq [color=green, shape=circle]
+	ctq--hnk
+	ctq--zbt
+	ctq--lpm
+	ctq--txv
+	hnk [color=green, shape=circle]
+	hnk--ctq
+	hnk--fcp
+	hnk--jxx
+	hnk--nmm
+	zbt [color=green, shape=circle]
+	zbt--ctq
+	zbt--qns
+	zbt--nrk
+	zbt--snf
+	zbt--gmp
+	lpm [color=green, shape=circle]
+	lpm--ctq
+	lpm--jcs
+	lpm--rnm
+	lpm--vnn
+	lpm--ndp
+	txv [color=green, shape=circle]
+	txv--ctq
+	txv--nlr
+	txv--pzx
+	txv--pnz
+	qhv [color=red, shape=circle]
+	qhv--ztp
+	qhv--nmc
+	qhv--ctg
+	qhv--cfm
+	ztp [color=red, shape=circle]
+	ztp--qhv
+	ztp--plk
+	ztp--kvc
+	ztp--kph
+	nmc [color=red, shape=circle]
+	nmc--qhv
+	nmc--ghm
+	nmc--jtv
+	nmc--dhm
+	ctg [color=red, shape=circle]
+	ctg--qhv
+	ctg--tnr
+	ctg--kht
+	ctg--cqd
+	ctg--dfp
+	cfm [color=red, shape=circle]
+	cfm--qhv
+	cfm--xhf
+	cfm--xrm
+	cfm--gkb
+	flc [color=green, shape=circle]
+	flc--mxp
+	flc--zmp
+	flc--qcn
+	flc--kbx
+	mxp [color=green, shape=circle]
+	mxp--flc
+	mxp--fpp
+	mxp--kxv
+	mxp--tzk
+	mxp--sgf
+	fds [color=green, shape=circle]
+	fds--fjd
+	fds--nqr
+	fds--qph
+	fds--hsx
+	fjd [color=green, shape=circle]
+	fjd--fds
+	fjd--vrq
+	fjd--txn
+	fjd--fxs
+	nqr [color=green, shape=circle]
+	nqr--fds
+	nqr--cnb
+	nqr--rxt
+	nqr--zlz
+	crt [color=red, shape=circle]
+	crt--njh
+	crt--jph
+	crt--rzr
+	crt--zxj
+	njh [color=red, shape=circle]
+	njh--crt
+	njh--dhm
+	njh--rjp
+	njh--tdj
+	njh--qzf
+	jph [color=red, shape=circle]
+	jph--crt
+	jph--sgt
+	jph--grf
+	jph--mrg
+	tzv [color=green, shape=circle]
+	tzv--lvv
+	tzv--xnp
+	tzv--bmm
+	tzv--fhk
+	lvv [color=green, shape=circle]
+	lvv--tzv
+	lvv--vmg
+	lvv--gfl
+	lvv--qkd
+	bmx [color=red, shape=circle]
+	bmx--tjz
+	bmx--jst
+	bmx--tns
+	bmx--jmd
+	bmx--mqb
+	bmx--kfj
+	bmx--zlv [style="dotted"]
+	tjz [color=red, shape=circle]
+	tjz--bmx
+	tjz--qgs
+	tjz--hqs
+	tjz--ggv
+	tjz--lkf
+	jst [color=red, shape=circle]
+	jst--bmx
+	jst--dxq
+	jst--qzr
+	jst--kfd
+	jst--fbt
+	tns [color=red, shape=circle]
+	tns--bmx
+	tns--mhc
+	tns--qps
+	tns--bdb
+	jmd [color=red, shape=circle]
+	jmd--bmx
+	jmd--lph
+	jmd--vnd
+	jmd--jhg
+	mqb [color=red, shape=circle]
+	mqb--bmx
+	mqb--mxz
+	mqb--lbf
+	mqb--lrq
+	kfj [color=red, shape=circle]
+	kfj--bmx
+	kfj--rxp
+	kfj--dsd
+	kfj--pbg
+	slm [color=green, shape=circle]
+	slm--fkf
+	slm--dtz
+	slm--chl
+	slm--nxr
+	fkf [color=green, shape=circle]
+	fkf--slm
+	fkf--gqr
+	fkf--sqb
+	fkf--fml
+	dtz [color=green, shape=circle]
+	dtz--slm
+	dtz--jmg
+	dtz--hts
+	dtz--mjs
+	chl [color=green, shape=circle]
+	chl--slm
+	chl--ldf
+	chl--lvt
+	chl--dhb
+	chl--xph
+	nxr [color=green, shape=circle]
+	nxr--slm
+	nxr--lxg
+	nxr--vxg
+	nxr--fmm
+	kkt [color=red, shape=circle]
+	kkt--qdl
+	kkt--qcq
+	kkt--tpt
+	kkt--jrf
+	qdl [color=red, shape=circle]
+	qdl--kkt
+	qdl--ntx
+	qdl--fbd
+	qdl--tps
+	qdl--vss
+	gpv [color=red, shape=circle]
+	gpv--qpb
+	gpv--clq
+	gpv--frm
+	gpv--gxd
+	qpb [color=red, shape=circle]
+	qpb--gpv
+	qpb--xjg
+	qpb--dbn
+	qpb--phq
+	qpb--rhd
+	clq [color=red, shape=circle]
+	clq--gpv
+	clq--mbh
+	clq--slx
+	clq--knt
+	gxf [color=red, shape=circle]
+	gxf--zrf
+	gxf--tzp
+	gxf--ftk
+	gxf--ftq
+	zrf [color=red, shape=circle]
+	zrf--gxf
+	zrf--ftq
+	zrf--xbc
+	zrf--qlg
+	rsz [color=red, shape=circle]
+	rsz--clr
+	rsz--gml
+	rsz--vrk
+	rsz--qzr
+	clr [color=red, shape=circle]
+	clr--rsz
+	clr--hzz
+	clr--fpj
+	clr--lqj
 	jqt [color=green, shape=circle]
-	jqt--rhn	jqt--xhk	jqt--ntq	rhn [color=green, shape=circle]
-	rhn--jqt	rhn--xhk	rhn--bvb	rhn--hfx	xhk [color=green, shape=circle]
-	xhk--jqt	xhk--hfx	xhk--rhn	xhk--bvb	xhk--ntq	nvd [color=red, shape=circle]
-	nvd--cmg	nvd--pzl	nvd--qnr	nvd--lhk	rsh [color=red, shape=circle]
-	rsh--frs	rsh--pzl	rsh--lsr	rsh--rzs	frs [color=red, shape=circle]
-	frs--rsh	frs--qnr	frs--lhk	frs--lsr	pzl [color=red, shape=circle]
-	pzl--rsh	pzl--lsr	pzl--nvd	lsr [color=red, shape=circle]
-	lsr--rsh	lsr--pzl	lsr--lhk	lsr--rzs	lsr--frs	hfx [color=green, shape=circle]
-	hfx--xhk	hfx--rhn	hfx--bvb	hfx--ntq	cmg [color=red, shape=circle]
-	cmg--qnr	cmg--nvd	cmg--lhk	cmg--rzs	qnr [color=red, shape=circle]
-	qnr--cmg	qnr--nvd	qnr--rzs	qnr--frs	lhk [color=red, shape=circle]
-	lhk--cmg	lhk--nvd	lhk--lsr	lhk--frs	bvb [color=green, shape=circle]
-	bvb--rhn	bvb--xhk	bvb--hfx	bvb--ntq	ntq [color=green, shape=circle]
-	ntq--jqt	ntq--hfx	ntq--bvb	ntq--xhk	rzs [color=red, shape=circle]
-	rzs--qnr	rzs--cmg	rzs--lsr	rzs--rsh}
+	jqt--msg
+	jqt--tdp
+	jqt--lnv
+	jqt--lzt
+	msg [color=green, shape=circle]
+	msg--jqt
+	msg--ghz
+	msg--vgl
+	msg--pgg
+	msg--tkb
+	tdp [color=green, shape=circle]
+	tdp--jqt
+	tdp--krk
+	tdp--jrx
+	tdp--zhx
+	lnv [color=green, shape=circle]
+	lnv--jqt
+	lnv--cvk
+	lnv--bgd
+	lnv--plv
+	lzt [color=green, shape=circle]
+	lzt--jqt
+	lzt--cln
+	lzt--xqt
+	lzt--xxq
+	dkb [color=red, shape=circle]
+	dkb--fbr
+	dkb--fdx
+	dkb--ljl
+	dkb--pnf
+	dkb--cqd
+	dkb--mzq
+	dkb--lhz
+	fbr [color=red, shape=circle]
+	fbr--dkb
+	fbr--nvf
+	fbr--zvx
+	fbr--zpg
+	fdx [color=red, shape=circle]
+	fdx--dkb
+	fdx--scf
+	fdx--hbq
+	fdx--hfd
+	ljl [color=red, shape=circle]
+	ljl--dkb
+	ljl--qtj
+	ljl--dmb
+	ljl--hsr
+	gfp [color=red, shape=circle]
+	gfp--ljp
+	gfp--dtg
+	gfp--zdx
+	gfp--hqc
+	ljp [color=red, shape=circle]
+	ljp--gfp
+	ljp--hxb
+	ljp--qgv
+	ljp--zxr
+	dtg [color=red, shape=circle]
+	dtg--gfp
+	dtg--kqj
+	dtg--ltl
+	dtg--mqd
+	sdh [color=red, shape=circle]
+	sdh--tjn
+	sdh--vkd
+	sdh--mxz
+	sdh--gqv
+	sdh--hqc
+	sdh--bqq
+	tjn [color=red, shape=circle]
+	tjn--sdh
+	tjn--gls
+	tjn--njf
+	tjn--xhp
+	mtc [color=red, shape=circle]
+	mtc--dxc
+	mtc--rqp
+	mtc--gsv
+	mtc--pbg
+	dxc [color=red, shape=circle]
+	dxc--mtc
+	dxc--lrq
+	dxc--mtf
+	dxc--xrz
+	dxc--bqq
+	dxc--rlr
+	rqp [color=red, shape=circle]
+	rqp--mtc
+	rqp--sdj
+	rqp--rlq
+	rqp--vqx
+	ccd [color=green, shape=circle]
+	ccd--tkb
+	ccd--pdt
+	ccd--gms
+	ccd--fql
+	tkb [color=green, shape=circle]
+	tkb--ccd
+	tkb--tbz
+	tkb--vrt
+	tkb--msg
+	tkb--fcp
+	hdx [color=red, shape=circle]
+	hdx--pqs
+	hdx--znd
+	hdx--tkg
+	hdx--rkp
+	pqs [color=red, shape=circle]
+	pqs--hdx
+	pqs--kkg
+	pqs--qzx
+	pqs--xhg
+	pqs--mvc
+	ntd [color=green, shape=circle]
+	ntd--spb
+	ntd--zjs
+	ntd--vkb
+	ntd--nrq
+	spb [color=green, shape=circle]
+	spb--ntd
+	spb--bxx
+	spb--qfs
+	spb--drp
+	spb--vlp
+	zjs [color=green, shape=circle]
+	zjs--ntd
+	zjs--ccj
+	zjs--mph
+	zjs--css
+	zjs--zrn
+	vkb [color=green, shape=circle]
+	vkb--ntd
+	vkb--lvn
+	vkb--vkr
+	vkb--php
+	vkb--hbj
+	vkb--jrp
+	hjl [color=red, shape=circle]
+	hjl--cbb
+	hjl--gxd
+	hjl--vpp
+	hjl--mzq
+	cbb [color=red, shape=circle]
+	cbb--hjl
+	cbb--sph
+	cbb--lfc
+	cbb--zkc
+	gxd [color=red, shape=circle]
+	gxd--hjl
+	gxd--gpv
+	gxd--qcm
+	gxd--ftx
+	vpp [color=red, shape=circle]
+	vpp--hjl
+	vpp--mdl
+	vpp--pvr
+	vpp--mrg
+	ktt [color=green, shape=circle]
+	ktt--jdn
+	ktt--mdh
+	ktt--fhl
+	ktt--cdb
+	jdn [color=green, shape=circle]
+	jdn--ktt
+	jdn--kpv
+	jdn--jbx
+	jdn--dxv
+	hkf [color=green, shape=circle]
+	hkf--vmm
+	hkf--ngr
+	hkf--fjp
+	hkf--nrz
+	vmm [color=green, shape=circle]
+	vmm--hkf
+	vmm--pgz
+	vmm--xcm
+	vmm--jgj
+	vmm--pqj
+	nlh [color=red, shape=circle]
+	nlh--lbs
+	nlh--kvb
+	nlh--ggv
+	nlh--rrk
+	lbs [color=red, shape=circle]
+	lbs--nlh
+	lbs--khz
+	lbs--phq
+	lbs--rch
+	lbs--ppq
+	lbs--lkf
+	lbs--rgc
+	lbs--slx
+	tjr [color=green, shape=circle]
+	tjr--npd
+	tjr--ppc
+	tjr--jxp
+	tjr--ldr
+	npd [color=green, shape=circle]
+	npd--tjr
+	npd--ngc
+	npd--dpf
+	npd--jqg
+	ppc [color=green, shape=circle]
+	ppc--tjr
+	ppc--mmf
+	ppc--kft
+	ppc--jsm
+	ppc--csg
+	jxp [color=green, shape=circle]
+	jxp--tjr
+	jxp--ldf
+	jxp--shg
+	jxp--knc
+	jxp--ptv
+	jxp--mpr
+	jxp--gvj
+	ldr [color=green, shape=circle]
+	ldr--tjr
+	ldr--plr
+	ldr--fpt
+	ldr--nzd
+	nfk [color=red, shape=circle]
+	nfk--pxg
+	nfk--njf
+	nfk--cht
+	nfk--rqd
+	pxg [color=red, shape=circle]
+	pxg--nfk
+	pxg--kgl
+	pxg--xdq
+	pxg--jtx
+	njf [color=red, shape=circle]
+	njf--nfk
+	njf--szx
+	njf--mns
+	njf--tjn
+	cht [color=red, shape=circle]
+	cht--nfk
+	cht--llt
+	cht--jqz
+	cht--xtt
+	gzl [color=green, shape=circle]
+	gzl--kfs
+	gzl--frg
+	gzl--hdq
+	gzl--fxs
+	kfs [color=green, shape=circle]
+	kfs--gzl
+	kfs--cxx
+	kfs--bqc
+	kfs--pbx
+	nvm [color=green, shape=circle]
+	nvm--bmv
+	nvm--jgh
+	nvm--vjt
+	nvm--plh
+	bmv [color=green, shape=circle]
+	bmv--nvm
+	bmv--xgf
+	bmv--hlk
+	bmv--rgs
+	bmv--rjj
+	jgh [color=green, shape=circle]
+	jgh--nvm
+	jgh--dct
+	jgh--trb
+	jgh--ngc
+	jgh--tld
+	vjt [color=green, shape=circle]
+	vjt--nvm
+	vjt--kgf
+	vjt--gqr
+	vjt--gxs
+	ffd [color=red, shape=circle]
+	ffd--sdn
+	ffd--kht
+	ffd--lnk
+	ffd--bhz
+	ffd--bcl
+	sdn [color=red, shape=circle]
+	sdn--ffd
+	sdn--cmk
+	sdn--tst
+	sdn--mpf
+	sdn--dfp
+	kht [color=red, shape=circle]
+	kht--ffd
+	kht--lph
+	kht--ctg
+	kht--lkf
+	rjc [color=green, shape=circle]
+	rjc--bjd
+	rjc--fql
+	rjc--lbn
+	rjc--skk
+	rjc--hlj
+	bjd [color=green, shape=circle]
+	bjd--rjc
+	bjd--jnb
+	bjd--hlt
+	bjd--cqk
+	fql [color=green, shape=circle]
+	fql--rjc
+	fql--cvh
+	fql--bbr
+	fql--kbx
+	fql--ccd
+	fql--kcs
+	lbn [color=green, shape=circle]
+	lbn--rjc
+	lbn--fsk
+	lbn--cpz
+	lbn--mlz
+	lbn--xkd
+	skk [color=green, shape=circle]
+	skk--rjc
+	skk--xgx
+	skk--hxt
+	skk--gqd
+	skk--cls
+	kgn [color=green, shape=circle]
+	kgn--drp
+	kgn--hmx
+	kgn--pqb
+	kgn--cfc
+	drp [color=green, shape=circle]
+	drp--kgn
+	drp--nmr
+	drp--dkc
+	drp--spb
+	drp--ksf
+	drp--mqj
+	hmx [color=green, shape=circle]
+	hmx--kgn
+	hmx--blx
+	hmx--xsg
+	hmx--pld
+	hmx--gzx
+	qlj [color=red, shape=circle]
+	qlj--cqn
+	qlj--vfx
+	qlj--cth
+	qlj--kmd
+	qlj--lhn
+	qlj--fpq
+	qlj--kvc
+	qlj--smm
+	qlj--lhf
+	cqn [color=red, shape=circle]
+	cqn--qlj
+	cqn--kjr
+	cqn--dsr
+	cqn--qpg
+	vfx [color=red, shape=circle]
+	vfx--qlj
+	vfx--hqs
+	vfx--mrq
+	vfx--qdp
+	cth [color=red, shape=circle]
+	cth--qlj
+	cth--gzb
+	cth--jrs
+	cth--mlt
+	kmd [color=red, shape=circle]
+	kmd--qlj
+	kmd--nhz
+	kmd--pds
+	kmd--kkg
+	lhn [color=red, shape=circle]
+	lhn--qlj
+	lhn--qzx
+	lhn--lcf
+	lhn--rjl
+	fpq [color=red, shape=circle]
+	fpq--qlj
+	fpq--gsv
+	fpq--kgl
+	fpq--jts
+	kvc [color=red, shape=circle]
+	kvc--qlj
+	kvc--ztp
+	kvc--sxc
+	kvc--mrg
+	smm [color=red, shape=circle]
+	smm--qlj
+	smm--dmg
+	smm--kzg
+	smm--rxj
+	lhf [color=red, shape=circle]
+	lhf--qlj
+	lhf--dvs
+	lhf--rlq
+	lhf--grd
+	lhf--gfv
+	zcx [color=green, shape=circle]
+	zcx--qrv
+	zcx--xdv
+	zcx--thr
+	zcx--hdt
+	qrv [color=green, shape=circle]
+	qrv--zcx
+	qrv--pxp
+	qrv--spc
+	qrv--tvf
+	qrv--nbh
+	xdv [color=green, shape=circle]
+	xdv--zcx
+	xdv--hgc
+	xdv--fqk
+	xdv--grg
+	thr [color=green, shape=circle]
+	thr--zcx
+	thr--gqr
+	thr--csl
+	thr--vpm
+	thr--fjp
+	thr--rpb
+	hpb [color=green, shape=circle]
+	hpb--lhg
+	hpb--nbv
+	hpb--ftm
+	hpb--tcr
+	lhg [color=green, shape=circle]
+	lhg--hpb
+	lhg--chh
+	lhg--gxk
+	lhg--mjh
+	nbv [color=green, shape=circle]
+	nbv--hpb
+	nbv--nrq
+	nbv--fhl
+	nbv--htm
+	nbv--jjk
+	nbv--bsx
+	nbv--mlz
+	ftm [color=green, shape=circle]
+	ftm--hpb
+	ftm--dhc
+	ftm--xzb
+	ftm--nbp
+	ftm--hnr
+	tcr [color=green, shape=circle]
+	tcr--hpb
+	tcr--bvc
+	tcr--mkr
+	tcr--gms
+	tcr--qsf
+	tcr--ncp
+	kxk [color=green, shape=circle]
+	kxk--gcl
+	kxk--dvk
+	kxk--kgx
+	kxk--rfz
+	kxk--zsz
+	kxk--bzm
+	kxk--zfn
+	gcl [color=green, shape=circle]
+	gcl--kxk
+	gcl--gqd
+	gcl--grq
+	gcl--mhd
+	dvk [color=green, shape=circle]
+	dvk--kxk
+	dvk--vkf
+	dvk--dzk
+	dvk--rst
+	dvk--fqv
+	kgx [color=green, shape=circle]
+	kgx--kxk
+	kgx--mmz
+	kgx--vmx
+	kgx--hjb
+	rfz [color=green, shape=circle]
+	rfz--kxk
+	rfz--bsq
+	rfz--ccz
+	rfz--jcg
+	zsz [color=green, shape=circle]
+	zsz--kxk
+	zsz--lld
+	zsz--ccn
+	zsz--nrz
+	fnv [color=red, shape=circle]
+	fnv--hbq
+	fnv--tnq
+	fnv--fdp
+	fnv--hhf
+	hbq [color=red, shape=circle]
+	hbq--fnv
+	hbq--fhx
+	hbq--ndf
+	hbq--xqb
+	hbq--fdx
+	tnq [color=red, shape=circle]
+	tnq--fnv
+	tnq--kjr
+	tnq--vqr
+	tnq--ctz
+	fdp [color=red, shape=circle]
+	fdp--fnv
+	fdp--hxb
+	fdp--gjz
+	fdp--xpl
+	fdp--pck
+	fdp--bbt
+	fdp--vss
+	fls [color=red, shape=circle]
+	fls--ntk
+	fls--fmv
+	fls--rxx
+	fls--kpq
+	ntk [color=red, shape=circle]
+	ntk--fls
+	ntk--cfg
+	ntk--tks
+	ntk--srq
+	fmv [color=red, shape=circle]
+	fmv--fls
+	fmv--bnj
+	fmv--xxl
+	fmv--rbd
+	rxx [color=red, shape=circle]
+	rxx--fls
+	rxx--qcm
+	rxx--lnl
+	rxx--dbm
+	kpq [color=red, shape=circle]
+	kpq--fls
+	kpq--kqg
+	kpq--bvp
+	kpq--sjt
+	lnk [color=red, shape=circle]
+	lnk--dqv
+	lnk--cqq
+	lnk--ffd
+	lnk--pgq
+	lnk--hbv
+	dqv [color=red, shape=circle]
+	dqv--lnk
+	dqv--lmz
+	dqv--chs
+	dqv--xqb
+	cqq [color=red, shape=circle]
+	cqq--lnk
+	cqq--cfg
+	cqq--lsk
+	cqq--jjx
+	cqq--nkd
+	pgq [color=red, shape=circle]
+	pgq--lnk
+	pgq--vvm
+	pgq--lhz
+	pgq--xxx
+	pgq--pjv
+	hbv [color=red, shape=circle]
+	hbv--lnk
+	hbv--skd
+	hbv--szx
+	hbv--dtf
+	hbv--gxv
+	hbv--pcs
+	kpf [color=green, shape=circle]
+	kpf--llk
+	kpf--qhs
+	kpf--zxd
+	kpf--lcj
+	llk [color=green, shape=circle]
+	llk--kpf
+	llk--xnp
+	llk--zll
+	llk--jrr
+	qhs [color=green, shape=circle]
+	qhs--kpf
+	qhs--fzt
+	qhs--kdv
+	qhs--kps
+	zxd [color=green, shape=circle]
+	zxd--kpf
+	zxd--nrk
+	zxd--vqn
+	zxd--ndn
+	zxd--qsf
+	lcj [color=green, shape=circle]
+	lcj--kpf
+	lcj--lhx
+	lcj--ppz
+	lcj--mjn
+	lcj--mjx
+	bld [color=green, shape=circle]
+	bld--nxd
+	bld--zbv
+	bld--dlg
+	bld--qts
+	nxd [color=green, shape=circle]
+	nxd--bld
+	nxd--mcq
+	nxd--pdr
+	nxd--nrp
+	nxd--gcb
+	zbv [color=green, shape=circle]
+	zbv--bld
+	zbv--plr
+	zbv--blx
+	zbv--gzx
+	zbv--mls
+	dlg [color=green, shape=circle]
+	dlg--bld
+	dlg--jnb
+	dlg--qnd
+	dlg--fjc
+	dlg--tsp
+	qts [color=green, shape=circle]
+	qts--bld
+	qts--mjr
+	qts--jmg
+	qts--srb
+	thg [color=green, shape=circle]
+	thg--psz
+	thg--nzd
+	thg--fpt
+	thg--pjr
+	psz [color=green, shape=circle]
+	psz--thg
+	psz--rcj
+	psz--sdb
+	psz--rpg
+	nzd [color=green, shape=circle]
+	nzd--thg
+	nzd--jcs
+	nzd--ldr
+	nzd--pgm
+	fpt [color=green, shape=circle]
+	fpt--thg
+	fpt--ldr
+	fpt--gbj
+	fpt--mmx
+	fpt--lsp
+	mzp [color=green, shape=circle]
+	mzp--hzk
+	mzp--csp
+	mzp--jxg
+	mzp--hrg
+	hzk [color=green, shape=circle]
+	hzk--mzp
+	hzk--gff
+	hzk--hbj
+	hzk--rcm
+	csp [color=green, shape=circle]
+	csp--mzp
+	csp--msc
+	csp--szc
+	csp--tsp
+	jxg [color=green, shape=circle]
+	jxg--mzp
+	jxg--jnd
+	jxg--dqn
+	jxg--stp
+	hrg [color=green, shape=circle]
+	hrg--mzp
+	hrg--flb
+	hrg--csl
+	hrg--zfx
+	lqk [color=green, shape=circle]
+	lqk--cpv
+	lqk--kdv
+	lqk--gff
+	lqk--mkt
+	cpv [color=green, shape=circle]
+	cpv--lqk
+	cpv--xgx
+	cpv--bmq
+	cpv--tlr
+	cpv--ctp
+	kdv [color=green, shape=circle]
+	kdv--lqk
+	kdv--jbx
+	kdv--qhs
+	kdv--zcm
+	slb [color=red, shape=circle]
+	slb--chj
+	slb--chm
+	slb--rpk
+	slb--fgn
+	chj [color=red, shape=circle]
+	chj--slb
+	chj--cxz
+	chj--rfq
+	chj--jjf
+	chj--fkt
+	chj--nnf
+	chm [color=red, shape=circle]
+	chm--slb
+	chm--shj
+	chm--sbt
+	chm--vvm
+	rpk [color=red, shape=circle]
+	rpk--slb
+	rpk--cpp
+	rpk--zrj
+	rpk--zkc
+	rpk--zdg
+	gxq [color=green, shape=circle]
+	gxq--kvn
+	gxq--mhz
+	gxq--grq
+	gxq--jqc
+	kvn [color=green, shape=circle]
+	kvn--gxq
+	kvn--pql
+	kvn--lpd
+	kvn--tsm
+	mhz [color=green, shape=circle]
+	mhz--gxq
+	mhz--cxx
+	mhz--gnk
+	mhz--xvn
+	grq [color=green, shape=circle]
+	grq--gxq
+	grq--gqd
+	grq--pzx
+	grq--gcl
+	zmk [color=green, shape=circle]
+	zmk--krs
+	zmk--kss
+	zmk--fdk
+	zmk--dxv
+	krs [color=green, shape=circle]
+	krs--zmk
+	krs--mdd
+	krs--bzm
+	krs--zlq
+	krs--pnn
+	krs--dvq
+	krs--slk
+	rcf [color=green, shape=circle]
+	rcf--srd
+	rcf--fnn
+	rcf--xpg
+	rcf--jcg
+	srd [color=green, shape=circle]
+	srd--rcf
+	srd--hvf
+	srd--kps
+	srd--kbj
+	fnn [color=green, shape=circle]
+	fnn--rcf
+	fnn--zlv
+	fnn--nqb
+	fnn--tsp
+	xpg [color=green, shape=circle]
+	xpg--rcf
+	xpg--xjb
+	xpg--blp
+	xpg--jrn
+	jcg [color=green, shape=circle]
+	jcg--rcf
+	jcg--ghz
+	jcg--rfz
+	jcg--pgg
+	rff [color=green, shape=circle]
+	rff--zqp
+	rff--qrh
+	rff--ndn
+	rff--gkh
+	zqp [color=green, shape=circle]
+	zqp--rff
+	zqp--knc
+	zqp--jnd
+	zqp--stf
+	zqp--gbr
+	zqp--vtl
+	cmk [color=red, shape=circle]
+	cmk--khb
+	cmk--btp
+	cmk--sdn
+	cmk--xtc
+	khb [color=red, shape=circle]
+	khb--cmk
+	khb--mxl
+	khb--rkp
+	khb--nkq
+	btp [color=red, shape=circle]
+	btp--cmk
+	btp--mdk
+	btp--klh
+	btp--ggz
+	sxc [color=red, shape=circle]
+	sxc--kgg
+	sxc--khz
+	sxc--xmj
+	sxc--kvc
+	kgg [color=red, shape=circle]
+	kgg--sxc
+	kgg--rxp
+	kgg--kbq
+	kgg--bvp
+	kvb [color=red, shape=circle]
+	kvb--fbt
+	kvb--bhp
+	kvb--vvx
+	kvb--nlh
+	fbt [color=red, shape=circle]
+	fbt--kvb
+	fbt--sph
+	fbt--blf
+	fbt--jst
+	bhp [color=red, shape=circle]
+	bhp--kvb
+	bhp--thz
+	bhp--vnx
+	bhp--mxs
+	vvx [color=red, shape=circle]
+	vvx--kvb
+	vvx--xrd
+	vvx--zlg
+	vvx--cfs
+	vgn [color=red, shape=circle]
+	vgn--bkk
+	vgn--qps
+	vgn--lpp
+	vgn--xdh
+	bkk [color=red, shape=circle]
+	bkk--vgn
+	bkk--blh
+	bkk--rfm
+	bkk--gzv
+	qps [color=red, shape=circle]
+	qps--vgn
+	qps--fbs
+	qps--hgd
+	qps--tns
+	lpp [color=red, shape=circle]
+	lpp--vgn
+	lpp--xqv
+	lpp--rzr
+	lpp--gsv
+	lpp--dxx
+	rxp [color=red, shape=circle]
+	rxp--dmp
+	rxp--kgg
+	rxp--kfj
+	rxp--ccx
+	dmp [color=red, shape=circle]
+	dmp--rxp
+	dmp--hcb
+	dmp--dxx
+	dmp--bhr
+	mmv [color=green, shape=circle]
+	mmv--gqd
+	mmv--lnh
+	mmv--pqj
+	mmv--tkn
+	gqd [color=green, shape=circle]
+	gqd--mmv
+	gqd--grq
+	gqd--gcl
+	gqd--skk
+	lnh [color=green, shape=circle]
+	lnh--mmv
+	lnh--snm
+	lnh--vqn
+	lnh--dqt
+	pqj [color=green, shape=circle]
+	pqj--mmv
+	pqj--dsb
+	pqj--vmm
+	pqj--bsq
+	tkn [color=green, shape=circle]
+	tkn--mmv
+	tkn--mpd
+	tkn--bpv
+	tkn--clf
+	qcq [color=red, shape=circle]
+	qcq--kkt
+	qcq--qgs
+	qcq--kxt
+	qcq--rcb
+	nlr [color=green, shape=circle]
+	nlr--pkq
+	nlr--txv
+	nlr--mft
+	nlr--zlf
+	pkq [color=green, shape=circle]
+	pkq--nlr
+	pkq--qsg
+	pkq--mcq
+	pkq--scs
+	mmf [color=green, shape=circle]
+	mmf--pnn
+	mmf--ppc
+	mmf--bxx
+	mmf--cnj
+	mmf--shg
+	mmf--zzr
+	pnn [color=green, shape=circle]
+	pnn--mmf
+	pnn--rtj
+	pnn--krs
+	pnn--bjb
+	bxv [color=red, shape=circle]
+	bxv--pjv
+	bxv--fht
+	bxv--hnm
+	bxv--znd
+	pjv [color=red, shape=circle]
+	pjv--bxv
+	pjv--xfk
+	pjv--mpm
+	pjv--kgl
+	pjv--lnq
+	pjv--cvs
+	pjv--pgq
+	fht [color=red, shape=circle]
+	fht--bxv
+	fht--zdg
+	fht--fnj
+	fht--ghq
+	fht--rgn
+	hnm [color=red, shape=circle]
+	hnm--bxv
+	hnm--sql
+	hnm--snv
+	hnm--cbq
+	rjl [color=red, shape=circle]
+	rjl--xpl
+	rjl--zjx
+	rjl--dfp
+	rjl--lhn
+	xpl [color=red, shape=circle]
+	xpl--rjl
+	xpl--fdp
+	xpl--fzm
+	xpl--nrv
+	lld [color=green, shape=circle]
+	lld--zsz
+	lld--hvf
+	lld--ptp
+	lld--plh
+	lld--qkd
+	jcs [color=green, shape=circle]
+	jcs--jsn
+	jcs--nzd
+	jcs--fml
+	jcs--lpm
+	jcs--hlj
+	jcs--qnd
+	jcs--mjs
+	jsn [color=green, shape=circle]
+	jsn--jcs
+	jsn--gnl
+	jsn--kzc
+	jsn--jvt
+	fml [color=green, shape=circle]
+	fml--jcs
+	fml--mvg
+	fml--htq
+	fml--fkf
+	fml--xpt
+	rfj [color=red, shape=circle]
+	rfj--csq
+	rfj--rrg
+	rfj--htx
+	rfj--pcs
+	csq [color=red, shape=circle]
+	csq--rfj
+	csq--bxk
+	csq--pbr
+	csq--nvz
+	brt [color=red, shape=circle]
+	brt--fgj
+	brt--qkt
+	brt--ggt
+	brt--sfd
+	fgj [color=red, shape=circle]
+	fgj--brt
+	fgj--qvc
+	fgj--hlm
+	fgj--cpf
+	fgj--cnl
+	cfg [color=red, shape=circle]
+	cfg--cqq
+	cfg--ntk
+	cfg--jlr
+	cfg--frc
+	cfg--bzc
+	jlr [color=red, shape=circle]
+	jlr--cfg
+	jlr--zmx
+	jlr--scf
+	jlr--zsq
+	frc [color=red, shape=circle]
+	frc--cfg
+	frc--xqh
+	frc--zfz
+	frc--qkt
+	gml [color=red, shape=circle]
+	gml--mpm
+	gml--rsz
+	gml--ndq
+	gml--xsl
+	mpm [color=red, shape=circle]
+	mpm--gml
+	mpm--plt
+	mpm--pjv
+	mpm--fkc
+	mpm--rvl
+	mpm--lzr
+	ndq [color=red, shape=circle]
+	ndq--gml
+	ndq--cnl
+	ndq--mbk
+	ndq--njn
+	xsl [color=red, shape=circle]
+	xsl--gml
+	xsl--mqd
+	xsl--tpb [style="dotted"]
+	xsl--xhg
+	bmh [color=green, shape=circle]
+	bmh--blx
+	bmh--lkl
+	bmh--sds
+	bmh--qph
+	bmh--bvc
+	blx [color=green, shape=circle]
+	blx--bmh
+	blx--zbv
+	blx--hmx
+	blx--zlq
+	lkl [color=green, shape=circle]
+	lkl--bmh
+	lkl--qbs
+	lkl--hzp
+	lkl--thd
+	lkl--rzk
+	sds [color=green, shape=circle]
+	sds--bmh
+	sds--hvf
+	sds--jfd
+	sds--rkr
+	sds--zpq
+	qph [color=green, shape=circle]
+	qph--bmh
+	qph--jft
+	qph--ktb
+	qph--fds
+	qph--qnh
+	qph--brp
+	bvc [color=green, shape=circle]
+	bvc--bmh
+	bvc--tcr
+	bvc--bfl
+	bvc--ncp
+	fhx [color=red, shape=circle]
+	fhx--tmk
+	fhx--vrk
+	fhx--hbq
+	fhx--zff
+	fhx--gxv
+	tmk [color=red, shape=circle]
+	tmk--fhx
+	tmk--vpk
+	tmk--pkl
+	tmk--krj
+	vrk [color=red, shape=circle]
+	vrk--fhx
+	vrk--rsz
+	vrk--zsb
+	vrk--hcc
+	zff [color=red, shape=circle]
+	zff--fhx
+	zff--zjx
+	zff--bch
+	zff--svv
+	zff--zts
+	zff--hkn
+	zff--jhg
+	hhf [color=red, shape=circle]
+	hhf--mzb
+	hhf--fnv
+	hhf--fcn
+	hhf--rmz
+	hhf--jhq
+	mzb [color=red, shape=circle]
+	mzb--hhf
+	mzb--fqs
+	mzb--pck
+	mzb--hdm
+	fcn [color=red, shape=circle]
+	fcn--hhf
+	fcn--qzb
+	fcn--mbh
+	fcn--czb
+	pgz [color=green, shape=circle]
+	pgz--xbl
+	pgz--dkc
+	pgz--spj
+	pgz--vmm
+	pgz--vft
+	xbl [color=green, shape=circle]
+	xbl--pgz
+	xbl--gtg
+	xbl--zpf
+	xbl--mtb
+	dkc [color=green, shape=circle]
+	dkc--pgz
+	dkc--ccs
+	dkc--drp
+	dkc--tnf
+	spj [color=green, shape=circle]
+	spj--pgz
+	spj--xgm
+	spj--hjq
+	spj--srp
+	spj--jnd
+	vft [color=green, shape=circle]
+	vft--pgz
+	vft--mjr
+	vft--xgf
+	vft--dnz
+	mdd [color=green, shape=circle]
+	mdd--srp
+	mdd--krs
+	mdd--kft
+	mdd--qsg
+	mdd--qzg
+	mdd--gts
+	srp [color=green, shape=circle]
+	srp--mdd
+	srp--btg
+	srp--pld
+	srp--spj
+	kft [color=green, shape=circle]
+	kft--mdd
+	kft--bfc
+	kft--ppc
+	kft--xdr
+	kft--mfz
+	kft--xkd
+	kft--xxz
+	qsg [color=green, shape=circle]
+	qsg--mdd
+	qsg--scl
+	qsg--pkq
+	qsg--tvq
+	qbg [color=red, shape=circle]
+	qbg--pkj
+	qbg--sph
+	qbg--pjb
+	qbg--mlt
+	pkj [color=red, shape=circle]
+	pkj--qbg
+	pkj--qgs
+	pkj--ftg
+	pkj--xzr
+	sph [color=red, shape=circle]
+	sph--qbg
+	sph--cbb
+	sph--fbt
+	sph--ctm
+	sph--qmq
+	mgv [color=red, shape=circle]
+	mgv--dxq
+	mgv--kgl
+	mgv--zcn
+	mgv--xtt
+	dxq [color=red, shape=circle]
+	dxq--mgv
+	dxq--qkt
+	dxq--jst
+	dxq--bch
+	dxq--llx
+	kgl [color=red, shape=circle]
+	kgl--mgv
+	kgl--pxg
+	kgl--fpq
+	kgl--pjv
+	jhj [color=green, shape=circle]
+	jhj--rpb
+	jhj--lhq
+	jhj--lrp
+	jhj--hsx
+	rpb [color=green, shape=circle]
+	rpb--jhj
+	rpb--mbb
+	rpb--thr
+	rpb--cxn
+	lhq [color=green, shape=circle]
+	lhq--jhj
+	lhq--pnz
+	lhq--ktb
+	lhq--brp
+	lhq--mgm
+	lph [color=red, shape=circle]
+	lph--kht
+	lph--zpn
+	lph--jmd
+	lph--bjm
+	frm [color=red, shape=circle]
+	frm--klh
+	frm--gpv
+	frm--rvl
+	frm--ndf
+	frm--vpk
+	klh [color=red, shape=circle]
+	klh--frm
+	klh--lfn
+	klh--btp
+	klh--qzl
+	rvl [color=red, shape=circle]
+	rvl--frm
+	rvl--xbm
+	rvl--zqr
+	rvl--nqs
+	rvl--grd
+	rvl--mpm
+	sqx [color=red, shape=circle]
+	sqx--prm
+	sqx--tnr
+	sqx--tjt
+	sqx--njn
+	prm [color=red, shape=circle]
+	prm--sqx
+	prm--sbt
+	prm--plc
+	prm--mjm
+	tnr [color=red, shape=circle]
+	tnr--sqx
+	tnr--ctg
+	tnr--svs
+	tnr--xhx
+	tjt [color=red, shape=circle]
+	tjt--sqx
+	tjt--pkk
+	tjt--cld
+	tjt--pdb
+	rbh [color=green, shape=circle]
+	rbh--nrp
+	rbh--ggl
+	rbh--vls
+	rbh--xqt
+	nrp [color=green, shape=circle]
+	nrp--rbh
+	nrp--bzb
+	nrp--nxd
+	nrp--nvs
+	nrp--rpg
+	ggl [color=green, shape=circle]
+	ggl--rbh
+	ggl--tvq
+	ggl--ndd
+	ggl--tvn
+	vls [color=green, shape=circle]
+	vls--rbh
+	vls--xgg
+	vls--zzp
+	vls--xbs
+	xqt [color=green, shape=circle]
+	xqt--rbh
+	xqt--lzt
+	xqt--kgt
+	xqt--zlb
+	xqt--fjp
+	xqt--tkx
+	mmj [color=red, shape=circle]
+	mmj--xlb
+	mmj--mlh
+	mmj--lrr
+	mmj--vgj
+	xlb [color=red, shape=circle]
+	xlb--mmj
+	xlb--vkd
+	xlb--rvj
+	xlb--rdh
+	xlb--knf
+	lvn [color=green, shape=circle]
+	lvn--vkb
+	lvn--nnd
+	lvn--gts
+	lvn--vtc
+	dfj [color=green, shape=circle]
+	dfj--lbb
+	dfj--sbs
+	dfj--xjd
+	dfj--zvn
+	lbb [color=green, shape=circle]
+	lbb--dfj
+	lbb--phs
+	lbb--hbk
+	lbb--ktd
+	sbs [color=green, shape=circle]
+	sbs--dfj
+	sbs--rgs
+	sbs--vkf
+	sbs--jqg
+	xjd [color=green, shape=circle]
+	xjd--dfj
+	xjd--xvp
+	xjd--dhk
+	xjd--jbr
+	mlh [color=red, shape=circle]
+	mlh--mmj
+	mlh--lht
+	mlh--ptl
+	mlh--kzn
+	mlh--kzg
+	mlh--jgv
+	lht [color=red, shape=circle]
+	lht--mlh
+	lht--ntx
+	lht--zcn
+	lht--qgx
+	ptl [color=red, shape=circle]
+	ptl--mlh
+	ptl--zmx
+	ptl--cnk
+	ptl--fpl
+	ptl--bpq
+	kzn [color=red, shape=circle]
+	kzn--mlh
+	kzn--zxr
+	kzn--fsj
+	kzn--dxx
+	kzg [color=red, shape=circle]
+	kzg--mlh
+	kzg--mlp
+	kzg--smm
+	kzg--jgx
+	jgv [color=red, shape=circle]
+	jgv--mlh
+	jgv--mrf
+	jgv--ngz
+	jgv--llt
+	qgs [color=red, shape=circle]
+	qgs--pkj
+	qgs--tjz
+	qgs--qcq
+	qgs--fdt
+	gnl [color=green, shape=circle]
+	gnl--jsn
+	gnl--pcq
+	gnl--bpv
+	gnl--fqv
+	kzc [color=green, shape=circle]
+	kzc--jsn
+	kzc--csg
+	kzc--bxc
+	kzc--mll
+	jvt [color=green, shape=circle]
+	jvt--jsn
+	jvt--sdb
+	jvt--mnz
+	jvt--gkr
+	zjx [color=red, shape=circle]
+	zjx--zff
+	zjx--jsl
+	zjx--kxt
+	zjx--rjl
+	zjx--lzk
+	jsl [color=red, shape=circle]
+	jsl--zjx
+	jsl--nkd
+	jsl--mpq
+	jsl--fbd
+	kxt [color=red, shape=circle]
+	kxt--zjx
+	kxt--njn
+	kxt--ntm
+	kxt--qcq
+	kxt--mtm
+	kfq [color=red, shape=circle]
+	kfq--qkl
+	kfq--dvs
+	kfq--nhk
+	kfq--pvr
+	qkl [color=red, shape=circle]
+	qkl--kfq
+	qkl--svv
+	qkl--shh
+	qkl--zfz
+	dvs [color=red, shape=circle]
+	dvs--kfq
+	dvs--kbq
+	dvs--lhf
+	dvs--qzf
+	nhk [color=red, shape=circle]
+	nhk--kfq
+	nhk--qzc
+	nhk--xcx
+	nhk--rvj
+	tkp [color=red, shape=circle]
+	tkp--klm
+	tkp--slv
+	tkp--vvf
+	tkp--zxm
+	tkp--khn
+	tkp--hfs
+	klm [color=red, shape=circle]
+	klm--tkp
+	klm--mbx
+	klm--lnq
+	klm--rhd
+	vzv [color=red, shape=circle]
+	vzv--jgx
+	vzv--ngq
+	vzv--lbd
+	vzv--ttt
+	vzv--lnl
+	vzv--hps
+	vzv--rlr
+	jgx [color=red, shape=circle]
+	jgx--vzv
+	jgx--kzg
+	jgx--vdr
+	jgx--tks
+	jgx--gvl
+	jgx--hlm
+	jgx--tqv
+	ngq [color=red, shape=circle]
+	ngq--vzv
+	ngq--frl
+	ngq--hgd
+	ngq--mpj
+	lbd [color=red, shape=circle]
+	lbd--vzv
+	lbd--thz
+	lbd--lnq
+	lbd--knf
+	ttt [color=red, shape=circle]
+	ttt--vzv
+	ttt--fgh
+	ttt--bfx
+	ttt--thp
+	ttt--fsg
+	lnl [color=red, shape=circle]
+	lnl--vzv
+	lnl--qbd
+	lnl--nlb
+	lnl--rxx
+	fbs [color=red, shape=circle]
+	fbs--mpf
+	fbs--fjj
+	fbs--qps
+	fbs--pbg
+	mpf [color=red, shape=circle]
+	mpf--fbs
+	mpf--sdn
+	mpf--ggp
+	mpf--vdr
+	mpf--nhd
+	fjj [color=red, shape=circle]
+	fjj--fbs
+	fjj--qqh
+	fjj--vvr
+	fjj--vzc
+	xzg [color=red, shape=circle]
+	xzg--hnz
+	xzg--rrn
+	xzg--ffq
+	xzg--xtc
+	xzg--krj
+	hnz [color=red, shape=circle]
+	hnz--xzg
+	hnz--fpz
+	hnz--jrt
+	hnz--fqs
+	hnz--njx
+	rrn [color=red, shape=circle]
+	rrn--xzg
+	rrn--pbg
+	rrn--hzl
+	rrn--bbc
+	ffq [color=red, shape=circle]
+	ffq--xzg
+	ffq--jkk
+	ffq--zcc
+	ffq--ztg
+	lfc [color=red, shape=circle]
+	lfc--gjz
+	lfc--cbb
+	lfc--xsn
+	lfc--qbr
+	lfc--rpn
+	gjz [color=red, shape=circle]
+	gjz--lfc
+	gjz--rxc
+	gjz--fdp
+	gjz--cnk
+	qtj [color=red, shape=circle]
+	qtj--mcs
+	qtj--bbn
+	qtj--mxs
+	qtj--ljl
+	mcs [color=red, shape=circle]
+	mcs--qtj
+	mcs--hlm
+	mcs--vbg
+	mcs--ggz
+	bbn [color=red, shape=circle]
+	bbn--qtj
+	bbn--cnx
+	bbn--jqz
+	bbn--mzl
+	mxs [color=red, shape=circle]
+	mxs--qtj
+	mxs--nqs
+	mxs--qlm
+	mxs--xfk
+	mxs--pnf
+	mxs--knr
+	mxs--lmj
+	mxs--bhp
+	vnb [color=red, shape=circle]
+	vnb--pkl
+	vnb--svs
+	vnb--lpz
+	vnb--vqx
+	pkl [color=red, shape=circle]
+	pkl--vnb
+	pkl--xhx
+	pkl--tmk
+	pkl--mjm
+	svs [color=red, shape=circle]
+	svs--vnb
+	svs--vqr
+	svs--xbm
+	svs--xdq
+	svs--tnr
+	svs--bqr
+	lpz [color=red, shape=circle]
+	lpz--vnb
+	lpz--bbj
+	lpz--nrv
+	lpz--ncs
+	gsg [color=red, shape=circle]
+	gsg--pcg
+	gsg--sfd
+	gsg--hfs
+	gsg--vbg
+	pcg [color=red, shape=circle]
+	pcg--gsg
+	pcg--tgs
+	pcg--rqc
+	pcg--jcc
+	sfd [color=red, shape=circle]
+	sfd--gsg
+	sfd--brt
+	sfd--qgx
+	sfd--jts
+	hfs [color=red, shape=circle]
+	hfs--gsg
+	hfs--qnl
+	hfs--dcm
+	hfs--ssf
+	hfs--tkp
+	vbg [color=red, shape=circle]
+	vbg--gsg
+	vbg--rjp
+	vbg--vgz
+	vbg--gqj
+	vbg--mcs
+	zdr [color=red, shape=circle]
+	zdr--fkc
+	zdr--zjp
+	zdr--qlg
+	zdr--njr
+	fkc [color=red, shape=circle]
+	fkc--zdr
+	fkc--rlk
+	fkc--khd
+	fkc--ncs
+	fkc--mpm
+	zjp [color=red, shape=circle]
+	zjp--zdr
+	zjp--hcb
+	zjp--grt
+	zjp--gnj
+	zjp--vcz
+	zjp--qgv
+	qlg [color=red, shape=circle]
+	qlg--zdr
+	qlg--zrf
+	qlg--zpn
+	qlg--cbz
+	qlg--ngl
+	cln [color=green, shape=circle]
+	cln--lzt
+	cln--xcz
+	cln--ktd
+	cln--dcf
+	cln--jvk
+	ccs [color=green, shape=circle]
+	ccs--dkc
+	ccs--ftl
+	ccs--hjg
+	ccs--hdq
+	ccs--nxx
+	kqg [color=red, shape=circle]
+	kqg--kpq
+	kqg--szl
+	kqg--ghs
+	kqg--mvv
+	bvp [color=red, shape=circle]
+	bvp--kpq
+	bvp--mrf
+	bvp--qbq
+	bvp--lrq
+	bvp--kgg
+	plr [color=green, shape=circle]
+	plr--ldr
+	plr--gzd
+	plr--zbv
+	plr--cdb
+	gzd [color=green, shape=circle]
+	gzd--plr
+	gzd--dqn
+	gzd--gts
+	gzd--vqn
+	kps [color=green, shape=circle]
+	kps--vrt
+	kps--srd
+	kps--qhs
+	kps--pbx
+	vrt [color=green, shape=circle]
+	vrt--kps
+	vrt--lhx
+	vrt--tkb
+	vrt--djn
+	vrt--fjc
+	vrt--gkh
+	vrt--zcm
+	snf [color=green, shape=circle]
+	snf--nnd
+	snf--stm
+	snf--zbt
+	snf--jrr
+	nnd [color=green, shape=circle]
+	nnd--snf
+	nnd--tbj
+	nnd--mjp
+	nnd--lvn
+	nnd--bmm
+	nnd--gpq
+	pdq [color=red, shape=circle]
+	pdq--znj
+	pdq--cdd
+	pdq--ltl
+	pdq--grt
+	pdq--lmz
+	znj [color=red, shape=circle]
+	znj--pdq
+	znj--cvg
+	znj--nkd
+	znj--rfd
+	cdd [color=red, shape=circle]
+	cdd--pdq
+	cdd--rxc
+	cdd--hgj
+	cdd--fpg
+	jnb [color=green, shape=circle]
+	jnb--bjd
+	jnb--spd
+	jnb--dlg
+	jnb--ldf
+	spd [color=green, shape=circle]
+	spd--jnb
+	spd--vtl
+	spd--pql
+	spd--zpf
+	spd--rkl
+	spd--fmm
+	spd--spx
+	cnl [color=red, shape=circle]
+	cnl--ndq
+	cnl--fzm
+	cnl--bbj
+	cnl--srq
+	cnl--fgj
+	mbk [color=red, shape=circle]
+	mbk--ndq
+	mbk--tgl
+	mbk--kgk
+	mbk--tcc
+	pqb [color=green, shape=circle]
+	pqb--kgn
+	pqb--vlt
+	pqb--fqv
+	pqb--tpn
+	pqb--rst
+	vlt [color=green, shape=circle]
+	vlt--pqb
+	vlt--rlh
+	vlt--hjb
+	vlt--gfl
+	fqv [color=green, shape=circle]
+	fqv--pqb
+	fqv--gkk
+	fqv--dvk
+	fqv--gnl
+	qln [color=red, shape=circle]
+	qln--sdf
+	qln--pvn
+	qln--zdx
+	qln--vss
+	sdf [color=red, shape=circle]
+	sdf--qln
+	sdf--bfq
+	sdf--dhs
+	sdf--xzr
+	sdf--cpn
+	sdf--dkh
+	pvn [color=red, shape=circle]
+	pvn--qln
+	pvn--qmq
+	pvn--gnj
+	pvn--rgc
+	zdx [color=red, shape=circle]
+	zdx--qln
+	zdx--stq
+	zdx--gfp
+	zdx--xcs
+	mlp [color=red, shape=circle]
+	mlp--kzg
+	mlp--plt
+	mlp--nkn
+	mlp--qfp
+	xqv [color=red, shape=circle]
+	xqv--xbm
+	xqv--lpp
+	xqv--srz
+	xqv--tgl
+	xqv--zzk
+	xbm [color=red, shape=circle]
+	xbm--xqv
+	xbm--rvl
+	xbm--cgr
+	xbm--rlk
+	xbm--svs
+	nvp [color=green, shape=circle]
+	nvp--hgc
+	nvp--nrk
+	nvp--dpc
+	nvp--pxp
+	nvp--vrn
+	hgc [color=green, shape=circle]
+	hgc--nvp
+	hgc--xdv
+	hgc--btg
+	hgc--bdt
+	rzr [color=red, shape=circle]
+	rzr--sml
+	rzr--lpp
+	rzr--tzp
+	rzr--crt
+	sml [color=red, shape=circle]
+	sml--rzr
+	sml--xcs
+	sml--thp
+	sml--jvr
+	tzp [color=red, shape=circle]
+	tzp--rzr
+	tzp--vcg
+	tzp--bpp
+	tzp--gxf
+	tzp--xjg
+	fgh [color=red, shape=circle]
+	fgh--ttt
+	fgh--chs
+	fgh--tdj
+	fgh--xcd
+	fgh--nbg
+	bfx [color=red, shape=circle]
+	bfx--ttt
+	bfx--zbq
+	bfx--pqm
+	bfx--sql
+	thp [color=red, shape=circle]
+	thp--ttt
+	thp--sml
+	thp--ztg
+	thp--btz
+	thp--khq
+	fsg [color=red, shape=circle]
+	fsg--ttt
+	fsg--rhd
+	fsg--fkq
+	fsg--dfh
+	fsg--rfd
+	mvn [color=red, shape=circle]
+	mvn--ngz
+	mvn--lnb
+	mvn--rch
+	mvn--bpp
+	ngz [color=red, shape=circle]
+	ngz--mvn
+	ngz--jgv
+	ngz--lfn
+	ngz--qqh
+	ngz--zjd
+	ngz--zsb
+	tbj [color=green, shape=circle]
+	tbj--tmc
+	tbj--nnd
+	tbj--xvp
+	tbj--mdh
+	tbj--vhq
+	tbj--xcz
+	tbj--mvr
+	tmc [color=green, shape=circle]
+	tmc--tbj
+	tmc--bmn
+	tmc--ncc
+	tmc--hbj
+	xvp [color=green, shape=circle]
+	xvp--tbj
+	xvp--xjd
+	xvp--jmx
+	xvp--xdl
+	xvp--qqk
+	xgf [color=green, shape=circle]
+	xgf--bmv
+	xgf--vft
+	xgf--gkh
+	xgf--kgz
+	kxh [color=red, shape=circle]
+	kxh--nkd
+	kxh--hfc
+	kxh--xfc
+	kxh--fgn
+	nkd [color=red, shape=circle]
+	nkd--kxh
+	nkd--xrd
+	nkd--znj
+	nkd--jsl
+	nkd--cqq
+	hfc [color=red, shape=circle]
+	hfc--kxh
+	hfc--qzr
+	hfc--xhg
+	hfc--bdb
+	ftl [color=green, shape=circle]
+	ftl--vnn
+	ftl--ccs
+	ftl--xzm
+	ftl--hsx
+	vnn [color=green, shape=circle]
+	vnn--ftl
+	vnn--lpm
+	vnn--kjd
+	vnn--cgq
+	vnn--lmb
+	xzm [color=green, shape=circle]
+	xzm--ftl
+	xzm--dzb
+	xzm--jrx
+	xzm--brp
+	hvf [color=green, shape=circle]
+	hvf--srd
+	hvf--sds
+	hvf--lld
+	hvf--xvn
+	xvn [color=green, shape=circle]
+	xvn--hvf
+	xvn--kdq
+	xvn--lhd
+	xvn--dhk
+	xvn--lrp
+	xvn--mhz
+	plk [color=red, shape=circle]
+	plk--ztp
+	plk--sdx
+	plk--xdh
+	plk--zhg
+	plk--khn
+	jmj [color=green, shape=circle]
+	jmj--tmq
+	jmj--xgm
+	jmj--kdq
+	jmj--gkn
+	tmq [color=green, shape=circle]
+	tmq--jmj
+	tmq--lgp
+	tmq--ndg
+	tmq--rgr
+	tmq--jzh
+	tmq--bfj
+	tmq--vsr
+	tmq--mvg
+	xgm [color=green, shape=circle]
+	xgm--jmj
+	xgm--mkr
+	xgm--spj
+	xgm--btn
+	kdq [color=green, shape=circle]
+	kdq--jmj
+	kdq--xvn
+	kdq--lkr
+	kdq--mqj
+	gkn [color=green, shape=circle]
+	gkn--jmj
+	gkn--gmm
+	gkn--cch
+	gkn--ffp
+	hjq [color=green, shape=circle]
+	hjq--btg
+	hjq--skl
+	hjq--spj
+	hjq--gkr
+	btg [color=green, shape=circle]
+	btg--hjq
+	btg--hgc
+	btg--srp
+	btg--qhl
+	btg--ktd
+	jjx [color=red, shape=circle]
+	jjx--nxv
+	jjx--vkl
+	jjx--knr
+	jjx--sxn
+	jjx--rqd
+	jjx--cqq
+	nxv [color=red, shape=circle]
+	nxv--jjx
+	nxv--grt
+	nxv--xbv
+	nxv--hps
+	pdt [color=green, shape=circle]
+	pdt--jpj
+	pdt--gkk
+	pdt--mds
+	pdt--ccd
+	pdt--vqp
+	jpj [color=green, shape=circle]
+	jpj--pdt
+	jpj--lrj
+	jpj--stm
+	jpj--gbj
+	gkk [color=green, shape=circle]
+	gkk--pdt
+	gkk--qcn
+	gkk--kjd
+	gkk--fqv
+	gkk--lmr
+	mds [color=green, shape=circle]
+	mds--pdt
+	mds--clj
+	mds--hpx
+	mds--lpd
+	vqp [color=green, shape=circle]
+	vqp--pdt
+	vqp--rsk
+	vqp--rkr
+	vqp--mgm
+	kss [color=green, shape=circle]
+	kss--dqg
+	kss--zlb
+	kss--cxn
+	kss--zmk
+	dqg [color=green, shape=circle]
+	dqg--kss
+	dqg--pcq
+	dqg--pvk
+	dqg--xjb
+	dqg--zlf
+	zlb [color=green, shape=circle]
+	zlb--kss
+	zlb--jps
+	zlb--xqt
+	zlb--fjz
+	cxn [color=green, shape=circle]
+	cxn--kss
+	cxn--qhm
+	cxn--bhv
+	cxn--rpb
+	mrq [color=red, shape=circle]
+	mrq--hzl
+	mrq--vfx
+	mrq--xbk
+	mrq--lbg
+	hzl [color=red, shape=circle]
+	hzl--mrq
+	hzl--jtv
+	hzl--rrn
+	hzl--ntm
+	hzl--gds
+	pgf [color=red, shape=circle]
+	pgf--pgs
+	pgf--hth
+	pgf--xlk
+	pgf--qmb
+	pgf--jtx
+	pgs [color=red, shape=circle]
+	pgs--pgf
+	pgs--cxf
+	pgs--shc
+	pgs--xdq
+	hth [color=red, shape=circle]
+	hth--pgf
+	hth--nhz
+	hth--bcl
+	hth--rdk
+	hth--rfd
+	xlk [color=red, shape=circle]
+	xlk--pgf
+	xlk--hdm
+	xlk--vdr
+	xlk--smp
+	pzx [color=green, shape=circle]
+	pzx--txv
+	pzx--grq
+	pzx--jps
+	pzx--ksd
+	hqs [color=red, shape=circle]
+	hqs--vfx
+	hqs--ghp
+	hqs--fqs
+	hqs--tjz
+	hqs--rgc
+	qdp [color=red, shape=circle]
+	qdp--vfx
+	qdp--fsj
+	qdp--hcc
+	qdp--bzc
+	jnd [color=green, shape=circle]
+	jnd--jxg
+	jnd--nbz
+	jnd--spj
+	jnd--zqp
+	dfh [color=red, shape=circle]
+	dfh--tst
+	dfh--cvg
+	dfh--qlv
+	dfh--fsg
+	tst [color=red, shape=circle]
+	tst--dfh
+	tst--xkv
+	tst--sdn
+	tst--pjk
+	qbs [color=green, shape=circle]
+	qbs--ffb
+	qbs--lkl
+	qbs--trr
+	qbs--skl
+	ffb [color=green, shape=circle]
+	ffb--qbs
+	ffb--lsp
+	ffb--gpq
+	ffb--lmr
+	xjb [color=green, shape=circle]
+	xjb--xpg
+	xjb--smr
+	xjb--dqg
+	xjb--vqn
+	xjb--tsm
+	jnm [color=red, shape=circle]
+	jnm--tks
+	jnm--rcn
+	jnm--mvc
+	jnm--hgj
+	jnm--svv
+	tks [color=red, shape=circle]
+	tks--jnm
+	tks--xnd
+	tks--ntk
+	tks--xxc
+	tks--jgx
+	rcn [color=red, shape=circle]
+	rcn--jnm
+	rcn--ggv
+	rcn--zbm
+	rcn--qlv
+	mvc [color=red, shape=circle]
+	mvc--jnm
+	mvc--pcs
+	mvc--pqs
+	mvc--vcz
+	hgj [color=red, shape=circle]
+	hgj--jnm
+	hgj--cdd
+	hgj--ntm
+	hgj--rqd
+	hgj--nnm
+	qtl [color=green, shape=circle]
+	qtl--ftr
+	qtl--pgm
+	qtl--nbh
+	qtl--fjz
+	qtl--fhq
+	ftr [color=green, shape=circle]
+	ftr--qtl
+	ftr--phs
+	ftr--dpc
+	ftr--xnz
+	pgm [color=green, shape=circle]
+	pgm--qtl
+	pgm--skl
+	pgm--grg
+	pgm--nzd
+	pgm--cfc
+	nbh [color=green, shape=circle]
+	nbh--qtl
+	nbh--cbh
+	nbh--zzp
+	nbh--qrv
+	fjz [color=green, shape=circle]
+	fjz--qtl
+	fjz--xsb
+	fjz--qgh
+	fjz--qjp
+	fjz--zlb
+	fhq [color=green, shape=circle]
+	fhq--qtl
+	fhq--bpl
+	fhq--mnz
+	fhq--slk
+	xkv [color=red, shape=circle]
+	xkv--tst
+	xkv--xnk
+	xkv--lkf
+	xkv--gqj
+	gjt [color=green, shape=circle]
+	gjt--kmq
+	gjt--bxc
+	gjt--cbh
+	gjt--mvg
+	gjt--php
+	kmq [color=green, shape=circle]
+	kmq--gjt
+	kmq--lgp
+	kmq--pnz
+	kmq--bsx
+	kmq--xts
+	kmq--pfj
+	bxc [color=green, shape=circle]
+	bxc--gjt
+	bxc--tpn
+	bxc--vsv
+	bxc--cqk
+	bxc--lqt
+	bxc--kzc
+	xks [color=red, shape=circle]
+	xks--ntx
+	xks--ggv
+	xks--scf
+	xks--bnj
+	ntx [color=red, shape=circle]
+	ntx--xks
+	ntx--lht
+	ntx--cpn
+	ntx--qdl
+	hxb [color=red, shape=circle]
+	hxb--ljp
+	hxb--ljk
+	hxb--fdp
+	hxb--mtm
+	ljk [color=red, shape=circle]
+	ljk--hxb
+	ljk--ssh
+	ljk--zts
+	ljk--zsb
+	pjb [color=red, shape=circle]
+	pjb--qbg
+	pjb--jdc
+	pjb--bpp
+	pjb--hsr
+	pjb--cnx
+	jdc [color=red, shape=circle]
+	jdc--pjb
+	jdc--tkv
+	jdc--pds
+	jdc--mvv
+	bpp [color=red, shape=circle]
+	bpp--pjb
+	bpp--tzp
+	bpp--bsk
+	bpp--mvn
+	bpp--lhz
+	hsr [color=red, shape=circle]
+	hsr--pjb
+	hsr--tjq
+	hsr--ljl
+	hsr--mjb
+	hsr--njx
+	qnh [color=green, shape=circle]
+	qnh--xmg
+	qnh--htm
+	qnh--vhq
+	qnh--qph
+	xmg [color=green, shape=circle]
+	xmg--qnh
+	xmg--nnb
+	xmg--sgl
+	xmg--hts
+	htm [color=green, shape=circle]
+	htm--qnh
+	htm--txn
+	htm--pvk
+	htm--nbv
+	htm--gkh
+	htm--zlz
+	tqm [color=green, shape=circle]
+	tqm--ncc
+	tqm--bmn
+	tqm--jlt
+	tqm--fhk
+	ncc [color=green, shape=circle]
+	ncc--tqm
+	ncc--dzk
+	ncc--bsq
+	ncc--tmc
+	bmn [color=green, shape=circle]
+	bmn--tqm
+	bmn--stf
+	bmn--mbb
+	bmn--tmc
+	jlt [color=green, shape=circle]
+	jlt--tqm
+	jlt--txn
+	jlt--fxl
+	jlt--gnk
+	fhk [color=green, shape=circle]
+	fhk--tqm
+	fhk--hnq
+	fhk--tzv
+	fhk--ngn
+	fhk--mng
+	nmr [color=green, shape=circle]
+	nmr--drp
+	nmr--xgg
+	nmr--fdk
+	nmr--nst
+	nmr--mnq
+	nmr--jvk
+	xgg [color=green, shape=circle]
+	xgg--nmr
+	xgg--vls
+	xgg--gbj
+	xgg--pld
+	xgg--nst
+	bsv [color=red, shape=circle]
+	bsv--mbx
+	bsv--bqr
+	bsv--nhx
+	bsv--xcd
+	mbx [color=red, shape=circle]
+	mbx--bsv
+	mbx--klm
+	mbx--frr
+	mbx--tgx
+	mbx--vqr
+	bqr [color=red, shape=circle]
+	bqr--bsv
+	bqr--nhx
+	bqr--vkd
+	bqr--svs
+	nhx [color=red, shape=circle]
+	nhx--bsv
+	nhx--bqr
+	nhx--sgt
+	nhx--zgf
+	nhx--ppq
+	xcd [color=red, shape=circle]
+	xcd--bsv
+	xcd--fgh
+	xcd--mhc
+	xcd--lfs
+	krk [color=green, shape=circle]
+	krk--tdp
+	krk--gmx
+	krk--css
+	krk--mld
+	krk--hsb
+	gmx [color=green, shape=circle]
+	gmx--krk
+	gmx--ptp
+	gmx--lhd
+	gmx--jmx
+	qzc [color=red, shape=circle]
+	qzc--nhk
+	qzc--hxm
+	qzc--bfq
+	qzc--zbm
+	hxm [color=red, shape=circle]
+	hxm--qzc
+	hxm--dsd
+	hxm--sbg
+	hxm--krl
+	hxm--vnx
+	hxm--vxf
+	xnp [color=green, shape=circle]
+	xnp--llk
+	xnp--qdh
+	xnp--tzv
+	xnp--mtb
+	xnp--qqk
+	qdh [color=green, shape=circle]
+	qdh--xnp
+	qdh--tzk
+	qdh--pjr
+	qdh--hfx
+	qdh--sgx
+	qdh--dvl
+	mfz [color=green, shape=circle]
+	mfz--nnk
+	mfz--pjq
+	mfz--kft
+	mfz--mtb
+	nnk [color=green, shape=circle]
+	nnk--mfz
+	nnk--jnq
+	nnk--ppm
+	nnk--kpj
+	pjq [color=green, shape=circle]
+	pjq--mfz
+	pjq--bmq
+	pjq--mkt
+	pjq--fzq
+	pjq--rct
+	rrg [color=red, shape=circle]
+	rrg--qbq
+	rrg--rfj
+	rrg--kbt
+	rrg--fbd
+	qbq [color=red, shape=circle]
+	qbq--rrg
+	qbq--tht
+	qbq--vkp
+	qbq--bvp
+	qbq--rgn
+	ctm [color=red, shape=circle]
+	ctm--sph
+	ctm--zkk
+	ctm--drv
+	ctm--lmd
+	qmq [color=red, shape=circle]
+	qmq--sph
+	qmq--pvn
+	qmq--zfz
+	qmq--xsn
+	lkr [color=green, shape=circle]
+	lkr--bgd
+	lkr--hcn
+	lkr--kdq
+	lkr--cnb
+	bgd [color=green, shape=circle]
+	bgd--lkr
+	bgd--pcq
+	bgd--lnv
+	bgd--nbp
+	bgd--hzd
+	hcn [color=green, shape=circle]
+	hcn--lkr
+	hcn--hfz
+	hcn--mkr
+	hcn--vsr
+	cnb [color=green, shape=circle]
+	cnb--lkr
+	cnb--zfx
+	cnb--nqr
+	cnb--stb
+	cnb--qmn
+	xrd [color=red, shape=circle]
+	xrd--vvx
+	xrd--nkd
+	xrd--vjs
+	xrd--qbd
+	vjs [color=red, shape=circle]
+	vjs--fdt
+	vjs--xrd
+	vjs--prp
+	vjs--ghp
+	fdt [color=red, shape=circle]
+	fdt--vjs
+	fdt--nvz
+	fdt--tqc
+	fdt--kkg
+	fdt--qgs
+	prp [color=red, shape=circle]
+	prp--vjs
+	prp--ntl
+	prp--vgz
+	prp--brc
+	prp--hkn
+	prp--ppq
+	ghp [color=red, shape=circle]
+	ghp--vjs
+	ghp--nvf
+	ghp--hqs
+	ghp--hzz
+	nrk [color=green, shape=circle]
+	nrk--phn
+	nrk--nvp
+	nrk--vhs
+	nrk--zxd
+	nrk--trr
+	nrk--xsx
+	nrk--zbt
+	phn [color=green, shape=circle]
+	phn--nrk
+	phn--bfc
+	phn--ksf
+	phn--jqg
+	vhs [color=green, shape=circle]
+	vhs--nrk
+	vhs--jpp
+	vhs--vsv
+	vhs--hck
+	lmz [color=red, shape=circle]
+	lmz--dqv
+	lmz--rbg
+	lmz--pdq
+	lmz--cbq
+	chs [color=red, shape=circle]
+	chs--dqv
+	chs--fgh
+	chs--khd
+	chs--zzv
+	xqb [color=red, shape=circle]
+	xqb--dqv
+	xqb--llx
+	xqb--hbq
+	xqb--hdm
+	xqb--gdc
+	zpg [color=red, shape=circle]
+	zpg--bbf
+	zpg--rmx
+	zpg--fbr
+	zpg--cmq
+	zpg--nhd
+	bbf [color=red, shape=circle]
+	bbf--zpg
+	bbf--mdl
+	bbf--qbm
+	bbf--lbg
+	rmx [color=red, shape=circle]
+	rmx--zpg
+	rmx--lbf
+	rmx--zzv
+	rmx--mqd
+	rmx--mpx
+	fkt [color=red, shape=circle]
+	fkt--lhp
+	fkt--blb
+	fkt--bhz
+	fkt--dzc
+	fkt--chj
+	lhp [color=red, shape=circle]
+	lhp--fkt
+	lhp--czb
+	lhp--jml
+	lhp--qnl
+	xsb [color=green, shape=circle]
+	xsb--fjz
+	xsb--ptt
+	xsb--kbj
+	xsb--nst
+	ptt [color=green, shape=circle]
+	ptt--xsb
+	ptt--spz
+	ptt--flb
+	ptt--xqf
+	nlj [color=green, shape=circle]
+	nlj--rlv
+	nlj--bfc
+	nlj--ngn
+	nlj--jdm
+	rlv [color=green, shape=circle]
+	rlv--nlj
+	rlv--trr
+	rlv--php
+	rlv--qxx
+	hgf [color=green, shape=circle]
+	hgf--gnm
+	hgf--xcn
+	hgf--tld
+	hgf--cqg
+	hgf--rct
+	gnm [color=green, shape=circle]
+	gnm--hgf
+	gnm--hjg
+	gnm--dvf
+	gnm--gxk
+	gnm--pdr
+	gnm--rcj
+	xcn [color=green, shape=circle]
+	xcn--hgf
+	xcn--qrx
+	xcn--skn
+	xcn--tsm
+	tld [color=green, shape=circle]
+	tld--hgf
+	tld--jdj
+	tld--jgh
+	tld--jgc
+	cqg [color=green, shape=circle]
+	cqg--hgf
+	cqg--pjn
+	cqg--fnp
+	cqg--mmx
+	rct [color=green, shape=circle]
+	rct--hgf
+	rct--vhq
+	rct--fvj
+	rct--pjq
+	cvg [color=red, shape=circle]
+	cvg--znj
+	cvg--dkd
+	cvg--kbt
+	cvg--dfh
+	cvg--blf
+	dkd [color=red, shape=circle]
+	dkd--cvg
+	dkd--zdg
+	dkd--ctz
+	dkd--xtm
+	kbt [color=red, shape=circle]
+	kbt--cvg
+	kbt--xms
+	kbt--rrg
+	kbt--nnm
+	tjq [color=red, shape=circle]
+	tjq--sbg
+	tjq--hsr
+	tjq--xcs
+	tjq--gsd
+	tjq--nvz
+	sbg [color=red, shape=circle]
+	sbg--tjq
+	sbg--hxm
+	sbg--qbr
+	sbg--sth
+	xcs [color=red, shape=circle]
+	xcs--tjq
+	xcs--sml
+	xcs--zdx
+	xcs--ftx
+	gsd [color=red, shape=circle]
+	gsd--tjq
+	gsd--ltv
+	gsd--zmg
+	gsd--jts
+	nvz [color=red, shape=circle]
+	nvz--tjq
+	nvz--srz
+	nvz--rrc
+	nvz--fdt
+	nvz--csq
+	nvz--mpx
+	hnf [color=red, shape=circle]
+	hnf--skp
+	hnf--kvp
+	hnf--jgs
+	hnf--smp
+	skp [color=red, shape=circle]
+	skp--hnf
+	skp--mxz
+	skp--tmd
+	skp--qvc
+	mnl [color=green, shape=circle]
+	mnl--gmp
+	mnl--jsz
+	mnl--fsh
+	mnl--jsm
+	mnl--gsm
+	gmp [color=green, shape=circle]
+	gmp--mnl
+	gmp--jzf
+	gmp--hfz
+	gmp--cbh
+	gmp--zbt
+	gmp--kpv
+	jsz [color=green, shape=circle]
+	jsz--mnl
+	jsz--fpp
+	jsz--snm
+	jsz--mcm
+	fsh [color=green, shape=circle]
+	fsh--mnl
+	fsh--hjg
+	fsh--bzb
+	fsh--tvn
+	fsh--hfz
+	fsh--zvn
+	jsm [color=green, shape=circle]
+	jsm--mnl
+	jsm--knd
+	jsm--ppc
+	jsm--ktd
+	gsm [color=green, shape=circle]
+	gsm--mnl
+	gsm--hlt
+	gsm--xnz
+	gsm--ffh
+	zlv [color=green, shape=circle]
+	zlv--fnn
+	zlv--bpl
+	zlv--bmx [style="dotted"]
+	zlv--mlz
+	bpl [color=green, shape=circle]
+	bpl--zlv
+	bpl--ksf
+	bpl--mqq
+	bpl--fsk
+	bpl--vgl
+	bpl--fhq
+	mlz [color=green, shape=circle]
+	mlz--zlv
+	mlz--blp
+	mlz--nbv
+	mlz--lbn
+	skt [color=red, shape=circle]
+	skt--rfm
+	skt--knf
+	skt--ndf
+	skt--pvr
+	rfm [color=red, shape=circle]
+	rfm--skt
+	rfm--dsr
+	rfm--bkk
+	rfm--xtt
+	knf [color=red, shape=circle]
+	knf--skt
+	knf--bfm
+	knf--lbd
+	knf--bnj
+	knf--xlb
+	knf--mjm
+	lhx [color=green, shape=circle]
+	lhx--lrp
+	lhx--kbc
+	lhx--scx
+	lhx--vrt
+	lhx--lcj
+	lrp [color=green, shape=circle]
+	lrp--lhx
+	lrp--xvn
+	lrp--jhj
+	lrp--fnh
+	kbc [color=green, shape=circle]
+	kbc--lhx
+	kbc--gxs
+	kbc--vgl
+	kbc--xbs
+	scx [color=green, shape=circle]
+	scx--lhx
+	scx--dnz
+	scx--nvs
+	scx--tvx
+	ldf [color=green, shape=circle]
+	ldf--jxp
+	ldf--chl
+	ldf--jnb
+	ldf--hfz
+	hfz [color=green, shape=circle]
+	hfz--ldf
+	hfz--gmp
+	hfz--fsh
+	hfz--lmb
+	hfz--hcn
+	rnq [color=red, shape=circle]
+	rnq--cqp
+	rnq--pds
+	rnq--fmc
+	rnq--kkg
+	cqp [color=red, shape=circle]
+	cqp--rnq
+	cqp--mrf
+	cqp--zkh
+	cqp--jhg
+	pds [color=red, shape=circle]
+	pds--rnq
+	pds--kmd
+	pds--gnv
+	pds--jdc
+	pds--phq
+	qgh [color=green, shape=circle]
+	qgh--mjc
+	qgh--fjz
+	qgh--jft
+	qgh--rng
+	mjc [color=green, shape=circle]
+	mjc--qgh
+	mjc--xzp
+	mjc--vpl
+	mjc--nmm
+	fdk [color=green, shape=circle]
+	fdk--nmr
+	fdk--jmg
+	fdk--qzn
+	fdk--zmk
+	jmg [color=green, shape=circle]
+	jmg--fdk
+	jmg--dtz
+	jmg--qts
+	jmg--rnm
+	jmg--rcg
+	qzn [color=green, shape=circle]
+	qzn--fdk
+	qzn--jnq
+	qzn--mcm
+	qzn--lrd
+	rlx [color=green, shape=circle]
+	rlx--dcf
+	rlx--kpv
+	rlx--mph
+	rlx--vxg
+	dcf [color=green, shape=circle]
+	dcf--rlx
+	dcf--rfk
+	dcf--cln
+	dcf--xts
+	kpv [color=green, shape=circle]
+	kpv--rlx
+	kpv--jdn
+	kpv--mft
+	kpv--gmp
+	kpv--gvj
+	mph [color=green, shape=circle]
+	mph--rlx
+	mph--rxz
+	mph--zjs
+	mph--hdq
+	mph--xbg
+	mph--vtc
+	vxg [color=green, shape=circle]
+	vxg--rlx
+	vxg--kgf
+	vxg--mkt
+	vxg--vqn
+	vxg--nxr
+	bfc [color=green, shape=circle]
+	bfc--phn
+	bfc--kft
+	bfc--nlj
+	bfc--fsk
+	fsk [color=green, shape=circle]
+	fsk--bfc
+	fsk--lbn
+	fsk--bpl
+	fsk--ndd
+	dsd [color=red, shape=circle]
+	dsd--hxm
+	dsd--kfj
+	dsd--lmd
+	dsd--zhg
+	lrq [color=red, shape=circle]
+	lrq--dxc
+	lrq--plc
+	lrq--qzl
+	lrq--bvp
+	lrq--mqb
+	mtf [color=red, shape=circle]
+	mtf--dxc
+	mtf--zdn
+	mtf--ggt
+	mtf--xtm
+	hvk [color=red, shape=circle]
+	hvk--rdh
+	hvk--vvm
+	hvk--qgx
+	hvk--qnl
+	hvk--nnm
+	hvk--nbg
+	rdh [color=red, shape=circle]
+	rdh--hvk
+	rdh--ntl
+	rdh--cbz
+	rdh--xlb
+	vvm [color=red, shape=circle]
+	vvm--hvk
+	vvm--qbr
+	vvm--chm
+	vvm--pgq
+	qgx [color=red, shape=circle]
+	qgx--hvk
+	qgx--nqt
+	qgx--lht
+	qgx--sdj
+	qgx--sfd
+	qnl [color=red, shape=circle]
+	qnl--hvk
+	qnl--vcz
+	qnl--lhp
+	qnl--hfs
+	nnm [color=red, shape=circle]
+	nnm--hvk
+	nnm--kbt
+	nnm--ckq
+	nnm--hgj
+	qzg [color=green, shape=circle]
+	qzg--hsx
+	qzg--rxt
+	qzg--chh
+	qzg--mdd
+	qzg--lrj
+	hsx [color=green, shape=circle]
+	hsx--qzg
+	hsx--fds
+	hsx--ftl
+	hsx--jhj
+	rxt [color=green, shape=circle]
+	rxt--qzg
+	rxt--nqr
+	rxt--nvs
+	rxt--plv
+	rxt--dqt
+	chh [color=green, shape=circle]
+	chh--qzg
+	chh--hnq
+	chh--lhg
+	chh--jgj
+	zmx [color=red, shape=circle]
+	zmx--jlr
+	zmx--zsb
+	zmx--ptl
+	zmx--bxk
+	zsb [color=red, shape=circle]
+	zsb--zmx
+	zsb--ngz
+	zsb--vrk
+	zsb--ljk
+	trr [color=green, shape=circle]
+	trr--qbs
+	trr--rlv
+	trr--nrk
+	trr--rcg
+	blm [color=red, shape=circle]
+	blm--fzm
+	blm--glx
+	blm--qbd
+	blm--cnx
+	blm--czb
+	fzm [color=red, shape=circle]
+	fzm--blm
+	fzm--xpl
+	fzm--cnl
+	fzm--ldq
+	glx [color=red, shape=circle]
+	glx--blm
+	glx--mkv
+	glx--nhf
+	glx--bpq
+	qbd [color=red, shape=circle]
+	qbd--blm
+	qbd--lnl
+	qbd--xrd
+	qbd--zjd
+	xnd [color=red, shape=circle]
+	xnd--tks
+	xnd--ghm
+	xnd--blh
+	xnd--xxl
+	lgp [color=green, shape=circle]
+	lgp--kmq
+	lgp--tmq
+	lgp--dsb
+	lgp--cfc
+	xqh [color=red, shape=circle]
+	xqh--frc
+	xqh--cbz
+	xqh--blh
+	xqh--xxl
+	xqh--zxm
+	cbz [color=red, shape=circle]
+	cbz--xqh
+	cbz--snq
+	cbz--rdh
+	cbz--qlg
+	cbz--xxx
+	bzm [color=green, shape=circle]
+	bzm--pvk
+	bzm--kxk
+	bzm--krs
+	bzm--ksd
+	pvk [color=green, shape=circle]
+	pvk--bzm
+	pvk--dqg
+	pvk--htm
+	pvk--hxs
+	bxk [color=red, shape=circle]
+	bxk--vcg
+	bxk--gqv
+	bxk--csq
+	bxk--xhp
+	bxk--zmx
+	bxk--lzr
+	vcg [color=red, shape=circle]
+	vcg--bxk
+	vcg--tzp
+	vcg--nhf
+	vcg--hkg
+	gqv [color=red, shape=circle]
+	gqv--bxk
+	gqv--sdh
+	gqv--tgx
+	gqv--dmb
+	xhp [color=red, shape=circle]
+	xhp--bxk
+	xhp--slv
+	xhp--tjn
+	xhp--bhr
+	lzr [color=red, shape=circle]
+	lzr--bxk
+	lzr--pqm
+	lzr--zpb
+	lzr--mpm
+	jnq [color=green, shape=circle]
+	jnq--nnk
+	jnq--qzn
+	jnq--gjc
+	jnq--mjx
+	gjc [color=green, shape=circle]
+	gjc--jnq
+	gjc--dxv
+	gjc--grv
+	gjc--kxm
+	mjx [color=green, shape=circle]
+	mjx--jnq
+	mjx--pjr
+	mjx--lcj
+	mjx--hbk
+	tgs [color=red, shape=circle]
+	tgs--jrs
+	tgs--pcg
+	tgs--mtm
+	tgs--ddv
+	jrs [color=red, shape=circle]
+	jrs--tgs
+	jrs--ghm
+	jrs--nkn
+	jrs--qlv
+	jrs--bnj
+	jrs--knr
+	jrs--mvh
+	jrs--cth
+	jrs--cpf
+	jrs--xdq
+	stf [color=green, shape=circle]
+	stf--bmn
+	stf--mhd
+	stf--mng
+	stf--zqp
+	mbb [color=green, shape=circle]
+	mbb--bmn
+	mbb--pch
+	mbb--rpb
+	mbb--tvq
+	mbb--zdd
+	pnz [color=green, shape=circle]
+	pnz--txv
+	pnz--kmq
+	pnz--lhq
+	pnz--kgv
+	qzb [color=red, shape=circle]
+	qzb--fcn
+	qzb--snv
+	qzb--gxv
+	qzb--jfn
+	mbh [color=red, shape=circle]
+	mbh--fcn
+	mbh--mzl
+	mbh--sgn
+	mbh--hfd
+	mbh--clq
+	mbh--gkm
+	mbh--vgj
+	gff [color=green, shape=circle]
+	gff--ccj
+	gff--lqk
+	gff--hzk
+	gff--tlt
+	ccj [color=green, shape=circle]
+	ccj--gff
+	ccj--zjs
+	ccj--gzx
+	ccj--qrn
+	nvf [color=red, shape=circle]
+	nvf--tps
+	nvf--ghp
+	nvf--fbr
+	nvf--hps
+	tps [color=red, shape=circle]
+	tps--nvf
+	tps--qdl
+	tps--plb
+	tps--xtm
+	nxz [color=green, shape=circle]
+	nxz--nnb
+	nxz--ccz
+	nxz--rnm
+	nxz--qmm
+	nnb [color=green, shape=circle]
+	nnb--nxz
+	nnb--xmg
+	nnb--kkk
+	nnb--ndp
+	ccz [color=green, shape=circle]
+	ccz--nxz
+	ccz--jps
+	ccz--rfz
+	ccz--nbt
+	hvg [color=red, shape=circle]
+	hvg--xhg
+	hvg--fnj
+	hvg--tqc
+	hvg--nbg
+	xhg [color=red, shape=circle]
+	xhg--hvg
+	xhg--xsl
+	xhg--pqs
+	xhg--hfc
+	fnj [color=red, shape=circle]
+	fnj--hvg
+	fnj--ftq
+	fnj--lnm
+	fnj--ssh
+	fnj--fht
+	tqc [color=red, shape=circle]
+	tqc--hvg
+	tqc--jgs
+	tqc--fdt
+	tqc--bhr
+	mjp [color=green, shape=circle]
+	mjp--nnd
+	mjp--lvt
+	mjp--xmh
+	mjp--pqp
+	mjp--zhx
+	xjs [color=red, shape=circle]
+	xjs--tzl
+	xjs--kvt
+	xjs--xdh
+	xjs--dvj
+	xjs--grt
+	tzl [color=red, shape=circle]
+	tzl--xjs
+	tzl--djh
+	tzl--zqr
+	tzl--lcf
+	ngn [color=green, shape=circle]
+	ngn--nlj
+	ngn--vtl
+	ngn--lxs
+	ngn--fhk
+	vtl [color=green, shape=circle]
+	vtl--ngn
+	vtl--gtx
+	vtl--spd
+	vtl--zrb
+	vtl--zqp
+	mrf [color=red, shape=circle]
+	mrf--bvp
+	mrf--cqp
+	mrf--jgv
+	mrf--lnt
+	lnt [color=red, shape=circle]
+	lnt--mrf
+	lnt--zxr
+	lnt--jlp
+	lnt--xxx
+	fpp [color=green, shape=circle]
+	fpp--mxp
+	fpp--jsz
+	fpp--krf
+	fpp--vnv
+	fpp--plp
+	kxv [color=green, shape=circle]
+	kxv--mxp
+	kxv--ndd
+	kxv--lmb
+	kxv--fqz
+	ndg [color=green, shape=circle]
+	ndg--tmq
+	ndg--tlr
+	ndg--xzz
+	ndg--mjh
+	ndg--jqc
+	rgr [color=green, shape=circle]
+	rgr--tmq
+	rgr--qgp
+	rgr--cpj
+	rgr--lpv
+	jzh [color=green, shape=circle]
+	jzh--tmq
+	jzh--dvb
+	jzh--fxl
+	jzh--pld
+	bfj [color=green, shape=circle]
+	bfj--tmq
+	bfj--sgf
+	bfj--vpm
+	bfj--jqc
+	vsr [color=green, shape=circle]
+	vsr--tmq
+	vsr--ngt
+	vsr--cfc
+	vsr--hcn
+	xdq [color=red, shape=circle]
+	xdq--pxg
+	xdq--svs
+	xdq--jrs
+	xdq--pgs
+	bfq [color=red, shape=circle]
+	bfq--sdf
+	bfq--pcr
+	bfq--qzc
+	bfq--cmq
+	dhs [color=red, shape=circle]
+	dhs--sdf
+	dhs--ftq
+	dhs--kdr
+	dhs--snq
+	xzr [color=red, shape=circle]
+	xzr--sdf
+	xzr--vfp
+	xzr--jvr
+	xzr--pkj
+	xzr--xfz
+	cpn [color=red, shape=circle]
+	cpn--sdf
+	cpn--ntx
+	cpn--dqj
+	cpn--snq
+	ssf [color=red, shape=circle]
+	ssf--shj
+	ssf--rrk
+	ssf--xrv
+	ssf--kjp
+	ssf--hfs
+	shj [color=red, shape=circle]
+	shj--ssf
+	shj--rjp
+	shj--chm
+	shj--dtf
+	rrk [color=red, shape=circle]
+	rrk--ssf
+	rrk--pjk
+	rrk--nlh
+	rrk--rkp
+	xrv [color=red, shape=circle]
+	xrv--ssf
+	xrv--vcz
+	xrv--vmf
+	xrv--tql
+	rcj [color=green, shape=circle]
+	rcj--psz
+	rcj--ltj
+	rcj--gxk
+	rcj--gnm
+	sdb [color=green, shape=circle]
+	sdb--psz
+	sdb--fqk
+	sdb--fxl
+	sdb--jvt
+	kgf [color=green, shape=circle]
+	kgf--vxg
+	kgf--vjt
+	kgf--jnl
+	kgf--bpv
+	nrq [color=green, shape=circle]
+	nrq--nbv
+	nrq--vkf
+	nrq--csl
+	nrq--jdm
+	nrq--ntd
+	vkf [color=green, shape=circle]
+	vkf--nrq
+	vkf--dvk
+	vkf--ccn
+	vkf--sbs
+	csl [color=green, shape=circle]
+	csl--nrq
+	csl--ptp
+	csl--hrg
+	csl--thr
+	jdm [color=green, shape=circle]
+	jdm--nrq
+	jdm--ngr
+	jdm--nlj
+	jdm--xcz
+	ptp [color=green, shape=circle]
+	ptp--jrp
+	ptp--csl
+	ptp--lld
+	ptp--gmx
+	ptp--mpr
+	jrp [color=green, shape=circle]
+	jrp--ptp
+	jrp--vkb
+	jrp--shg
+	jrp--htq
+	qhm [color=green, shape=circle]
+	qhm--cxn
+	qhm--xfr
+	qhm--zfn
+	qhm--ffh
+	qhm--nzb
+	qhm--ndn
+	qhm--vmx
+	qhm--vrn
+	xfr [color=green, shape=circle]
+	xfr--qhm
+	xfr--hlt
+	xfr--krf
+	xfr--pxt
+	zfn [color=green, shape=circle]
+	zfn--qhm
+	zfn--kxk
+	zfn--qsf
+	zfn--ddl
+	ffh [color=green, shape=circle]
+	ffh--qhm
+	ffh--gsm
+	ffh--lsf
+	ffh--lrd
+	nzb [color=green, shape=circle]
+	nzb--qhm
+	nzb--blp
+	nzb--trb
+	nzb--rpg
+	nzb--qhl
+	ndn [color=green, shape=circle]
+	ndn--qhm
+	ndn--rff
+	ndn--zxd
+	ndn--fqz
+	vmx [color=green, shape=circle]
+	vmx--qhm
+	vmx--kgx
+	vmx--fzt
+	vmx--plp
+	vmx--btn
+	zqr [color=red, shape=circle]
+	zqr--ttv
+	zqr--rvl
+	zqr--tzl
+	zqr--ggp
+	zqr--dvj
+	zqr--snv
+	ttv [color=red, shape=circle]
+	ttv--zqr
+	ttv--mhc
+	ttv--qgd
+	ttv--brj
+	zfx [color=green, shape=circle]
+	zfx--cnb
+	zfx--hrg
+	zfx--xzb
+	zfx--mvr
+	stb [color=green, shape=circle]
+	stb--cnb
+	stb--ngr
+	stb--jjk
+	stb--rzk
+	gxj [color=green, shape=circle]
+	gxj--jjk
+	gxj--fqz
+	gxj--vsv
+	gxj--cnj
+	gxj--cls
+	jjk [color=green, shape=circle]
+	jjk--gxj
+	jjk--nbv
+	jjk--vrq
+	jjk--stb
+	jjk--qqk
+	fqz [color=green, shape=circle]
+	fqz--gxj
+	fqz--ndn
+	fqz--rjj
+	fqz--kxv
+	vsv [color=green, shape=circle]
+	vsv--gxj
+	vsv--rzf
+	vsv--bxc
+	vsv--vhs
+	cnj [color=green, shape=circle]
+	cnj--gxj
+	cnj--xkq
+	cnj--mmf
+	cnj--tsp
+	vct [color=red, shape=circle]
+	vct--jfn
+	vct--zpn
+	vct--dmg
+	vct--dfp
+	jfn [color=red, shape=circle]
+	jfn--vct
+	jfn--qzb
+	jfn--bvb
+	jfn--mxl
+	zpn [color=red, shape=circle]
+	zpn--vct
+	zpn--lph
+	zpn--mpq
+	zpn--kfd
+	zpn--qlg
+	zpn--llx
+	zpn--shc
+	dmg [color=red, shape=circle]
+	dmg--vct
+	dmg--zlg
+	dmg--smm
+	dmg--plb
+	xcg [color=red, shape=circle]
+	xcg--kzm
+	xcg--mjb
+	xcg--grf
+	xcg--ftk
+	kzm [color=red, shape=circle]
+	kzm--xcg
+	kzm--ssn
+	kzm--qlm
+	kzm--zgf
+	kzm--zzk
+	mjb [color=red, shape=circle]
+	mjb--xcg
+	mjb--rch
+	mjb--hsr
+	mjb--hdf
+	mjb--xbj
+	grf [color=red, shape=circle]
+	grf--xcg
+	grf--bnj
+	grf--jph
+	grf--khd
+	qrh [color=green, shape=circle]
+	qrh--bhv
+	qrh--rff
+	qrh--dvq
+	qrh--kcf
+	bhv [color=green, shape=circle]
+	bhv--qrh
+	bhv--rpz
+	bhv--hhp
+	bhv--cxn
+	dvq [color=green, shape=circle]
+	dvq--qrh
+	dvq--vtc
+	dvq--krs
+	dvq--qhl
+	plt [color=red, shape=circle]
+	plt--pnf
+	plt--mlp
+	plt--mpm
+	plt--cpf
+	pnf [color=red, shape=circle]
+	pnf--plt
+	pnf--zlg
+	pnf--dkb
+	pnf--mxs
+	rtj [color=green, shape=circle]
+	rtj--pnn
+	rtj--jmx
+	rtj--hrx
+	rtj--dsb
+	rtj--qbc
+	jmx [color=green, shape=circle]
+	jmx--rtj
+	jmx--nmd
+	jmx--xvp
+	jmx--gmx
+	jmx--xsx
+	jmx--gpq
+	jmx--knd
+	hrx [color=green, shape=circle]
+	hrx--rtj
+	hrx--vhq
+	hrx--rcg
+	hrx--kkk
+	szl [color=red, shape=circle]
+	szl--kqg
+	szl--nhf
+	szl--rch
+	szl--sgt
+	szl--dqj
+	tzk [color=green, shape=circle]
+	tzk--qdh
+	tzk--mxp
+	tzk--gmm
+	tzk--frx
+	gmm [color=green, shape=circle]
+	gmm--tzk
+	gmm--ngt
+	gmm--vmg
+	gmm--gkn
+	gmm--jdj
+	frx [color=green, shape=circle]
+	frx--tzk
+	frx--zfm
+	frx--hjb
+	frx--zfh
+	rfk [color=green, shape=circle]
+	rfk--dcf
+	rfk--jxl
+	rfk--bjb
+	rfk--zhx
+	qgv [color=red, shape=circle]
+	qgv--ljp
+	qgv--zfb
+	qgv--qkt
+	qgv--cpf
+	qgv--zjp
+	lqt [color=green, shape=circle]
+	lqt--qgp
+	lqt--cdb
+	lqt--jbr
+	lqt--bxc
+	qgp [color=green, shape=circle]
+	qgp--lqt
+	qgp--mft
+	qgp--gnk
+	qgp--rgr
+	qgp--vcr
+	dhc [color=green, shape=circle]
+	dhc--ccn
+	dhc--ppm
+	dhc--gvj
+	dhc--ftm
+	dhc--msc
+	ccn [color=green, shape=circle]
+	ccn--dhc
+	ccn--cbh
+	ccn--vkf
+	ccn--zsz
+	ccn--rrs
+	ccn--mhd
+	ppm [color=green, shape=circle]
+	ppm--dhc
+	ppm--znl
+	ppm--nnk
+	ppm--qkd
+	gvj [color=green, shape=circle]
+	gvj--dhc
+	gvj--mll
+	gvj--jzc
+	gvj--kpv
+	gvj--jxp
+	llq [color=green, shape=circle]
+	llq--pdr
+	llq--qfs
+	llq--hpx
+	llq--dhk
+	pdr [color=green, shape=circle]
+	pdr--llq
+	pdr--nxd
+	pdr--fmm
+	pdr--gnm
+	qfs [color=green, shape=circle]
+	qfs--llq
+	qfs--lvx
+	qfs--fxl
+	qfs--cbk
+	qfs--spb
+	hpx [color=green, shape=circle]
+	hpx--llq
+	hpx--mds
+	hpx--fnp
+	hpx--mgm
+	dhk [color=green, shape=circle]
+	dhk--llq
+	dhk--jrx
+	dhk--xvn
+	dhk--xjd
+	nmd [color=green, shape=circle]
+	nmd--mvr
+	nmd--tvn
+	nmd--xzp
+	nmd--jmx
+	mvr [color=green, shape=circle]
+	mvr--nmd
+	mvr--zfx
+	mvr--tbj
+	mvr--scr
+	tvn [color=green, shape=circle]
+	tvn--nmd
+	tvn--cvk
+	tvn--ggl
+	tvn--fsh
+	xzp [color=green, shape=circle]
+	xzp--nmd
+	xzp--mlq
+	xzp--mjc
+	xzp--jfd
+	hcb [color=red, shape=circle]
+	hcb--dmp
+	hcb--zjp
+	hcb--qpg
+	hcb--rdk
+	qpg [color=red, shape=circle]
+	qpg--hcb
+	qpg--cqn
+	qpg--srq
+	qpg--qkp
+	qpg--lrd [style="dotted"]
+	qpg--vgj
+	ntl [color=red, shape=circle]
+	ntl--ppg
+	ntl--rdh
+	ntl--prp
+	ntl--mtm
+	ppg [color=red, shape=circle]
+	ppg--ntl
+	ppg--rqc
+	ppg--pkk
+	ppg--plc
+	ppg--rpn
+	ppg--mlt
+	djh [color=red, shape=circle]
+	djh--qjh
+	djh--tzl
+	djh--ltv
+	djh--kdr
+	qjh [color=red, shape=circle]
+	qjh--djh
+	qjh--bpm
+	qjh--skz
+	qjh--lmd
+	ltv [color=red, shape=circle]
+	ltv--djh
+	ltv--sjs
+	ltv--rkp
+	ltv--gsd
+	ltv--gzb
+	srz [color=red, shape=circle]
+	srz--xqv
+	srz--nvz
+	srz--sgt
+	srz--xjg
+	sgt [color=red, shape=circle]
+	sgt--srz
+	sgt--szl
+	sgt--jph
+	sgt--nhx
+	sgt--tpt
+	vkl [color=red, shape=circle]
+	vkl--xxx
+	vkl--jjx
+	vkl--zvx
+	vkl--jtx
+	xxx [color=red, shape=circle]
+	xxx--vkl
+	xxx--lnt
+	xxx--cbz
+	xxx--pgq
+	zvx [color=red, shape=circle]
+	zvx--vkl
+	zvx--fbr
+	zvx--cpp
+	zvx--lrr
+	vnq [color=red, shape=circle]
+	vnq--nzq
+	vnq--vvr
+	vnq--jml
+	vnq--rhx
+	vnq--jhq
+	nzq [color=red, shape=circle]
+	nzq--vnq
+	nzq--nhz
+	nzq--blh
+	nzq--gcd
+	nzq--gnj
+	vvr [color=red, shape=circle]
+	vvr--vnq
+	vvr--fjj
+	vvr--nns
+	vvr--hgd
+	vvr--pcs
+	vvr--vxf
+	jml [color=red, shape=circle]
+	jml--vnq
+	jml--bsz
+	jml--xrz
+	jml--lhp
+	jml--qbv
+	blp [color=green, shape=circle]
+	blp--xpg
+	blp--nzb
+	blp--nbz
+	blp--mlz
+	rxz [color=green, shape=circle]
+	rxz--mph
+	rxz--pch
+	rxz--lxg
+	rxz--qxx
+	pch [color=green, shape=circle]
+	pch--rxz
+	pch--mbb
+	pch--mlq
+	pch--nmj
+	pch--tvx
+	ghz [color=green, shape=circle]
+	ghz--jcg
+	ghz--msg
+	ghz--kxm
+	ghz--xtf
+	zmp [color=green, shape=circle]
+	zmp--dvl
+	zmp--flc
+	zmp--mnz
+	zmp--hhc
+	dvl [color=green, shape=circle]
+	dvl--zmp
+	dvl--qdh
+	dvl--lpv
+	dvl--mgf
+	mnz [color=green, shape=circle]
+	mnz--zmp
+	mnz--jvt
+	mnz--fhq
+	mnz--bfl
+	mnz--mmz
+	hhc [color=green, shape=circle]
+	hhc--zmp
+	hhc--dct
+	hhc--dpf
+	hhc--nmm
+	ssh [color=red, shape=circle]
+	ssh--ljk
+	ssh--vzc
+	ssh--khq
+	ssh--fnj
+	ssh--bzc
+	vzc [color=red, shape=circle]
+	vzc--ssh
+	vzc--ztg
+	vzc--lfn
+	vzc--tmd
+	vzc--fjj
+	kjd [color=green, shape=circle]
+	kjd--xts
+	kjd--gkk
+	kjd--vnn
+	kjd--rkr
+	kjd--fph
+	xts [color=green, shape=circle]
+	xts--kjd
+	xts--kmq
+	xts--dcf
+	xts--jqc
+	vkd [color=red, shape=circle]
+	vkd--ggz
+	vkd--bqr
+	vkd--xlb
+	vkd--sdh
+	vkd--blf
+	ggz [color=red, shape=circle]
+	ggz--vkd
+	ggz--fgb
+	ggz--btp
+	ggz--mcs
+	ngt [color=green, shape=circle]
+	ngt--mgf
+	ngt--gmm
+	ngt--vsr
+	ngt--ksf
+	mgf [color=green, shape=circle]
+	mgf--ngt
+	mgf--dvl
+	mgf--fnp
+	mgf--nqb
+	ksf [color=green, shape=circle]
+	ksf--ngt
+	ksf--phn
+	ksf--dpc
+	ksf--bpl
+	ksf--ssc
+	ksf--rkl
+	ksf--drp
+	dbm [color=red, shape=circle]
+	dbm--mxf
+	dbm--qvf
+	dbm--rxx
+	dbm--jzz
+	mxf [color=red, shape=circle]
+	mxf--dbm
+	mxf--tkv
+	mxf--gzv
+	mxf--jhg
+	zkk [color=red, shape=circle]
+	zkk--ctm
+	zkk--xhf
+	zkk--shh
+	zkk--lbg
+	xhf [color=red, shape=circle]
+	xhf--zkk
+	xhf--cfm
+	xhf--lbg
+	xhf--jcc
+	shh [color=red, shape=circle]
+	shh--zkk
+	shh--dcs
+	shh--mzl
+	shh--qkl
+	shh--svd
+	tvq [color=green, shape=circle]
+	tvq--mbb
+	tvq--ggl
+	tvq--qsg
+	tvq--bpv
+	zdd [color=green, shape=circle]
+	zdd--mbb
+	zdd--xkd
+	zdd--jgp
+	zdd--qkd
+	ncs [color=red, shape=circle]
+	ncs--dhm
+	ncs--lpz
+	ncs--rjf
+	ncs--cmq
+	ncs--bpm
+	ncs--fkc
+	dhm [color=red, shape=circle]
+	dhm--ncs
+	dhm--njh
+	dhm--nmc
+	dhm--gqj
+	klk [color=green, shape=circle]
+	klk--hzs
+	klk--gcb
+	klk--lsf
+	klk--hdt
+	hzs [color=green, shape=circle]
+	hzs--klk
+	hzs--rkt
+	hzs--xbs
+	hzs--mhs
+	gcb [color=green, shape=circle]
+	gcb--klk
+	gcb--nxd
+	gcb--pld
+	gcb--tnf
+	gcb--hnt
+	cvk [color=green, shape=circle]
+	cvk--lnv
+	cvk--vpl
+	cvk--dxs
+	cvk--jkq
+	cvk--tvn
+	vpl [color=green, shape=circle]
+	vpl--cvk
+	vpl--kcs
+	vpl--mjc
+	vpl--gpf
+	dxs [color=green, shape=circle]
+	dxs--cvk
+	dxs--pxt
+	dxs--gzx
+	dxs--kpj
+	jkq [color=green, shape=circle]
+	jkq--cvk
+	jkq--pbx
+	jkq--dxv
+	jkq--gkh
+	qsf [color=green, shape=circle]
+	qsf--zfn
+	qsf--pxx
+	qsf--zxd
+	qsf--tcr
+	qsf--mll
+	ddl [color=green, shape=circle]
+	ddl--zfn
+	ddl--bsq
+	ddl--mnq
+	ddl--srv
+	lvx [color=green, shape=circle]
+	lvx--qfs
+	lvx--mlq
+	lvx--dsb
+	lvx--zlq
+	lvx--vrn
+	ndf [color=red, shape=circle]
+	ndf--frm
+	ndf--nqs
+	ndf--skt
+	ndf--hbq
+	nqs [color=red, shape=circle]
+	nqs--ndf
+	nqs--rvl
+	nqs--rvd
+	nqs--mxs
+	dzb [color=green, shape=circle]
+	dzb--xzm
+	dzb--dvb
+	dzb--cbk
+	dzb--pbx
+	kvp [color=red, shape=circle]
+	kvp--hnf
+	kvp--vpq
+	kvp--zsh
+	kvp--dkh
+	kvp--kcg
+	kvp--gkm
+	vpq [color=red, shape=circle]
+	vpq--kvp
+	vpq--gfv
+	vpq--pbr
+	vpq--bcv
+	vpq--jlp
+	zsh [color=red, shape=circle]
+	zsh--kvp
+	zsh--tql
+	zsh--vnd
+	zsh--sgn
+	dkh [color=red, shape=circle]
+	dkh--kvp
+	dkh--gfr
+	dkh--sdf
+	dkh--gls
+	kcg [color=red, shape=circle]
+	kcg--kvp
+	kcg--xtc
+	kcg--rvj
+	kcg--xmj
+	gkm [color=red, shape=circle]
+	gkm--kvp
+	gkm--cvs
+	gkm--fvk
+	gkm--mbh
+	xbk [color=red, shape=circle]
+	xbk--vxf
+	xbk--mrq
+	xbk--dxx
+	xbk--sdx
+	vxf [color=red, shape=circle]
+	vxf--xbk
+	vxf--vvr
+	vxf--svd
+	vxf--hxm
+	dxx [color=red, shape=circle]
+	dxx--xbk
+	dxx--dmp
+	dxx--lpp
+	dxx--qvc
+	dxx--kzn
+	khz [color=red, shape=circle]
+	khz--jqz
+	khz--gvt
+	khz--nqt
+	khz--lbs
+	khz--sxc
+	jqz [color=red, shape=circle]
+	jqz--khz
+	jqz--vcz
+	jqz--cht
+	jqz--bbn
+	gvt [color=red, shape=circle]
+	gvt--khz
+	gvt--pkk
+	gvt--jlp
+	gvt--tgx
+	nqt [color=red, shape=circle]
+	nqt--khz
+	nqt--zcc
+	nqt--qgx
+	nqt--mdk
+	nqt--tbl
+	nqt--bqq
+	nqt--mlt
+	jqg [color=green, shape=circle]
+	jqg--phn
+	jqg--gcf
+	jqg--lcz
+	jqg--jfd
+	jqg--sbs
+	jqg--npd
+	xcm [color=green, shape=circle]
+	xcm--sqb
+	xcm--vmm
+	xcm--mql
+	xcm--zcq
+	sqb [color=green, shape=circle]
+	sqb--xcm
+	sqb--krf
+	sqb--ltj
+	sqb--fkf
+	mql [color=green, shape=circle]
+	mql--xcm
+	mql--dvb
+	mql--lxd
+	mql--jrn
+	zcq [color=green, shape=circle]
+	zcq--xcm
+	zcq--sgf
+	zcq--ssc
+	zcq--xkd
+	zcq--mjs
+	mjr [color=green, shape=circle]
+	mjr--vft
+	mjr--qts
+	mjr--xdr
+	mjr--kxm
+	dnz [color=green, shape=circle]
+	dnz--vft
+	dnz--mhs
+	dnz--ksx
+	dnz--scx
+	qcn [color=green, shape=circle]
+	qcn--hxs
+	qcn--pjn
+	qcn--flc
+	qcn--tsl
+	qcn--gkk
+	hxs [color=green, shape=circle]
+	hxs--qcn
+	hxs--dct
+	hxs--cbk
+	hxs--pvk
+	pjn [color=green, shape=circle]
+	pjn--qcn
+	pjn--pfj
+	pjn--cqg
+	pjn--djq
+	tsl [color=green, shape=circle]
+	tsl--qcn
+	tsl--frg
+	tsl--fzt
+	tsl--brp
+	mkv [color=red, shape=circle]
+	mkv--btz
+	mkv--glx
+	mkv--mtl
+	mkv--plc
+	mkv--tmd
+	btz [color=red, shape=circle]
+	btz--mkv
+	btz--thp
+	btz--qvf
+	btz--kbq
+	ftk [color=red, shape=circle]
+	ftk--dtf
+	ftk--gxf
+	ftk--xcg
+	ftk--zsq
+	dtf [color=red, shape=circle]
+	dtf--ftk
+	dtf--hbv
+	dtf--qgd
+	dtf--shj
+	dtf--gds
+	zsq [color=red, shape=circle]
+	zsq--ftk
+	zsq--jlr
+	zsq--xgb
+	zsq--rgn
+	rrc [color=red, shape=circle]
+	rrc--nvz
+	rrc--zcc
+	rrc--mzl
+	rrc--pjj
+	zcc [color=red, shape=circle]
+	zcc--rrc
+	zcc--nqt
+	zcc--khp
+	zcc--ffq
+	mzl [color=red, shape=circle]
+	mzl--rrc
+	mzl--mbh
+	mzl--shh
+	mzl--bbn
+	scl [color=green, shape=circle]
+	scl--qsg
+	scl--nbt
+	scl--hbj
+	scl--fph
+	jkj [color=green, shape=circle]
+	jkj--xdl
+	jkj--lvt
+	jkj--ctp
+	jkj--rnv
+	jkj--dxv
+	xdl [color=green, shape=circle]
+	xdl--jkj
+	xdl--xvp
+	xdl--msc
+	xdl--fvj
+	lvt [color=green, shape=circle]
+	lvt--jkj
+	lvt--fqk
+	lvt--mjp
+	lvt--chl
+	ctp [color=green, shape=circle]
+	ctp--jkj
+	ctp--gbj
+	ctp--lsp
+	ctp--cpv
+	gfv [color=red, shape=circle]
+	gfv--jlp
+	gfv--rjf
+	gfv--vpq
+	gfv--tdj
+	gfv--lhf
+	jlp [color=red, shape=circle]
+	jlp--gfv
+	jlp--lnt
+	jlp--gvt
+	jlp--vpq
+	rjf [color=red, shape=circle]
+	rjf--gfv
+	rjf--fsj
+	rjf--ncs
+	rjf--qvf
+	tdj [color=red, shape=circle]
+	tdj--gfv
+	tdj--fgh
+	tdj--rph
+	tdj--njh
+	zdg [color=red, shape=circle]
+	zdg--dkd
+	zdg--fht
+	zdg--rpk
+	zdg--lkb
+	ctz [color=red, shape=circle]
+	ctz--dkd
+	ctz--rmz
+	ctz--tnq
+	ctz--pqm
+	rlh [color=green, shape=circle]
+	rlh--vlt
+	rlh--bzb
+	rlh--xbs
+	rlh--tkx
+	hjb [color=green, shape=circle]
+	hjb--vlt
+	hjb--frx
+	hjb--kgx
+	hjb--xxz
+	gfl [color=green, shape=circle]
+	gfl--vlt
+	gfl--gbr
+	gfl--lvv
+	gfl--fxc
+	hlk [color=green, shape=circle]
+	hlk--bmv
+	hlk--vmg
+	hlk--qjp
+	hlk--hdt
+	kjr [color=red, shape=circle]
+	kjr--tnq
+	kjr--sjs
+	kjr--cqn
+	kjr--brc
+	pcq [color=green, shape=circle]
+	pcq--kqc
+	pcq--gnl
+	pcq--dqg
+	pcq--bgd
+	kqc [color=green, shape=circle]
+	kqc--pcq
+	kqc--dvf
+	kqc--cph
+	kqc--nmm
+	lnb [color=red, shape=circle]
+	lnb--mvn
+	lnb--xsz
+	lnb--kkg
+	lnb--njr
+	lnb--nnf
+	mlq [color=green, shape=circle]
+	mlq--xzp
+	mlq--pch
+	mlq--lvx
+	mlq--kgz
+	kgz [color=green, shape=circle]
+	kgz--mlq
+	kgz--gxk
+	kgz--xgf
+	kgz--cch
+	bfl [color=green, shape=circle]
+	bfl--bvc
+	bfl--stm
+	bfl--hzd
+	bfl--xxq
+	bfl--mnz
+	ncp [color=green, shape=circle]
+	ncp--bvc
+	ncp--skn
+	ncp--tcr
+	ncp--qrn
+	lhd [color=green, shape=circle]
+	lhd--xvn
+	lhd--gmx
+	lhd--clj
+	lhd--mdh
+	lhd--ndd
+	lhd--qxx
+	clj [color=green, shape=circle]
+	clj--lhd
+	clj--mds
+	clj--knd
+	clj--xpt
+	dct [color=green, shape=circle]
+	dct--hhc
+	dct--jgh
+	dct--tbz
+	dct--plp
+	dct--hxs
+	tbz [color=green, shape=circle]
+	tbz--dct
+	tbz--tkb
+	tbz--tlr
+	tbz--rng
+	plp [color=green, shape=circle]
+	plp--dct
+	plp--vmx
+	plp--fpp
+	plp--ndp
+	vcz [color=red, shape=circle]
+	vcz--xrv
+	vcz--qnl
+	vcz--qbm
+	vcz--mvc
+	vcz--jqz
+	vcz--zjp
+	vmf [color=red, shape=circle]
+	vmf--xrv
+	vmf--xcx
+	vmf--rbg
+	vmf--nrv
+	mcq [color=green, shape=circle]
+	mcq--pkq
+	mcq--nxd
+	mcq--qnd
+	mcq--jgj
+	hjg [color=green, shape=circle]
+	hjg--ccs
+	hjg--fsh
+	hjg--gnm
+	hjg--bdt
+	ghm [color=red, shape=circle]
+	ghm--jrs
+	ghm--nmc
+	ghm--xnd
+	ghm--thz
+	sjt [color=red, shape=circle]
+	sjt--vfp
+	sjt--kpq
+	sjt--bvs
+	sjt--pjj
+	vfp [color=red, shape=circle]
+	vfp--sjt
+	vfp--fgb
+	vfp--dcm
+	vfp--srq
+	vfp--xzr
+	xcx [color=red, shape=circle]
+	xcx--gzb
+	xcx--nhk
+	xcx--vmf
+	xcx--sdx
+	xcx--cnx
+	gzb [color=red, shape=circle]
+	gzb--xcx
+	gzb--gls
+	gzb--cth
+	gzb--ltv
+	mkr [color=green, shape=circle]
+	mkr--tcr
+	mkr--xgm
+	mkr--zzr
+	mkr--hcn
+	hzb [color=red, shape=circle]
+	hzb--ssn
+	hzb--sng
+	hzb--scf
+	hzb--pjj
+	ssn [color=red, shape=circle]
+	ssn--hzb
+	ssn--dcs
+	ssn--kzm
+	ssn--bjq
+	sng [color=red, shape=circle]
+	sng--hzb
+	sng--qqh
+	sng--hkg
+	sng--zkc
+	scf [color=red, shape=circle]
+	scf--hzb
+	scf--xks
+	scf--jlr
+	scf--jzz
+	scf--fdx
+	xgx [color=green, shape=circle]
+	xgx--skk
+	xgx--cpv
+	xgx--rpz
+	xgx--dvb
+	frr [color=red, shape=circle]
+	frr--mbx
+	frr--jzv
+	frr--xbv
+	frr--zpb
+	tgx [color=red, shape=circle]
+	tgx--mbx
+	tgx--gqv
+	tgx--gvt
+	tgx--mvv
+	sgf [color=green, shape=circle]
+	sgf--bfj
+	sgf--zcq
+	sgf--mxp
+	sgf--fxs
+	kcf [color=green, shape=circle]
+	kcf--xsx
+	kcf--xzb
+	kcf--qrh
+	kcf--qmm
+	xsx [color=green, shape=circle]
+	xsx--kcf
+	xsx--nrk
+	xsx--hnt
+	xsx--jmx
+	xzb [color=green, shape=circle]
+	xzb--kcf
+	xzb--ftm
+	xzb--sqk
+	xzb--zfx
+	xzb--jzf
+	vqr [color=red, shape=circle]
+	vqr--mbx
+	vqr--svs
+	vqr--tnq
+	vqr--cld
+	gls [color=red, shape=circle]
+	gls--gzb
+	gls--tjn
+	gls--dkh
+	gls--vqx
+	xjg [color=red, shape=circle]
+	xjg--tzp
+	xjg--qpb
+	xjg--srz
+	xjg--lzk
+	fcp [color=green, shape=circle]
+	fcp--hnk
+	fcp--hdq
+	fcp--tvf
+	fcp--tkb
+	jxx [color=green, shape=circle]
+	jxx--hnk
+	jxx--gts
+	jxx--jxl
+	jxx--dsl
+	ptc [color=green, shape=circle]
+	ptc--bqc
+	ptc--bmm
+	ptc--dzk
+	ptc--xqf
+	bqc [color=green, shape=circle]
+	bqc--ptc
+	bqc--kgt
+	bqc--pqp
+	bqc--kfs
+	znd [color=red, shape=circle]
+	znd--hdx
+	znd--bxv
+	znd--ftq
+	znd--njr
+	ftq [color=red, shape=circle]
+	ftq--znd
+	ftq--fnj
+	ftq--zrf
+	ftq--gxf
+	ftq--pdb
+	ftq--dhs
+	rxc [color=red, shape=circle]
+	rxc--cdd
+	rxc--gjz
+	rxc--gnv
+	rxc--cbq
+	fpg [color=red, shape=circle]
+	fpg--cdd
+	fpg--qbv
+	fpg--jtv
+	fpg--xhx
+	snv [color=red, shape=circle]
+	snv--qzb
+	snv--hnm
+	snv--zqr
+	snv--qbv
+	frg [color=green, shape=circle]
+	frg--gzl
+	frg--tsl
+	frg--dvf
+	frg--xqf
+	dvf [color=green, shape=circle]
+	dvf--frg
+	dvf--gnm
+	dvf--kqc
+	dvf--fzq
+	dvf--grv
+	xmj [color=red, shape=circle]
+	xmj--sxc
+	xmj--rmz
+	xmj--sct
+	xmj--kcg
+	fqs [color=red, shape=circle]
+	fqs--mzb
+	fqs--hqs
+	fqs--dlt
+	fqs--hnz
+	zfz [color=red, shape=circle]
+	zfz--frc
+	zfz--qmq
+	zfz--qkl
+	zfz--xrz
+	zfz--ngl
+	mxz [color=red, shape=circle]
+	mxz--sdh
+	mxz--skp
+	mxz--mqb
+	mxz--vgx
+	vmg [color=green, shape=circle]
+	vmg--fhl
+	vmg--lvv
+	vmg--hlk
+	vmg--gmm
+	fhl [color=green, shape=circle]
+	fhl--vmg
+	fhl--mjh
+	fhl--nbv
+	fhl--ktt
+	fhl--czx
+	fhl--fnh
+	gms [color=green, shape=circle]
+	gms--pgg
+	gms--tcr
+	gms--ccd
+	gms--pxx
+	pgg [color=green, shape=circle]
+	pgg--gms
+	pgg--msg
+	pgg--jcg
+	pgg--tnf
+	plh [color=green, shape=circle]
+	plh--nvm
+	plh--smr
+	plh--lld
+	plh--cdb
+	smr [color=green, shape=circle]
+	smr--plh
+	smr--fnp
+	smr--gpf
+	smr--xjb
+	fsj [color=red, shape=circle]
+	fsj--rdk
+	fsj--qdp
+	fsj--rjf
+	fsj--kzn
+	rdk [color=red, shape=circle]
+	rdk--fsj
+	rdk--hth
+	rdk--shc
+	rdk--hcb
+	rdk--zxm
+	bmq [color=green, shape=circle]
+	bmq--qmn
+	bmq--pjq
+	bmq--jzc
+	bmq--cpv
+	qmn [color=green, shape=circle]
+	qmn--bmq
+	qmn--cnb
+	qmn--gzx
+	qmn--mll
+	jzc [color=green, shape=circle]
+	jzc--bmq
+	jzc--thd
+	jzc--htq
+	jzc--gvj
+	zlg [color=red, shape=circle]
+	zlg--pnf
+	zlg--dmg
+	zlg--qvc
+	zlg--vvx
+	kvt [color=red, shape=circle]
+	kvt--qgd
+	kvt--zmg
+	kvt--xjs
+	kvt--fvk
+	kvt--bsk
+	qgd [color=red, shape=circle]
+	qgd--kvt
+	qgd--fgb
+	qgd--dtf
+	qgd--ttv
+	qgd--ckq
+	zmg [color=red, shape=circle]
+	zmg--kvt
+	zmg--gzv
+	zmg--dsr
+	zmg--gsd
+	dsb [color=green, shape=circle]
+	dsb--spx
+	dsb--pxt
+	dsb--lgp
+	dsb--lvx
+	dsb--pqj
+	dsb--rtj
+	spx [color=green, shape=circle]
+	spx--dsb
+	spx--spd
+	spx--xbg
+	spx--psg
+	pxt [color=green, shape=circle]
+	pxt--dsb
+	pxt--xsg
+	pxt--mqq
+	pxt--xfr
+	pxt--dxs
+	pxt--cgq
+	pxt--mhd
+	pxt--stp
+	mdk [color=red, shape=circle]
+	mdk--nqt
+	mdk--rph
+	mdk--btp
+	mdk--sth
+	mdk--jrf
+	tbl [color=red, shape=circle]
+	tbl--nqt
+	tbl--htx
+	tbl--rcb
+	tbl--svd
+	tbl--qfp
+	bqq [color=red, shape=circle]
+	bqq--nqt
+	bqq--pmm
+	bqq--sdh
+	bqq--bpq
+	bqq--dxc
+	hlt [color=green, shape=circle]
+	hlt--knc
+	hlt--bjd
+	hlt--qrx
+	hlt--gsm
+	hlt--xfr
+	knc [color=green, shape=circle]
+	knc--hlt
+	knc--pjr
+	knc--jxp
+	knc--zqp
+	qrx [color=green, shape=circle]
+	qrx--hlt
+	qrx--shg
+	qrx--rjj
+	qrx--xcn
+	qrx--hsb
+	gbj [color=green, shape=circle]
+	gbj--ctp
+	gbj--fpt
+	gbj--mpd
+	gbj--xgg
+	gbj--jpj
+	gbj--tvf
+	cxx [color=green, shape=circle]
+	cxx--kfs
+	cxx--zpf
+	cxx--vnv
+	cxx--mhz
+	cxx--gxs
+	zpf [color=green, shape=circle]
+	zpf--cxx
+	zpf--mmx
+	zpf--xbl
+	zpf--spd
+	vnv [color=green, shape=circle]
+	vnv--cxx
+	vnv--rzf
+	vnv--jgp
+	vnv--fpp
+	kgt [color=green, shape=circle]
+	kgt--bqc
+	kgt--xqt
+	kgt--sgl
+	kgt--gjh
+	szx [color=red, shape=circle]
+	szx--njf
+	szx--lnq
+	szx--hbv
+	szx--kgk
+	szx--ftg
+	mns [color=red, shape=circle]
+	mns--njf
+	mns--bhz
+	mns--qbm
+	mns--jcc
+	mns--nkq
+	mns--lrt
+	qmb [color=red, shape=circle]
+	qmb--bfm
+	qmb--pgf
+	qmb--rgn
+	qmb--brc
+	bfm [color=red, shape=circle]
+	bfm--qmb
+	bfm--knf
+	bfm--rqc
+	bfm--tmd
+	rgn [color=red, shape=circle]
+	rgn--qmb
+	rgn--fht
+	rgn--dsr
+	rgn--qbq
+	rgn--zsq
+	brc [color=red, shape=circle]
+	brc--qmb
+	brc--prp
+	brc--kph
+	brc--skz
+	brc--tht
+	brc--kjr
+	fmc [color=red, shape=circle]
+	fmc--srj
+	fmc--vjm
+	fmc--rnq
+	fmc--cfs
+	srj [color=red, shape=circle]
+	srj--fmc
+	srj--bsz
+	srj--frl
+	srj--rcb
+	vjm [color=red, shape=circle]
+	vjm--fmc
+	vjm--bsz
+	vjm--bbh
+	vjm--lcf
+	nhz [color=red, shape=circle]
+	nhz--kmd
+	nhz--nzq
+	nhz--ttj
+	nhz--hth
+	nhz--xhx
+	nhz--thz
+	ttj [color=red, shape=circle]
+	ttj--nhz
+	ttj--ltl
+	ttj--cbq
+	ttj--ftx
+	xhx [color=red, shape=circle]
+	xhx--nhz
+	xhx--pkl
+	xhx--sbt
+	xhx--fpg
+	xhx--tnr
+	bzb [color=green, shape=circle]
+	bzb--csg
+	bzb--rzf
+	bzb--rlh
+	bzb--dqn
+	bzb--fsh
+	bzb--nrp
+	csg [color=green, shape=circle]
+	csg--bzb
+	csg--ppc
+	csg--lqp
+	csg--kzc
+	rzf [color=green, shape=circle]
+	rzf--bzb
+	rzf--vnv
+	rzf--vsv
+	rzf--kpj
+	dqn [color=green, shape=circle]
+	dqn--bzb
+	dqn--lpv
+	dqn--gzd
+	dqn--jxg
+	dqn--bdt
+	dqn--cls
+	lbf [color=red, shape=circle]
+	lbf--mqb
+	lbf--tht
+	lbf--rmx
+	lbf--dqq
+	tht [color=red, shape=circle]
+	tht--lbf
+	tht--qbq
+	tht--bjm
+	tht--brc
+	sdx [color=red, shape=circle]
+	sdx--skz
+	sdx--plk
+	sdx--xbk
+	sdx--xcx
+	skz [color=red, shape=circle]
+	skz--sdx
+	skz--qzx
+	skz--qjh
+	skz--brc
+	skl [color=green, shape=circle]
+	skl--hjq
+	skl--cch
+	skl--pgm
+	skl--qbs
+	skl--zcm
+	cch [color=green, shape=circle]
+	cch--skl
+	cch--gkn
+	cch--kgz
+	cch--lxd
+	zcm [color=green, shape=circle]
+	zcm--skl
+	zcm--qjp
+	zcm--sdr
+	zcm--kdv
+	zcm--vrt
+	rdr [color=green, shape=circle]
+	rdr--hhp
+	rdr--rkt
+	rdr--fzq
+	rdr--qmm
+	hhp [color=green, shape=circle]
+	hhp--rdr
+	hhp--bhv
+	hhp--skn
+	hhp--fnh
+	rkt [color=green, shape=circle]
+	rkt--rdr
+	rkt--hzs
+	rkt--lsf
+	rkt--jfd
+	rmz [color=red, shape=circle]
+	rmz--lsk
+	rmz--xbv
+	rmz--xxc
+	rmz--hhf
+	rmz--ctz
+	rmz--xmj
+	rmz--vgj
+	rmz--gnj
+	lsk [color=red, shape=circle]
+	lsk--rmz
+	lsk--qkt
+	lsk--hzz
+	lsk--cqq
+	xbv [color=red, shape=circle]
+	xbv--rmz
+	xbv--nxv
+	xbv--frr
+	xbv--ngl
+	xxc [color=red, shape=circle]
+	xxc--rmz
+	xxc--kfd
+	xxc--tks
+	xxc--vkp
+	vgj [color=red, shape=circle]
+	vgj--rmz
+	vgj--ltl
+	vgj--mbh
+	vgj--mmj
+	vgj--qpg
+	gnj [color=red, shape=circle]
+	gnj--rmz
+	gnj--nzq
+	gnj--pvn
+	gnj--kfd
+	gnj--zjp
+	dpc [color=green, shape=circle]
+	dpc--nvp
+	dpc--ksf
+	dpc--ftr
+	dpc--xzz
+	dpc--ptv
+	zfm [color=green, shape=circle]
+	zfm--tlr
+	zfm--gjh
+	zfm--frx
+	zfm--mpd
+	zfm--xxz
+	zfm--jvk
+	zfm--flb
+	tlr [color=green, shape=circle]
+	tlr--zfm
+	tlr--cpv
+	tlr--ndg
+	tlr--tbz
+	tlr--hzp
+	gjh [color=green, shape=circle]
+	gjh--zfm
+	gjh--lmr
+	gjh--cpz
+	gjh--kgt
+	mpd [color=green, shape=circle]
+	mpd--zfm
+	mpd--gbj
+	mpd--tkn
+	mpd--zrn
+	xxz [color=green, shape=circle]
+	xxz--zfm
+	xxz--kft
+	xxz--hjb
+	xxz--szh
+	jvk [color=green, shape=circle]
+	jvk--zfm
+	jvk--nmr
+	jvk--cln
+	jvk--nmj
+	xsz [color=red, shape=circle]
+	xsz--pqm
+	xsz--qfp
+	xsz--mtl
+	xsz--lnb
+	pqm [color=red, shape=circle]
+	pqm--xsz
+	pqm--lzr
+	pqm--ctz
+	pqm--fvk
+	pqm--bfx
+	qfp [color=red, shape=circle]
+	qfp--xsz
+	qfp--vpk
+	qfp--hkn
+	qfp--mlp
+	qfp--tbl
+	mtl [color=red, shape=circle]
+	mtl--xsz
+	mtl--mkv
+	mtl--frk
+	mtl--crp
+	cbh [color=green, shape=circle]
+	cbh--nbh
+	cbh--ccn
+	cbh--gcf
+	cbh--gjt
+	cbh--gmp
+	gcf [color=green, shape=circle]
+	gcf--cbh
+	gcf--jqg
+	gcf--rcr
+	gcf--vlp
+	fpz [color=red, shape=circle]
+	fpz--gfr
+	fpz--hnz
+	fpz--dlq
+	fpz--cmq
+	gfr [color=red, shape=circle]
+	gfr--fpz
+	gfr--dkh
+	gfr--vcn
+	gfr--jgr
+	dlq [color=red, shape=circle]
+	dlq--fpz
+	dlq--zts
+	dlq--jrt
+	dlq--lfs
+	bsx [color=green, shape=circle]
+	bsx--kmq
+	bsx--hfx
+	bsx--nbv
+	bsx--xbs
+	dsr [color=red, shape=circle]
+	dsr--rfm
+	dsr--pck
+	dsr--cqn
+	dsr--zmg
+	dsr--rgn
+	dmb [color=red, shape=circle]
+	dmb--ljl
+	dmb--knr
+	dmb--cxz
+	dmb--jcc
+	dmb--gqv
+	knr [color=red, shape=circle]
+	knr--dmb
+	knr--jrs
+	knr--jjx
+	knr--mxs
+	cxz [color=red, shape=circle]
+	cxz--dmb
+	cxz--chj
+	cxz--tpt
+	cxz--bqm
+	jcc [color=red, shape=circle]
+	jcc--dmb
+	jcc--mns
+	jcc--pcg
+	jcc--xhf
+	lnq [color=red, shape=circle]
+	lnq--klm
+	lnq--szx
+	lnq--lbd
+	lnq--pjv
+	fqk [color=green, shape=circle]
+	fqk--cfj
+	fqk--lvt
+	fqk--sdb
+	fqk--xdv
+	cfj [color=green, shape=circle]
+	cfj--fqk
+	cfj--krf
+	cfj--zrb
+	cfj--szh
+	qhl [color=green, shape=circle]
+	qhl--btg
+	qhl--spc
+	qhl--nzb
+	qhl--dvq
+	kbq [color=red, shape=circle]
+	kbq--dvs
+	kbq--jvr
+	kbq--stq
+	kbq--kgg
+	kbq--btz
+	kbq--jzv
+	bch [color=red, shape=circle]
+	bch--zff
+	bch--dxq
+	bch--sct
+	bch--ddv
+	jkk [color=red, shape=circle]
+	jkk--vpk
+	jkk--ffq
+	jkk--pdb
+	jkk--gcd
+	vpk [color=red, shape=circle]
+	vpk--jkk
+	vpk--frm
+	vpk--tmk
+	vpk--qfp
+	vpk--drv
+	pdb [color=red, shape=circle]
+	pdb--jkk
+	pdb--ftq
+	pdb--xgb
+	pdb--tjt
+	gcd [color=red, shape=circle]
+	gcd--jkk
+	gcd--nzq
+	gcd--smp
+	gcd--qbv
+	cvh [color=green, shape=circle]
+	cvh--szh
+	cvh--zzr
+	cvh--fql
+	cvh--fbp
+	szh [color=green, shape=circle]
+	szh--cvh
+	szh--ngc
+	szh--xdr
+	szh--xxz
+	szh--cfj
+	szh--kpj
+	zzr [color=green, shape=circle]
+	zzr--cvh
+	zzr--rcg
+	zzr--xzz
+	zzr--mmf
+	zzr--mkr
+	fbp [color=green, shape=circle]
+	fbp--cvh
+	fbp--bbr
+	fbp--php
+	fbp--jrn
+	jpp [color=green, shape=circle]
+	jpp--vhs
+	jpp--css
+	jpp--msc
+	jpp--rcm
+	cgr [color=red, shape=circle]
+	cgr--kgk
+	cgr--xbm
+	cgr--jgr
+	cgr--vqx
+	cgr--cfs
+	kgk [color=red, shape=circle]
+	kgk--cgr
+	kgk--njr
+	kgk--szx
+	kgk--mbk
+	jgr [color=red, shape=circle]
+	jgr--cgr
+	jgr--gfr
+	jgr--dqq
+	jgr--cfs
+	tql [color=red, shape=circle]
+	tql--qzf
+	tql--zsh
+	tql--xms
+	tql--xrv
+	tql--xtc
+	qzf [color=red, shape=circle]
+	qzf--tql
+	qzf--nbg
+	qzf--dvs
+	qzf--njh
+	xms [color=red, shape=circle]
+	xms--tql
+	xms--kbt
+	xms--zpb
+	xms--ckq
+	xsg [color=green, shape=circle]
+	xsg--xkq
+	xsg--pxt
+	xsg--vlp
+	xsg--hmx
+	xkq [color=green, shape=circle]
+	xkq--xsg
+	xkq--bjl
+	xkq--cnj
+	xkq--hts
+	xkq--rcm
+	vlp [color=green, shape=circle]
+	vlp--xsg
+	vlp--zvn
+	vlp--gcf
+	vlp--spb
+	blb [color=red, shape=circle]
+	blb--fkt
+	blb--jrf
+	blb--lfn
+	blb--cmq
+	blb--bqf
+	jrf [color=red, shape=circle]
+	jrf--blb
+	jrf--mdk
+	jrf--kkt
+	jrf--lkb
+	xdr [color=green, shape=circle]
+	xdr--mjr
+	xdr--bxx
+	xdr--kft
+	xdr--szh
+	xdr--djq
+	ztg [color=red, shape=circle]
+	ztg--vzc
+	ztg--thp
+	ztg--xsn
+	ztg--mpq
+	ztg--ffq
+	hlj [color=green, shape=circle]
+	hlj--jcs
+	hlj--rzk
+	hlj--gbr
+	hlj--rjc
+	rzk [color=green, shape=circle]
+	rzk--hlj
+	rzk--nxx
+	rzk--stb
+	rzk--lkl
+	gbr [color=green, shape=circle]
+	gbr--hlj
+	gbr--jgc
+	gbr--gfl
+	gbr--zqp
+	gbr--stp
+	tlt [color=green, shape=circle]
+	tlt--kxm
+	tlt--rpz
+	tlt--gff
+	tlt--jft
+	kxm [color=green, shape=circle]
+	kxm--tlt
+	kxm--ghz
+	kxm--mjr
+	kxm--gjc
+	rpz [color=green, shape=circle]
+	rpz--tlt
+	rpz--bhv
+	rpz--vcs
+	rpz--xgx
+	rpz--mng
+	lxs [color=green, shape=circle]
+	lxs--stp
+	lxs--bdt
+	lxs--mtb
+	lxs--ngn
+	stp [color=green, shape=circle]
+	stp--lxs
+	stp--pxt
+	stp--jxg
+	stp--gbr
+	bdt [color=green, shape=circle]
+	bdt--lxs
+	bdt--hgc
+	bdt--hjg
+	bdt--dqn
+	mtb [color=green, shape=circle]
+	mtb--lxs
+	mtb--xbl
+	mtb--mfz
+	mtb--xnp
+	dcs [color=red, shape=circle]
+	dcs--ssn
+	dcs--zkh
+	dcs--shh
+	dcs--qvf
+	dcs--fgn
+	stq [color=red, shape=circle]
+	stq--zdx
+	stq--fpj
+	stq--kbq
+	stq--fgn
+	sjs [color=red, shape=circle]
+	sjs--ltv
+	sjs--kjr
+	sjs--xfk
+	sjs--ftx
+	phq [color=red, shape=circle]
+	phq--lbs
+	phq--qpb
+	phq--pds
+	phq--jzz
+	dbn [color=red, shape=circle]
+	dbn--qpb
+	dbn--ckq
+	dbn--dqj
+	dbn--lkb
+	mdh [color=green, shape=circle]
+	mdh--tbj
+	mdh--lhd
+	mdh--ktt
+	mdh--rcr
+	mdh--jnl
+	rcr [color=green, shape=circle]
+	rcr--mdh
+	rcr--tpn
+	rcr--hfx
+	rcr--gcf
+	jnl [color=green, shape=circle]
+	jnl--mdh
+	jnl--kgf
+	jnl--css
+	jnl--tvx
+	pck [color=red, shape=circle]
+	pck--dsr
+	pck--fdp
+	pck--mzb
+	pck--bdq
+	bdq [color=red, shape=circle]
+	bdq--pck
+	bdq--rbg
+	bdq--bsk
+	bdq--lbg
+	ttx [color=green, shape=circle]
+	ttx--qvb
+	ttx--kcs
+	ttx--gpf
+	ttx--vkr
+	qvb [color=green, shape=circle]
+	qvb--ttx
+	qvb--dzk
+	qvb--dpf
+	qvb--nbp
+	kcs [color=green, shape=circle]
+	kcs--ttx
+	kcs--fql
+	kcs--mld
+	kcs--vpl
+	kcs--clb
+	gpf [color=green, shape=circle]
+	gpf--ttx
+	gpf--smr
+	gpf--vpl
+	gpf--hck
+	gpf--djq
+	ppz [color=green, shape=circle]
+	ppz--zkm
+	ppz--lcj
+	ppz--snm
+	ppz--mnq
+	zkm [color=green, shape=circle]
+	zkm--ppz
+	zkm--cph
+	zkm--ssc
+	zkm--mcm
+	zkm--bjb
+	snm [color=green, shape=circle]
+	snm--ppz
+	snm--lnh
+	snm--jsz
+	snm--mhs
+	snm--lpd
+	zpb [color=red, shape=circle]
+	zpb--lzr
+	zpb--xms
+	zpb--fpj
+	zpb--frr
+	zpb--krj
+	rvd [color=red, shape=circle]
+	rvd--nqs
+	rvd--dcm
+	rvd--ftg
+	rvd--pmm
+	rvd--brj
+	svv [color=red, shape=circle]
+	svv--zff
+	svv--jnm
+	svv--qkl
+	svv--bvs
+	mkt [color=green, shape=circle]
+	mkt--vxg
+	mkt--lqk
+	mkt--pjq
+	mkt--hxt
+	hxt [color=green, shape=circle]
+	hxt--mkt
+	hxt--skk
+	hxt--cgq
+	hxt--fph
+	cqd [color=red, shape=circle]
+	cqd--mzq
+	cqd--ctg
+	cqd--dkb
+	cqd--mqd
+	mzq [color=red, shape=circle]
+	mzq--cqd
+	mzq--krl
+	mzq--hjl
+	mzq--dkb
+	mqd [color=red, shape=circle]
+	mqd--cqd
+	mqd--xsl
+	mqd--plj
+	mqd--dtg
+	mqd--rmx
+	mqd--tcc
+	lfn [color=red, shape=circle]
+	lfn--blb
+	lfn--vzc
+	lfn--klh
+	lfn--ngz
+	mhs [color=green, shape=circle]
+	mhs--dnz
+	mhs--hzs
+	mhs--snm
+	mhs--lqp
+	mhs--mnq
+	ksx [color=green, shape=circle]
+	ksx--dnz
+	ksx--tnd
+	ksx--brp
+	ksx--fjc
+	ksx--lxd
+	bmm [color=green, shape=circle]
+	bmm--jzf
+	bmm--ptc
+	bmm--nnd
+	bmm--tzv
+	jzf [color=green, shape=circle]
+	jzf--bmm
+	jzf--gmp
+	jzf--xzb
+	jzf--jbr
+	rph [color=red, shape=circle]
+	rph--mdk
+	rph--tdj
+	rph--nlb
+	rph--sql
+	nlb [color=red, shape=circle]
+	nlb--rph
+	nlb--dzc
+	nlb--rbd
+	nlb--skd
+	nlb--lnl
+	sql [color=red, shape=circle]
+	sql--rph
+	sql--hnm
+	sql--bfx
+	sql--krj
+	fnp [color=green, shape=circle]
+	fnp--smr
+	fnp--cqg
+	fnp--hpx
+	fnp--bjl
+	fnp--slk
+	fnp--mgf
+	cxf [color=red, shape=circle]
+	cxf--pgs
+	cxf--rlk
+	cxf--qvc
+	cxf--mrg
+	thz [color=red, shape=circle]
+	thz--lbd
+	thz--ghm
+	thz--hcc
+	thz--nhz
+	thz--bhp
+	hcc [color=red, shape=circle]
+	hcc--thz
+	hcc--qdp
+	hcc--vrk
+	hcc--pcr
+	hcc--fvk
+	vnd [color=red, shape=circle]
+	vnd--zsh
+	vnd--sdj
+	vnd--jmd
+	vnd--vvf
+	sgn [color=red, shape=circle]
+	sgn--zsh
+	sgn--qbm
+	sgn--mbh
+	sgn--tgl
+	sgn--ghq
+	pcr [color=red, shape=circle]
+	pcr--bfq
+	pcr--hcc
+	pcr--fpj
+	pcr--nhd
+	khd [color=red, shape=circle]
+	khd--chs
+	khd--ghs
+	khd--fkc
+	khd--grf
+	rhx [color=red, shape=circle]
+	rhx--vnq
+	rhx--vbq
+	rhx--rlq
+	rhx--rpn
+	vbq [color=red, shape=circle]
+	vbq--rhx
+	vbq--xbc
+	vbq--crp
+	vbq--lmj
+	rlq [color=red, shape=circle]
+	rlq--rhx
+	rlq--lhf
+	rlq--rqp
+	rlq--sth
+	tpn [color=green, shape=circle]
+	tpn--pqb
+	tpn--bxc
+	tpn--nmj
+	tpn--rcr
+	nmj [color=green, shape=circle]
+	nmj--tpn
+	nmj--pch
+	nmj--slk
+	nmj--jvk
+	tpb [color=green, shape=circle]
+	tpb--xsl [style="dotted"]
+	tpb--mvg
+	tpb--rgs
+	tpb--htq
+	tpb--gkr
+	bhz [color=red, shape=circle]
+	bhz--ffd
+	bhz--fkt
+	bhz--mns
+	bhz--xrz
+	zdn [color=red, shape=circle]
+	zdn--mtf
+	zdn--lqj
+	zdn--xfc
+	zdn--jgs
+	lqj [color=red, shape=circle]
+	lqj--zdn
+	lqj--ltl
+	lqj--clr
+	lqj--tcc
+	bbr [color=green, shape=circle]
+	bbr--fql
+	bbr--fbp
+	bbr--grg
+	bbr--jgj
+	spz [color=green, shape=circle]
+	spz--nqb
+	spz--ptt
+	spz--grg
+	spz--mls
+	nqb [color=green, shape=circle]
+	nqb--spz
+	nqb--fnn
+	nqb--scs
+	nqb--mgf
+	nqb--kdp
+	phs [color=green, shape=circle]
+	phs--ftr
+	phs--hdq
+	phs--lbb
+	phs--zhx
+	phs--cpj
+	zfb [color=red, shape=circle]
+	zfb--qgv
+	zfb--nxg
+	zfb--jzv
+	zfb--jhq
+	nxg [color=red, shape=circle]
+	nxg--zfb
+	nxg--dcx
+	nxg--rxj
+	nxg--lmd
+	jzv [color=red, shape=circle]
+	jzv--zfb
+	jzv--htx
+	jzv--gtp
+	jzv--kbq
+	jzv--frr
+	jhq [color=red, shape=circle]
+	jhq--zfb
+	jhq--hhf
+	jhq--vnq
+	jhq--ckq
+	qkt [color=red, shape=circle]
+	qkt--qgv
+	qkt--lsk
+	qkt--dxq
+	qkt--frc
+	qkt--brt
+	flb [color=green, shape=circle]
+	flb--zfm
+	flb--ptt
+	flb--lmb
+	flb--hrg
+	flb--clf
+	lmb [color=green, shape=circle]
+	lmb--flb
+	lmb--kxv
+	lmb--hfz
+	lmb--jrr
+	lmb--vnn
+	clf [color=green, shape=circle]
+	clf--flb
+	clf--rcm
+	clf--tkn
+	clf--clb
+	hnq [color=green, shape=circle]
+	hnq--chh
+	hnq--trs
+	hnq--fhk
+	hnq--lpv
+	bxx [color=green, shape=circle]
+	bxx--jrr
+	bxx--mmf
+	bxx--xdr
+	bxx--vcs
+	bxx--spb
+	jrr [color=green, shape=circle]
+	jrr--bxx
+	jrr--gxs
+	jrr--lmb
+	jrr--snf
+	jrr--llk
+	vcs [color=green, shape=circle]
+	vcs--bxx
+	vcs--rpz
+	vcs--mhd
+	vcs--nrz
+	dzk [color=green, shape=circle]
+	dzk--qvb
+	dzk--ncc
+	dzk--dvk
+	dzk--rkl
+	dzk--ptc
+	rkl [color=green, shape=circle]
+	rkl--dzk
+	rkl--ksf
+	rkl--zll
+	rkl--spd
+	qnd [color=green, shape=circle]
+	qnd--mcq
+	qnd--dlg
+	qnd--jcs
+	qnd--trs
+	qnd--fph
+	zkh [color=red, shape=circle]
+	zkh--cqp
+	zkh--dcs
+	zkh--snq
+	zkh--bvs
+	zkh--gqj
+	snq [color=red, shape=circle]
+	snq--zkh
+	snq--cbz
+	snq--dhs
+	snq--cpn
+	mvg [color=green, shape=circle]
+	mvg--fml
+	mvg--tmq
+	mvg--gjt
+	mvg--tpb
+	mvg--vpm
+	vpm [color=green, shape=circle]
+	vpm--mvg
+	vpm--bfj
+	vpm--zfh
+	vpm--thr
+	zxr [color=red, shape=circle]
+	zxr--ljp
+	zxr--ppq
+	zxr--lnt
+	zxr--kzn
+	qvc [color=red, shape=circle]
+	qvc--zlg
+	qvc--cxf
+	qvc--fgj
+	qvc--dxx
+	qvc--skp
+	nhf [color=red, shape=circle]
+	nhf--glx
+	nhf--szl
+	nhf--vcg
+	nhf--rhd
+	dcx [color=red, shape=circle]
+	dcx--zkc
+	dcx--nxg
+	dcx--cpp
+	dcx--slx
+	zkc [color=red, shape=circle]
+	zkc--dcx
+	zkc--cpp
+	zkc--rpk
+	zkc--cbb
+	zkc--bdj
+	zkc--sng
+	cpp [color=red, shape=circle]
+	cpp--dcx
+	cpp--zvx
+	cpp--zkc
+	cpp--rpk
+	slx [color=red, shape=circle]
+	slx--dcx
+	slx--nnf
+	slx--clq
+	slx--khp
+	slx--lbs
+	gqr [color=green, shape=circle]
+	gqr--thr
+	gqr--vjt
+	gqr--jgp
+	gqr--fkf
+	jgp [color=green, shape=circle]
+	jgp--gqr
+	jgp--zdd
+	jgp--vnv
+	jgp--sdr
+	jgp--zlz
+	gtg [color=green, shape=circle]
+	gtg--ffp
+	gtg--jfs
+	gtg--xbl
+	gtg--tnf
+	ffp [color=green, shape=circle]
+	ffp--gtg
+	ffp--gkn
+	ffp--pbx
+	ffp--hdt
+	llx [color=red, shape=circle]
+	llx--dxq
+	llx--xqb
+	llx--fpj
+	llx--zpn
+	ggv [color=red, shape=circle]
+	ggv--xks
+	ggv--tjz
+	ggv--rcn
+	ggv--nlh
+	dzc [color=red, shape=circle]
+	dzc--tqv
+	dzc--nlb
+	dzc--gxv
+	dzc--fkt
+	tqv [color=red, shape=circle]
+	tqv--dzc
+	tqv--jgx
+	tqv--vss
+	tqv--krj
+	gxv [color=red, shape=circle]
+	gxv--dzc
+	gxv--fhx
+	gxv--hbv
+	gxv--qzb
+	gxv--cvs
+	trs [color=green, shape=circle]
+	trs--qnd
+	trs--ngr
+	trs--bpv
+	trs--hnq
+	ngr [color=green, shape=circle]
+	ngr--trs
+	ngr--jdm
+	ngr--stb
+	ngr--hkf
+	bpv [color=green, shape=circle]
+	bpv--trs
+	bpv--fjp
+	bpv--kgf
+	bpv--tkn
+	bpv--gnl
+	bpv--tvq
+	zcn [color=red, shape=circle]
+	zcn--mgv
+	zcn--lht
+	zcn--lrt
+	zcn--kdr
+	zcn--cfs
+	lrt [color=red, shape=circle]
+	lrt--zcn
+	lrt--dnr
+	lrt--mns
+	lrt--vnx
+	grd [color=red, shape=circle]
+	grd--lhf
+	grd--llt
+	grd--njn
+	grd--rvl
+	dlt [color=red, shape=circle]
+	dlt--bbt
+	dlt--njx
+	dlt--smp
+	dlt--fqs
+	bbt [color=red, shape=circle]
+	bbt--dlt
+	bbt--fdp
+	bbt--bdj
+	bbt--ccx
+	njx [color=red, shape=circle]
+	njx--dlt
+	njx--plj
+	njx--hnz
+	njx--hsr
+	smp [color=red, shape=circle]
+	smp--dlt
+	smp--xlk
+	smp--hnf
+	smp--gcd
+	trb [color=green, shape=circle]
+	trb--jgh
+	trb--nzb
+	trb--mng
+	trb--zvn
+	trb--tvx
+	tkv [color=red, shape=circle]
+	tkv--mxf
+	tkv--jdc
+	tkv--zts
+	tkv--sdj
+	mqq [color=green, shape=circle]
+	mqq--qns
+	mqq--mjh
+	mqq--pxt
+	mqq--bpl
+	qns [color=green, shape=circle]
+	qns--mqq
+	qns--xnz
+	qns--zbt
+	qns--mjs
+	qns--djn
+	mjh [color=green, shape=circle]
+	mjh--mqq
+	mjh--fhl
+	mjh--lhg
+	mjh--ndg
+	mjh--rrs
+	txn [color=green, shape=circle]
+	txn--htm
+	txn--jlt
+	txn--fjd
+	txn--lqp
+	ngc [color=green, shape=circle]
+	ngc--szh
+	ngc--rrs
+	ngc--thd
+	ngc--npd
+	ngc--jgh
+	ngc--ksd
+	rrs [color=green, shape=circle]
+	rrs--ngc
+	rrs--ccn
+	rrs--mjh
+	rrs--bbl
+	thd [color=green, shape=circle]
+	thd--ngc
+	thd--jzc
+	thd--lkl
+	thd--xxq
+	dvb [color=green, shape=circle]
+	dvb--hck
+	dvb--jzh
+	dvb--mql
+	dvb--dzb
+	dvb--xgx
+	hck [color=green, shape=circle]
+	hck--dvb
+	hck--rnv
+	hck--vhs
+	hck--gpf
+	llt [color=red, shape=circle]
+	llt--grd
+	llt--cht
+	llt--jgv
+	llt--skd
+	llt--kjp
+	skd [color=red, shape=circle]
+	skd--llt
+	skd--hbv
+	skd--nlb
+	skd--gdc
+	njn [color=red, shape=circle]
+	njn--sqx
+	njn--vkp
+	njn--grd
+	njn--kxt
+	njn--ndq
+	vkp [color=red, shape=circle]
+	vkp--njn
+	vkp--mhc
+	vkp--xxc
+	vkp--qbq
+	qqh [color=red, shape=circle]
+	qqh--ngz
+	qqh--fjj
+	qqh--sng
+	qqh--xbc
+	ntm [color=red, shape=circle]
+	ntm--hgj
+	ntm--kxt
+	ntm--hzl
+	ntm--xbj
+	qjp [color=green, shape=circle]
+	qjp--zcm
+	qjp--fjz
+	qjp--hlk
+	qjp--jrx
+	qjp--bjb
+	kqj [color=red, shape=circle]
+	kqj--dtg
+	kqj--rhd
+	kqj--pbg
+	kqj--xtm
+	rhd [color=red, shape=circle]
+	rhd--kqj
+	rhd--fsg
+	rhd--qpb
+	rhd--nhf
+	rhd--klm
+	grg [color=green, shape=circle]
+	grg--spz
+	grg--xdv
+	grg--bbr
+	grg--pgm
+	zts [color=red, shape=circle]
+	zts--tkv
+	zts--zff
+	zts--dlq
+	zts--bqm
+	zts--ljk
+	zts--xfc
+	bqm [color=red, shape=circle]
+	bqm--zts
+	bqm--zgf
+	bqm--cxz
+	bqm--bjq
+	dnr [color=red, shape=circle]
+	dnr--lrt
+	dnr--bvs
+	dnr--fgb
+	dnr--gdc
+	bdj [color=red, shape=circle]
+	bdj--bbt
+	bdj--xdh
+	bdj--hfd
+	bdj--zkc
+	krl [color=red, shape=circle]
+	krl--hxm
+	krl--mzq
+	krl--hkg
+	krl--bjq
+	mdl [color=red, shape=circle]
+	mdl--bbf
+	mdl--vpp
+	mdl--knt
+	mdl--pkk
+	mdl--nns
+	mdl--ggt
+	mdl--gds
+	tkg [color=red, shape=circle]
+	tkg--hdx
+	tkg--qzx
+	tkg--gvl
+	tkg--jzz
+	rch [color=red, shape=circle]
+	rch--lbs
+	rch--szl
+	rch--pbr
+	rch--mjb
+	rch--mvn
+	pbr [color=red, shape=circle]
+	pbr--rch
+	pbr--vpq
+	pbr--ggt
+	pbr--csq
+	jdj [color=green, shape=circle]
+	jdj--tld
+	jdj--zfh
+	jdj--spc
+	jdj--gmm
+	pjr [color=green, shape=circle]
+	pjr--qdh
+	pjr--knc
+	pjr--thg
+	pjr--mjx
+	vgl [color=green, shape=circle]
+	vgl--msg
+	vgl--bpl
+	vgl--kbc
+	vgl--sgx
+	nkn [color=red, shape=circle]
+	nkn--chp
+	nkn--jrs
+	nkn--mlp
+	nkn--sct
+	chp [color=red, shape=circle]
+	chp--nkn
+	chp--frk
+	chp--vgx
+	chp--khq
+	chp--kcb
+	chp--gdc
+	sct [color=red, shape=circle]
+	sct--nkn
+	sct--bch
+	sct--srq
+	sct--xmj
+	nbz [color=green, shape=circle]
+	nbz--blp
+	nbz--jnd
+	nbz--gpq
+	nbz--xtf
+	nbz--nbt
+	nbz--czx
+	frk [color=red, shape=circle]
+	frk--mtl
+	frk--chp
+	frk--pbg
+	frk--ckq
+	pxp [color=green, shape=circle]
+	pxp--djq
+	pxp--nvp
+	pxp--qrv
+	pxp--zrb
+	djq [color=green, shape=circle]
+	djq--pxp
+	djq--pjn
+	djq--gpf
+	djq--xdr
+	zrb [color=green, shape=circle]
+	zrb--pxp
+	zrb--pld
+	zrb--vtl
+	zrb--cfj
+	ggp [color=red, shape=circle]
+	ggp--mpf
+	ggp--zqr
+	ggp--fkq
+	ggp--nsl
+	fkq [color=red, shape=circle]
+	fkq--ggp
+	fkq--hzz
+	fkq--gnv
+	fkq--fsg
+	cph [color=green, shape=circle]
+	cph--zkm
+	cph--btn
+	cph--kqc
+	cph--bds
+	cph--qrn
+	czx [color=green, shape=circle]
+	czx--fhl
+	czx--hsb
+	czx--nbz
+	czx--jbr
+	czx--zpq
+	rlk [color=red, shape=circle]
+	rlk--xbm
+	rlk--fkc
+	rlk--cxf
+	rlk--vss
+	xkd [color=green, shape=circle]
+	xkd--kft
+	xkd--zdd
+	xkd--lbn
+	xkd--zcq
+	shg [color=green, shape=circle]
+	shg--qrx
+	shg--mmf
+	shg--jxp
+	shg--jrp
+	rjj [color=green, shape=circle]
+	rjj--qrx
+	rjj--nvs
+	rjj--bmv
+	rjj--fqz
+	xbs [color=green, shape=circle]
+	xbs--hzs
+	xbs--vls
+	xbs--rlh
+	xbs--bsx
+	xbs--kbc
+	xqf [color=green, shape=circle]
+	xqf--ptc
+	xqf--srv
+	xqf--frg
+	xqf--ptt
+	srv [color=green, shape=circle]
+	srv--xqf
+	srv--cbk
+	srv--xcz
+	srv--ddl
+	srv--kdp
+	stm [color=green, shape=circle]
+	stm--bfl
+	stm--snf
+	stm--fxc
+	stm--kbx
+	stm--szc
+	stm--jpj
+	fxc [color=green, shape=circle]
+	fxc--stm
+	fxc--htq
+	fxc--gfl
+	fxc--hbj
+	vgz [color=red, shape=circle]
+	vgz--prp
+	vgz--vbg
+	vgz--lzk
+	vgz--bcv
+	vgz--qzl
+	vgz--mpj
+	vgx [color=red, shape=circle]
+	vgx--lrr
+	vgx--chp
+	vgx--mxz
+	vgx--sdj
+	lrr [color=red, shape=circle]
+	lrr--vgx
+	lrr--xgb
+	lrr--mmj
+	lrr--zvx
+	zjd [color=red, shape=circle]
+	zjd--ngz
+	zjd--qbd
+	zjd--cld
+	zjd--fbd
+	kbx [color=green, shape=circle]
+	kbx--flc
+	kbx--fql
+	kbx--stm
+	kbx--dsl
+	dsl [color=green, shape=circle]
+	dsl--kbx
+	dsl--vqn
+	dsl--xbg
+	dsl--jxx
+	sth [color=red, shape=circle]
+	sth--mdk
+	sth--rlq
+	sth--rfq
+	sth--sbg
+	gtx [color=green, shape=circle]
+	gtx--vtl
+	gtx--cls
+	gtx--lrj
+	gtx--vhq
+	cls [color=green, shape=circle]
+	cls--gtx
+	cls--pld
+	cls--skk
+	cls--dqn
+	cls--gxj
+	lrj [color=green, shape=circle]
+	lrj--gtx
+	lrj--ktb
+	lrj--jpj
+	lrj--qzg
+	jrx [color=green, shape=circle]
+	jrx--dhk
+	jrx--xzm
+	jrx--tdp
+	jrx--qjp
+	jrx--dxv
+	jrt [color=red, shape=circle]
+	jrt--xnk
+	jrt--dlq
+	jrt--zzk
+	jrt--hnz
+	xnk [color=red, shape=circle]
+	xnk--jrt
+	xnk--xkv
+	xnk--qcm
+	xnk--tpt
+	zzk [color=red, shape=circle]
+	zzk--jrt
+	zzk--xfc
+	zzk--kzm
+	zzk--xqv
+	hnt [color=green, shape=circle]
+	hnt--xsx
+	hnt--hzd
+	hnt--gcb
+	hnt--scr
+	xsn [color=red, shape=circle]
+	xsn--lfc
+	xsn--ztg
+	xsn--qmq
+	xsn--rlr
+	pxx [color=green, shape=circle]
+	pxx--qsf
+	pxx--gms
+	pxx--qkd
+	pxx--fxs
+	qbv [color=red, shape=circle]
+	qbv--fpg
+	qbv--jml
+	qbv--snv
+	qbv--gcd
+	rqc [color=red, shape=circle]
+	rqc--gtp
+	rqc--ppg
+	rqc--bfm
+	rqc--pcg
+	gtp [color=red, shape=circle]
+	gtp--rqc
+	gtp--jzv
+	gtp--ngl
+	gtp--zbm
+	dpf [color=green, shape=circle]
+	dpf--npd
+	dpf--qvb
+	dpf--hhc
+	dpf--gpq
+	gpq [color=green, shape=circle]
+	gpq--dpf
+	gpq--nbz
+	gpq--jmx
+	gpq--nnd
+	gpq--ffb
+	hdq [color=green, shape=circle]
+	hdq--fcp
+	hdq--phs
+	hdq--ccs
+	hdq--mph
+	hdq--gzl
+	qzr [color=red, shape=circle]
+	qzr--rsz
+	qzr--jst
+	qzr--hfc
+	qzr--rpn
+	zzp [color=green, shape=circle]
+	zzp--vls
+	zzp--nbh
+	zzp--srb
+	zzp--gxk
+	rvj [color=red, shape=circle]
+	rvj--xlb
+	rvj--nhk
+	rvj--bpm
+	rvj--kcg
+	kkg [color=red, shape=circle]
+	kkg--kmd
+	kkg--pqs
+	kkg--lnb
+	kkg--rnq
+	kkg--mpj
+	kkg--fdt
+	mpj [color=red, shape=circle]
+	mpj--kkg
+	mpj--qlv
+	mpj--vgz
+	mpj--ngq
+	hzz [color=red, shape=circle]
+	hzz--fkq
+	hzz--zxm
+	hzz--ghp
+	hzz--lsk
+	hzz--clr
+	zxm [color=red, shape=circle]
+	zxm--hzz
+	zxm--rdk
+	zxm--tkp
+	zxm--xqh
+	jtv [color=red, shape=circle]
+	jtv--fpg
+	jtv--hzl
+	jtv--nmc
+	jtv--cld
+	gsv [color=red, shape=circle]
+	gsv--lpp
+	gsv--mtc
+	gsv--hfd
+	gsv--fpq
+	hfd [color=red, shape=circle]
+	hfd--gsv
+	hfd--lfs
+	hfd--bdj
+	hfd--mbh
+	hfd--fdx
+	xrm [color=red, shape=circle]
+	xrm--cfm
+	xrm--qvf
+	xrm--hkg
+	xrm--ccx
+	gkb [color=red, shape=circle]
+	gkb--cfm
+	gkb--blh
+	gkb--tgl
+	gkb--gdc
+	znl [color=green, shape=circle]
+	znl--jfs
+	znl--ppm
+	znl--gkh
+	znl--mpr
+	jfs [color=green, shape=circle]
+	jfs--znl
+	jfs--gtg
+	jfs--xtf
+	jfs--vrn
+	hfx [color=green, shape=circle]
+	hfx--qdh
+	hfx--bsx
+	hfx--rcr
+	hfx--zpq
+	hfx--kbj
+	zpq [color=green, shape=circle]
+	zpq--hfx
+	zpq--rng
+	zpq--cfc
+	zpq--czx
+	zpq--sds
+	jft [color=green, shape=circle]
+	jft--qgh
+	jft--tlt
+	jft--qph
+	jft--rcg
+	slv [color=red, shape=circle]
+	slv--xhp
+	slv--tkp
+	slv--pmm
+	slv--pjj
+	mmz [color=green, shape=circle]
+	mmz--kgx
+	mmz--hnr
+	mmz--mnz
+	mmz--zhx
+	zzv [color=red, shape=circle]
+	zzv--khp
+	zzv--chs
+	zzv--rmx
+	zzv--czb
+	khp [color=red, shape=circle]
+	khp--zzv
+	khp--zcc
+	khp--vcn
+	khp--xfz
+	khp--slx
+	khp--bdb
+	cpz [color=green, shape=circle]
+	cpz--lbn
+	cpz--qbc
+	cpz--kkk
+	cpz--gjh
+	pbg [color=red, shape=circle]
+	pbg--frk
+	pbg--mtc
+	pbg--kfj
+	pbg--fbs
+	pbg--rrn
+	pbg--hlm
+	pbg--kqj
+	hlm [color=red, shape=circle]
+	hlm--pbg
+	hlm--fgj
+	hlm--shc
+	hlm--jgx
+	hlm--mcs
+	skn [color=green, shape=circle]
+	skn--jrn
+	skn--vcr
+	skn--btn
+	skn--xcn
+	skn--hhp
+	skn--ncp
+	jrn [color=green, shape=circle]
+	jrn--skn
+	jrn--mql
+	jrn--fbp
+	jrn--xpg
+	vcr [color=green, shape=circle]
+	vcr--skn
+	vcr--gxk
+	vcr--fvj
+	vcr--qgp
+	btn [color=green, shape=circle]
+	btn--skn
+	btn--cph
+	btn--xgm
+	btn--vmx
+	qzx [color=red, shape=circle]
+	qzx--tkg
+	qzx--pqs
+	qzx--skz
+	qzx--lhn
+	qzx--hkn
+	xfk [color=red, shape=circle]
+	xfk--pjv
+	xfk--sjs
+	xfk--lkf
+	xfk--mxs
+	lkf [color=red, shape=circle]
+	lkf--xfk
+	lkf--kht
+	lkf--xkv
+	lkf--lbs
+	lkf--tjz
+	vkr [color=green, shape=circle]
+	vkr--vkb
+	vkr--grv
+	vkr--ttx
+	vkr--tsm
+	grv [color=green, shape=circle]
+	grv--vkr
+	grv--ltj
+	grv--dvf
+	grv--gjc
+	ldq [color=red, shape=circle]
+	ldq--fzm
+	ldq--nrv
+	ldq--khn
+	ldq--zrj
+	nxx [color=green, shape=circle]
+	nxx--rzk
+	nxx--ccs
+	nxx--hbk
+	nxx--clb
+	hbk [color=green, shape=circle]
+	hbk--nxx
+	hbk--rnv
+	hbk--lbb
+	hbk--mjx
+	clb [color=green, shape=circle]
+	clb--nxx
+	clb--kcs
+	clb--hsb
+	clb--clf
+	mjn [color=green, shape=circle]
+	mjn--lcj
+	mjn--rgs
+	mjn--nmm
+	mjn--php
+	bvs [color=red, shape=circle]
+	bvs--svv
+	bvs--dnr
+	bvs--sjt
+	bvs--lfs
+	bvs--zkh
+	lfs [color=red, shape=circle]
+	lfs--bvs
+	lfs--dlq
+	lfs--hfd
+	lfs--xcd
+	njr [color=red, shape=circle]
+	njr--znd
+	njr--kgk
+	njr--lnb
+	njr--zdr
+	mmx [color=green, shape=circle]
+	mmx--fpt
+	mmx--zpf
+	mmx--cqg
+	mmx--ktd
+	blh [color=red, shape=circle]
+	blh--xqh
+	blh--xnd
+	blh--bkk
+	blh--vdr
+	blh--nzq
+	blh--gkb
+	vdr [color=red, shape=circle]
+	vdr--blh
+	vdr--jgx
+	vdr--xlk
+	vdr--mpf
+	rjp [color=red, shape=circle]
+	rjp--vbg
+	rjp--njh
+	rjp--bcl
+	rjp--shj
+	bcl [color=red, shape=circle]
+	bcl--rjp
+	bcl--hth
+	bcl--ffd
+	bcl--vnx
+	bcl--fbd
+	vnx [color=red, shape=circle]
+	vnx--bhp
+	vnx--bcl
+	vnx--hxm
+	vnx--lrt
+	cdb [color=green, shape=circle]
+	cdb--ktt
+	cdb--plh
+	cdb--lqt
+	cdb--plr
+	xdh [color=red, shape=circle]
+	xdh--vgn
+	xdh--xjs
+	xdh--plk
+	xdh--dvj
+	xdh--bdj
+	xdh--qcm
+	dvj [color=red, shape=circle]
+	dvj--xdh
+	dvj--pjk
+	dvj--zqr
+	dvj--xjs
+	dvj--bbh
+	drv [color=red, shape=circle]
+	drv--vpk
+	drv--bvb
+	drv--ctm
+	drv--cld
+	drv--bjm
+	bjl [color=green, shape=circle]
+	bjl--xkq
+	bjl--bsq
+	bjl--nst
+	bjl--fnp
+	pjk [color=red, shape=circle]
+	pjk--tst
+	pjk--dvj
+	pjk--tcc
+	pjk--rrk
+	nns [color=red, shape=circle]
+	nns--vvr
+	nns--frl
+	nns--mdl
+	nns--xfz
+	hzd [color=green, shape=circle]
+	hzd--bfl
+	hzd--lcz
+	hzd--hnt
+	hzd--bgd
+	lcz [color=green, shape=circle]
+	lcz--hzd
+	lcz--jqg
+	lcz--zrn
+	lcz--bds
+	sqk [color=green, shape=circle]
+	sqk--xzb
+	sqk--ltj
+	sqk--zrn
+	sqk--xzz
+	krf [color=green, shape=circle]
+	krf--fpp
+	krf--sqb
+	krf--xfr
+	krf--cfj
+	sdj [color=red, shape=circle]
+	sdj--vgx
+	sdj--vnd
+	sdj--tkv
+	sdj--rqp
+	sdj--qgx
+	sdj--bvb
+	sdj--tgl
+	sdj--zbq
+	bvb [color=red, shape=circle]
+	bvb--sdj
+	bvb--drv
+	bvb--jgs
+	bvb--jfn
+	tgl [color=red, shape=circle]
+	tgl--sdj
+	tgl--gkb
+	tgl--mbk
+	tgl--sgn
+	tgl--xqv
+	tgl--mvh
+	qbr [color=red, shape=circle]
+	qbr--mxl
+	qbr--vvm
+	qbr--sbg
+	qbr--mch
+	qbr--lfc
+	mxl [color=red, shape=circle]
+	mxl--qbr
+	mxl--zbm
+	mxl--khb
+	mxl--bsk
+	mxl--mrg
+	mxl--jfn
+	mch [color=red, shape=circle]
+	mch--qbr
+	mch--dqj
+	mch--knt
+	mch--ftg
+	mch--zxj
+	lpv [color=green, shape=circle]
+	lpv--dqn
+	lpv--hnq
+	lpv--dvl
+	lpv--lmr
+	lpv--rgr
+	srq [color=red, shape=circle]
+	srq--sct
+	srq--vfp
+	srq--qpg
+	srq--ntk
+	srq--cnl
+	hbj [color=green, shape=circle]
+	hbj--hzk
+	hbj--tmc
+	hbj--fxc
+	hbj--vkb
+	hbj--scl
+	fgb [color=red, shape=circle]
+	fgb--qgd
+	fgb--vfp
+	fgb--ggz
+	fgb--dnr
+	qlv [color=red, shape=circle]
+	qlv--jrs
+	qlv--mpj
+	qlv--dfh
+	qlv--rcn
+	qlv--blf
+	kbj [color=green, shape=circle]
+	kbj--hfx
+	kbj--srd
+	kbj--nbt
+	kbj--xsb
+	nbt [color=green, shape=circle]
+	nbt--kbj
+	nbt--nbz
+	nbt--ccz
+	nbt--scl
+	gts [color=green, shape=circle]
+	gts--lvn
+	gts--mdd
+	gts--jxx
+	gts--gzd
+	gts--hdt
+	mpq [color=red, shape=circle]
+	mpq--jsl
+	mpq--zpn
+	mpq--ztg
+	mpq--xgb
+	bbj [color=red, shape=circle]
+	bbj--lpz
+	bbj--lmj
+	bbj--cnl
+	bbj--plj
+	lmj [color=red, shape=circle]
+	lmj--bbj
+	lmj--nbg
+	lmj--vbq
+	lmj--mxs
+	tnd [color=green, shape=circle]
+	tnd--ksx
+	tnd--djn
+	tnd--lxd
+	tnd--bds
+	jzz [color=red, shape=circle]
+	jzz--scf
+	jzz--dbm
+	jzz--phq
+	jzz--tkg
+	jzz--nkq
+	rnm [color=green, shape=circle]
+	rnm--lpm
+	rnm--jmg
+	rnm--jps
+	rnm--nxz
+	jps [color=green, shape=circle]
+	jps--rnm
+	jps--rnv
+	jps--ccz
+	jps--zlb
+	jps--bjb
+	jps--pzx
+	cgq [color=green, shape=circle]
+	cgq--pxt
+	cgq--vnn
+	cgq--hxt
+	cgq--lrd
+	xbg [color=green, shape=circle]
+	xbg--mph
+	xbg--zfh
+	xbg--dsl
+	xbg--spx
+	xtc [color=red, shape=circle]
+	xtc--xzg
+	xtc--cmk
+	xtc--tql
+	xtc--kcg
+	hqc [color=red, shape=circle]
+	hqc--gfp
+	hqc--sdh
+	hqc--jjf
+	hqc--khq
+	jjf [color=red, shape=circle]
+	jjf--hqc
+	jjf--kjp
+	jjf--bnj
+	jjf--chj
+	zbm [color=red, shape=circle]
+	zbm--rcn
+	zbm--dcm
+	zbm--mxl
+	zbm--qzc
+	zbm--gtp
+	nrv [color=red, shape=circle]
+	nrv--lpz
+	nrv--vmf
+	nrv--xpl
+	nrv--ldq
+	rnv [color=green, shape=circle]
+	rnv--jps
+	rnv--hck
+	rnv--hbk
+	rnv--jkj
+	rnv--vtc
+	vtc [color=green, shape=circle]
+	vtc--rnv
+	vtc--dvq
+	vtc--lvn
+	vtc--mph
+	ssc [color=green, shape=circle]
+	ssc--zcq
+	ssc--zkm
+	ssc--ksf
+	ssc--qqk
+	zlq [color=green, shape=circle]
+	zlq--lvx
+	zlq--krs
+	zlq--xph
+	zlq--blx
+	xph [color=green, shape=circle]
+	xph--zlq
+	xph--jbx
+	xph--nbp
+	xph--chl
+	kjp [color=red, shape=circle]
+	kjp--lkb
+	kjp--llt
+	kjp--jjf
+	kjp--ssf
+	lkb [color=red, shape=circle]
+	lkb--kjp
+	lkb--zdg
+	lkb--dbn
+	lkb--jrf
+	lkb--bbc
+	dcm [color=red, shape=circle]
+	dcm--rvd
+	dcm--vfp
+	dcm--zbm
+	dcm--hfs
+	rxj [color=red, shape=circle]
+	rxj--bcv
+	rxj--mhc
+	rxj--nxg
+	rxj--smm
+	rxj--plb
+	bcv [color=red, shape=circle]
+	bcv--rxj
+	bcv--vpq
+	bcv--fpl
+	bcv--vgz
+	mhc [color=red, shape=circle]
+	mhc--rxj
+	mhc--vkp
+	mhc--xcd
+	mhc--tns
+	mhc--ttv
+	mhc--ddv
+	shc [color=red, shape=circle]
+	shc--hlm
+	shc--rdk
+	shc--pgs
+	shc--zpn
+	xfc [color=red, shape=circle]
+	xfc--zzk
+	xfc--zts
+	xfc--kxh
+	xfc--zdn
+	dhb [color=green, shape=circle]
+	dhb--chl
+	dhb--lsp
+	dhb--fjp
+	dhb--tkx
+	ggt [color=red, shape=circle]
+	ggt--pbr
+	ggt--mtf
+	ggt--brt
+	ggt--mdl
+	ggt--dqj
+	gzx [color=green, shape=circle]
+	gzx--qmn
+	gzx--ccj
+	gzx--dxs
+	gzx--zll
+	gzx--hmx
+	gzx--zbv
+	mll [color=green, shape=circle]
+	mll--qmn
+	mll--gvj
+	mll--kzc
+	mll--qsf
+	lsp [color=green, shape=circle]
+	lsp--dhb
+	lsp--ctp
+	lsp--ffb
+	lsp--fpt
+	knd [color=green, shape=circle]
+	knd--jsm
+	knd--jmx
+	knd--clj
+	knd--xxq
+	ktd [color=green, shape=circle]
+	ktd--jsm
+	ktd--mmx
+	ktd--lbb
+	ktd--btg
+	ktd--cln
+	xnz [color=green, shape=circle]
+	xnz--jgc
+	xnz--gsm
+	xnz--qns
+	xnz--ftr
+	jgc [color=green, shape=circle]
+	jgc--xnz
+	jgc--tld
+	jgc--vrq
+	jgc--gbr
+	pql [color=green, shape=circle]
+	pql--kvn
+	pql--mld
+	pql--spd
+	pql--pqp
+	ltj [color=green, shape=circle]
+	ltj--grv
+	ltj--rcj
+	ltj--sqb
+	ltj--sqk
+	kdr [color=red, shape=circle]
+	kdr--dhs
+	kdr--djh
+	kdr--zcn
+	kdr--pmm
+	kdr--rgc
+	pmm [color=red, shape=circle]
+	pmm--kdr
+	pmm--bqq
+	pmm--slv
+	pmm--rvd
+	hzp [color=green, shape=circle]
+	hzp--bbl
+	hzp--lkl
+	hzp--tlr
+	hzp--vrq
+	bbl [color=green, shape=circle]
+	bbl--hzp
+	bbl--szc
+	bbl--lxg
+	bbl--zlf
+	bbl--rrs
+	vrq [color=green, shape=circle]
+	vrq--hzp
+	vrq--jjk
+	vrq--fjd
+	vrq--jgc
+	vrq--mqj
+	nbp [color=green, shape=circle]
+	nbp--ftm
+	nbp--bgd
+	nbp--xph
+	nbp--qvb
+	rbg [color=red, shape=circle]
+	rbg--bdq
+	rbg--vmf
+	rbg--lmz
+	rbg--bsk
+	qbm [color=red, shape=circle]
+	qbm--sgn
+	qbm--bbf
+	qbm--vcz
+	qbm--mns
+	ktb [color=green, shape=circle]
+	ktb--jbx
+	ktb--qph
+	ktb--lhq
+	ktb--lrj
+	jbx [color=green, shape=circle]
+	jbx--ktb
+	jbx--rsk
+	jbx--kdv
+	jbx--jdn
+	jbx--xph
+	jbx--msc
+	nkq [color=red, shape=circle]
+	nkq--mns
+	nkq--nsl
+	nkq--khb
+	nkq--jzz
+	gvl [color=red, shape=circle]
+	gvl--tkg
+	gvl--jgx
+	gvl--crp
+	gvl--hgd
+	fzt [color=green, shape=circle]
+	fzt--tsl
+	fzt--rng
+	fzt--qhs
+	fzt--vmx
+	rng [color=green, shape=circle]
+	rng--fzt
+	rng--zpq
+	rng--qgh
+	rng--tbz
+	pfj [color=green, shape=circle]
+	pfj--pjn
+	pfj--bsq
+	pfj--psg
+	pfj--kmq
+	bsq [color=green, shape=circle]
+	bsq--pfj
+	bsq--ncc
+	bsq--rfz
+	bsq--bjl
+	bsq--ddl
+	bsq--pqj
+	bsq--kgv
+	psg [color=green, shape=circle]
+	psg--pfj
+	psg--spx
+	psg--kkk
+	psg--qrn
+	kfd [color=red, shape=circle]
+	kfd--gnj
+	kfd--jst
+	kfd--xxc
+	kfd--zpn
+	kfd--jtx
+	jgs [color=red, shape=circle]
+	jgs--bvb
+	jgs--zdn
+	jgs--hnf
+	jgs--tqc
+	jgs--plb
+	xmh [color=green, shape=circle]
+	xmh--mjp
+	xmh--szc
+	xmh--zlf
+	xmh--mpr
+	css [color=green, shape=circle]
+	css--jnl
+	css--jpp
+	css--zjs
+	css--krk
+	css--rkr
+	rkr [color=green, shape=circle]
+	rkr--css
+	rkr--sds
+	rkr--kjd
+	rkr--vqp
+	zll [color=green, shape=circle]
+	zll--llk
+	zll--rkl
+	zll--gzx
+	zll--rpg
+	frl [color=red, shape=circle]
+	frl--nns
+	frl--srj
+	frl--bpm
+	frl--ngq
+	mhd [color=green, shape=circle]
+	mhd--gcl
+	mhd--ccn
+	mhd--pxt
+	mhd--stf
+	mhd--vcs
+	lzk [color=red, shape=circle]
+	lzk--xjg
+	lzk--vgz
+	lzk--zjx
+	lzk--lhz
+	lhz [color=red, shape=circle]
+	lhz--lzk
+	lhz--dkb
+	lhz--bpp
+	lhz--pgq
+	fzq [color=green, shape=circle]
+	fzq--rdr
+	fzq--dvf
+	fzq--cqk
+	fzq--pjq
+	cqk [color=green, shape=circle]
+	cqk--fzq
+	cqk--sgl
+	cqk--cpj
+	cqk--bjd
+	cqk--bxc
+	qvf [color=red, shape=circle]
+	qvf--rjf
+	qvf--dbm
+	qvf--dcs
+	qvf--btz
+	qvf--xrm
+	ftg [color=red, shape=circle]
+	ftg--rvd
+	ftg--szx
+	ftg--pkj
+	ftg--mch
+	hdm [color=red, shape=circle]
+	hdm--xqb
+	hdm--xlk
+	hdm--mzb
+	hdm--bbh
+	fpl [color=red, shape=circle]
+	fpl--bcv
+	fpl--ptl
+	fpl--rkp
+	fpl--vcn
+	bnj [color=red, shape=circle]
+	bnj--fmv
+	bnj--knf
+	bnj--jjf
+	bnj--jrs
+	bnj--xks
+	bnj--grf
+	hdf [color=red, shape=circle]
+	hdf--mjb
+	hdf--gnv
+	hdf--gzv
+	hdf--rcb
+	qlm [color=red, shape=circle]
+	qlm--kzm
+	qlm--sxn
+	qlm--bqf
+	qlm--mxs
+	mld [color=green, shape=circle]
+	mld--kcs
+	mld--pql
+	mld--nrz
+	mld--krk
+	nrz [color=green, shape=circle]
+	nrz--mld
+	nrz--zsz
+	nrz--vcs
+	nrz--hkf
+	bsz [color=red, shape=circle]
+	bsz--srj
+	bsz--jml
+	bsz--vjm
+	bsz--vvf
+	fvk [color=red, shape=circle]
+	fvk--pqm
+	fvk--kvt
+	fvk--hcc
+	fvk--gkm
+	hkn [color=red, shape=circle]
+	hkn--qfp
+	hkn--zff
+	hkn--qzx
+	hkn--prp
+	jgj [color=green, shape=circle]
+	jgj--chh
+	jgj--mcq
+	jgj--bbr
+	jgj--vmm
+	gxs [color=green, shape=circle]
+	gxs--jrr
+	gxs--plv
+	gxs--cxx
+	gxs--vjt
+	gxs--kbc
+	plv [color=green, shape=circle]
+	plv--gxs
+	plv--srb
+	plv--lnv
+	plv--rxt
+	mvh [color=red, shape=circle]
+	mvh--tgl
+	mvh--jrs
+	mvh--svd
+	mvh--mrg
+	cmq [color=red, shape=circle]
+	cmq--blb
+	cmq--zpg
+	cmq--bfq
+	cmq--fpz
+	cmq--ncs
+	fxl [color=green, shape=circle]
+	fxl--sdb
+	fxl--qfs
+	fxl--jzh
+	fxl--bds
+	fxl--jlt
+	fxl--kdp
+	bds [color=green, shape=circle]
+	bds--fxl
+	bds--lcz
+	bds--tnd
+	bds--cph
+	kdp [color=green, shape=circle]
+	kdp--fxl
+	kdp--xtf
+	kdp--srv
+	kdp--nqb
+	zgf [color=red, shape=circle]
+	zgf--nhx
+	zgf--kzm
+	zgf--bqm
+	zgf--lnm
+	lnm [color=red, shape=circle]
+	lnm--zgf
+	lnm--rqd
+	lnm--fnj
+	lnm--rlr
+	zrj [color=red, shape=circle]
+	zrj--rpk
+	zrj--bzc
+	zrj--lmd
+	zrj--ldq
+	cbq [color=red, shape=circle]
+	cbq--hnm
+	cbq--cnk
+	cbq--vvf
+	cbq--lmz
+	cbq--rxc
+	cbq--ttj
+	vcn [color=red, shape=circle]
+	vcn--gfr
+	vcn--sxn
+	vcn--fpl
+	vcn--khp
+	nnf [color=red, shape=circle]
+	nnf--lnb
+	nnf--slx
+	nnf--chj
+	nnf--bbc
+	sgx [color=green, shape=circle]
+	sgx--qdh
+	sgx--hnr
+	sgx--scr
+	sgx--vgl
+	sxn [color=red, shape=circle]
+	sxn--vcn
+	sxn--qlm
+	sxn--jjx
+	sxn--kcb
+	sxn--fgn
+	cbk [color=green, shape=circle]
+	cbk--hxs
+	cbk--srv
+	cbk--dzb
+	cbk--qfs
+	cnk [color=red, shape=circle]
+	cnk--knt
+	cnk--plc
+	cnk--gjz
+	cnk--cbq
+	cnk--ptl
+	knt [color=red, shape=circle]
+	knt--cnk
+	knt--mdl
+	knt--clq
+	knt--mch
+	plc [color=red, shape=circle]
+	plc--cnk
+	plc--ppg
+	plc--mkv
+	plc--lrq
+	plc--prm
+	kph [color=red, shape=circle]
+	kph--brc
+	kph--ztp
+	kph--pvr
+	kph--mjm
+	pvr [color=red, shape=circle]
+	pvr--kph
+	pvr--kfq
+	pvr--vpp
+	pvr--skt
+	pvr--xtt
+	mjm [color=red, shape=circle]
+	mjm--kph
+	mjm--pkl
+	mjm--knf
+	mjm--prm
+	vqn [color=green, shape=circle]
+	vqn--xjb
+	vqn--xpt
+	vqn--zxd
+	vqn--dsl
+	vqn--vxg
+	vqn--gzd
+	vqn--lnh
+	xpt [color=green, shape=circle]
+	xpt--vqn
+	xpt--clj
+	xpt--fml
+	xpt--fmm
+	xpt--fvj
+	vhq [color=green, shape=circle]
+	vhq--gtx
+	vhq--rct
+	vhq--hrx
+	vhq--qnh
+	vhq--tbj
+	rcg [color=green, shape=circle]
+	rcg--jft
+	rcg--hrx
+	rcg--trr
+	rcg--zzr
+	rcg--jmg
+	zrn [color=green, shape=circle]
+	zrn--lcz
+	zrn--sqk
+	zrn--mpd
+	zrn--zjs
+	zrn--tsm
+	rsk [color=green, shape=circle]
+	rsk--jbx
+	rsk--srb
+	rsk--kgv
+	rsk--vqp
+	qcm [color=red, shape=circle]
+	qcm--xnk
+	qcm--rxx
+	qcm--gxd
+	qcm--xxl
+	qcm--xdh
+	xxl [color=red, shape=circle]
+	xxl--qcm
+	xxl--fmv
+	xxl--xqh
+	xxl--xnd
+	cnx [color=red, shape=circle]
+	cnx--xcx
+	cnx--pjb
+	cnx--blm
+	cnx--bbn
+	pld [color=green, shape=circle]
+	pld--zrb
+	pld--xgg
+	pld--srp
+	pld--gcb
+	pld--hmx
+	pld--jzh
+	pld--cls
+	mft [color=green, shape=circle]
+	mft--nlr
+	mft--kpv
+	mft--qgp
+	mft--zlf
+	gnv [color=red, shape=circle]
+	gnv--rxc
+	gnv--pds
+	gnv--hdf
+	gnv--fkq
+	gnv--mtm
+	pkk [color=red, shape=circle]
+	pkk--mdl
+	pkk--ppg
+	pkk--gvt
+	pkk--tjt
+	bbh [color=red, shape=circle]
+	bbh--hdm
+	bbh--dvj
+	bbh--vjm
+	bbh--mpx
+	bbh--zbq
+	mpx [color=red, shape=circle]
+	mpx--bbh
+	mpx--zhg
+	mpx--rmx
+	mpx--nvz
+	ltl [color=red, shape=circle]
+	ltl--lqj
+	ltl--dtg
+	ltl--ttj
+	ltl--pdq
+	ltl--vgj
+	xrz [color=red, shape=circle]
+	xrz--jml
+	xrz--zfz
+	xrz--dxc
+	xrz--bhz
+	srb [color=green, shape=circle]
+	srb--plv
+	srb--rsk
+	srb--qts
+	srb--sdr
+	srb--zzp
+	sdr [color=green, shape=circle]
+	sdr--srb
+	sdr--zcm
+	sdr--jgp
+	sdr--mls
+	fmm [color=green, shape=circle]
+	fmm--spd
+	fmm--pdr
+	fmm--nxr
+	fmm--xpt
+	ppq [color=red, shape=circle]
+	ppq--prp
+	ppq--lbs
+	ppq--zxr
+	ppq--nhx
+	grt [color=red, shape=circle]
+	grt--xjs
+	grt--nxv
+	grt--pdq
+	grt--zjp
+	gxk [color=green, shape=circle]
+	gxk--lhg
+	gxk--rcj
+	gxk--vcr
+	gxk--gnm
+	gxk--kgz
+	gxk--zzp
+	gxk--qmm
+	dqq [color=red, shape=circle]
+	dqq--lbf
+	dqq--bhr
+	dqq--jgr
+	dqq--rcb
+	bhr [color=red, shape=circle]
+	bhr--dqq
+	bhr--dmp
+	bhr--tqc
+	bhr--xhp
+	svd [color=red, shape=circle]
+	svd--mvh
+	svd--shh
+	svd--tbl
+	svd--vxf
+	czb [color=red, shape=circle]
+	czb--zzv
+	czb--fcn
+	czb--blm
+	czb--lhp
+	cfc [color=green, shape=circle]
+	cfc--kgn
+	cfc--pgm
+	cfc--vsr
+	cfc--lgp
+	cfc--zpq
+	rqd [color=red, shape=circle]
+	rqd--hgj
+	rqd--jjx
+	rqd--lnm
+	rqd--nfk
+	cld [color=red, shape=circle]
+	cld--vqr
+	cld--tjt
+	cld--zjd
+	cld--jtv
+	cld--drv
+	rkp [color=red, shape=circle]
+	rkp--fpl
+	rkp--hdx
+	rkp--ltv
+	rkp--khb
+	rkp--rrk
+	rkp--mvv
+	slk [color=green, shape=circle]
+	slk--nmj
+	slk--krs
+	slk--fnp
+	slk--fhq
+	slk--kgv
+	fbd [color=red, shape=circle]
+	fbd--bcl
+	fbd--qdl
+	fbd--rrg
+	fbd--zjd
+	fbd--jsl
+	rgs [color=green, shape=circle]
+	rgs--sbs
+	rgs--bmv
+	rgs--mjn
+	rgs--jxl
+	rgs--tpb
+	htq [color=green, shape=circle]
+	htq--fml
+	htq--jzc
+	htq--fxc
+	htq--tpb
+	htq--jrp
+	bjb [color=green, shape=circle]
+	bjb--jps
+	bjb--zkm
+	bjb--pnn
+	bjb--rfk
+	bjb--qjp
+	jxl [color=green, shape=circle]
+	jxl--rgs
+	jxl--rfk
+	jxl--jxx
+	jxl--dqt
+	gnk [color=green, shape=circle]
+	gnk--jlt
+	gnk--mhz
+	gnk--qgp
+	gnk--gkr
+	rfd [color=red, shape=circle]
+	rfd--znj
+	rfd--fsg
+	rfd--hth
+	rfd--xbj
+	xbj [color=red, shape=circle]
+	xbj--rfd
+	xbj--ntm
+	xbj--mjb
+	xbj--crp
+	lsf [color=green, shape=circle]
+	lsf--ffh
+	lsf--klk
+	lsf--rkt
+	lsf--djn
+	bqf [color=red, shape=circle]
+	bqf--blb
+	bqf--qlm
+	bqf--ghs
+	bqf--ghq
+	ghs [color=red, shape=circle]
+	ghs--bqf
+	ghs--khd
+	ghs--kqg
+	ghs--cvs
+	khq [color=red, shape=circle]
+	khq--hqc
+	khq--thp
+	khq--chp
+	khq--ssh
+	plj [color=red, shape=circle]
+	plj--bbj
+	plj--mqd
+	plj--zxj
+	plj--njx
+	fnh [color=green, shape=circle]
+	fnh--hhp
+	fnh--fhl
+	fnh--mls
+	fnh--lrp
+	pqp [color=green, shape=circle]
+	pqp--bqc
+	pqp--pql
+	pqp--mjp
+	pqp--tvf
+	tvf [color=green, shape=circle]
+	tvf--pqp
+	tvf--fcp
+	tvf--qrv
+	tvf--gbj
+	qbc [color=green, shape=circle]
+	qbc--cpz
+	qbc--spc
+	qbc--rtj
+	qbc--fjc
+	spc [color=green, shape=circle]
+	spc--qbc
+	spc--mgm
+	spc--jdj
+	spc--qrv
+	spc--qhl
+	xbc [color=red, shape=circle]
+	xbc--vbq
+	xbc--zrf
+	xbc--qqh
+	xbc--jts
+	xzz [color=green, shape=circle]
+	xzz--sqk
+	xzz--zzr
+	xzz--dpc
+	xzz--ndg
+	xzz--rst
+	rst [color=green, shape=circle]
+	rst--xzz
+	rst--lrd
+	rst--dvk
+	rst--pqb
+	jbr [color=green, shape=circle]
+	jbr--lqt
+	jbr--xjd
+	jbr--gkh
+	jbr--czx
+	jbr--jzf
+	mng [color=green, shape=circle]
+	mng--stf
+	mng--rpz
+	mng--fhk
+	mng--trb
+	vqx [color=red, shape=circle]
+	vqx--rqp
+	vqx--gls
+	vqx--cgr
+	vqx--vnb
+	msc [color=green, shape=circle]
+	msc--jbx
+	msc--xdl
+	msc--lqp
+	msc--jpp
+	msc--dhc
+	msc--csp
+	lqp [color=green, shape=circle]
+	lqp--msc
+	lqp--csg
+	lqp--mhs
+	lqp--txn
+	nvs [color=green, shape=circle]
+	nvs--rxt
+	nvs--scx
+	nvs--nrp
+	nvs--rjj
+	sbt [color=red, shape=circle]
+	sbt--prm
+	sbt--chm
+	sbt--xhx
+	sbt--rbd
+	sbt--cvs
+	crp [color=red, shape=circle]
+	crp--lbg
+	crp--mtl
+	crp--vbq
+	crp--xbj
+	crp--gvl
+	lbg [color=red, shape=circle]
+	lbg--crp
+	lbg--mrq
+	lbg--zkk
+	lbg--bbf
+	lbg--bdq
+	lbg--xhf
+	tnf [color=green, shape=circle]
+	tnf--gcb
+	tnf--pgg
+	tnf--scs
+	tnf--gtg
+	tnf--dkc
+	fvj [color=green, shape=circle]
+	fvj--xdl
+	fvj--vcr
+	fvj--rct
+	fvj--ksd
+	fvj--xpt
+	rpg [color=green, shape=circle]
+	rpg--psz
+	rpg--nrp
+	rpg--zll
+	rpg--nzb
+	zfh [color=green, shape=circle]
+	zfh--frx
+	zfh--xbg
+	zfh--jdj
+	zfh--vpm
+	zfh--qmm
+	xcz [color=green, shape=circle]
+	xcz--jdm
+	xcz--srv
+	xcz--tbj
+	xcz--cln
+	nst [color=green, shape=circle]
+	nst--xgg
+	nst--nmr
+	nst--bjl
+	nst--xsb
+	ckq [color=red, shape=circle]
+	ckq--frk
+	ckq--qgd
+	ckq--nnm
+	ckq--xms
+	ckq--jhq
+	ckq--dbn
+	kcb [color=red, shape=circle]
+	kcb--sxn
+	kcb--rfq
+	kcb--zxj
+	kcb--chp
+	bpm [color=red, shape=circle]
+	bpm--qjh
+	bpm--frl
+	bpm--ncs
+	bpm--rvj
+	hnr [color=green, shape=circle]
+	hnr--sgx
+	hnr--ftm
+	hnr--mmz
+	hnr--ptv
+	hnr--cpj
+	bpq [color=red, shape=circle]
+	bpq--bqq
+	bpq--ptl
+	bpq--glx
+	bpq--hps
+	ndd [color=green, shape=circle]
+	ndd--ggl
+	ndd--kxv
+	ndd--fsk
+	ndd--lhd
+	szc [color=green, shape=circle]
+	szc--stm
+	szc--xmh
+	szc--vrn
+	szc--bbl
+	szc--csp
+	vrn [color=green, shape=circle]
+	vrn--szc
+	vrn--lvx
+	vrn--mqj
+	vrn--nvp
+	vrn--qhm
+	vrn--jfs
+	rpn [color=red, shape=circle]
+	rpn--lfc
+	rpn--rhx
+	rpn--ppg
+	rpn--qzr
+	lxg [color=green, shape=circle]
+	lxg--bbl
+	lxg--rxz
+	lxg--hsb
+	lxg--nxr
+	mcm [color=green, shape=circle]
+	mcm--jsz
+	mcm--zkm
+	mcm--fjp
+	mcm--qzn
+	fjp [color=green, shape=circle]
+	fjp--mcm
+	fjp--bpv
+	fjp--hkf
+	fjp--thr
+	fjp--dhb
+	fjp--xqt
+	sgl [color=green, shape=circle]
+	sgl--cqk
+	sgl--kgt
+	sgl--xmg
+	sgl--zlz
+	jvr [color=red, shape=circle]
+	jvr--xzr
+	jvr--kbq
+	jvr--qzl
+	jvr--sml
+	nbg [color=red, shape=circle]
+	nbg--qzf
+	nbg--hvg
+	nbg--fgh
+	nbg--hvk
+	nbg--lmj
+	hgd [color=red, shape=circle]
+	hgd--ngq
+	hgd--qps
+	hgd--vvr
+	hgd--brj
+	hgd--gvl
+	brj [color=red, shape=circle]
+	brj--hgd
+	brj--rvd
+	brj--ttv
+	brj--bjq
+	htx [color=red, shape=circle]
+	htx--zhg
+	htx--jzv
+	htx--tbl
+	htx--rfj
+	zhg [color=red, shape=circle]
+	zhg--htx
+	zhg--mpx
+	zhg--plk
+	zhg--dsd
+	lrd [color=green, shape=circle]
+	lrd--rst
+	lrd--qzn
+	lrd--ffh
+	lrd--qpg [style="dotted"]
+	lrd--cgq
+	fpj [color=red, shape=circle]
+	fpj--clr
+	fpj--zpb
+	fpj--stq
+	fpj--llx
+	fpj--pcr
+	xxq [color=green, shape=circle]
+	xxq--lzt
+	xxq--bfl
+	xxq--lxd
+	xxq--knd
+	xxq--thd
+	lxd [color=green, shape=circle]
+	lxd--xxq
+	lxd--cch
+	lxd--mql
+	lxd--tnd
+	lxd--ksx
+	mgm [color=green, shape=circle]
+	mgm--hpx
+	mgm--spc
+	mgm--lhq
+	mgm--vqp
+	mls [color=green, shape=circle]
+	mls--sdr
+	mls--fnh
+	mls--spz
+	mls--zbv
+	hsb [color=green, shape=circle]
+	hsb--lxg
+	hsb--clb
+	hsb--qrx
+	hsb--krk
+	hsb--czx
+	ksd [color=green, shape=circle]
+	ksd--fvj
+	ksd--ngc
+	ksd--pzx
+	ksd--bzm
+	nmm [color=green, shape=circle]
+	nmm--hnk
+	nmm--hhc
+	nmm--mjn
+	nmm--mjc
+	nmm--kqc
+	zbq [color=red, shape=circle]
+	zbq--bbh
+	zbq--nsl
+	zbq--sdj
+	zbq--bfx
+	nsl [color=red, shape=circle]
+	nsl--zbq
+	nsl--ggp
+	nsl--nkq
+	nsl--gqj
+	mtm [color=red, shape=circle]
+	mtm--tgs
+	mtm--kxt
+	mtm--blf
+	mtm--bjm
+	mtm--ntl
+	mtm--hxb
+	mtm--gnv
+	blf [color=red, shape=circle]
+	blf--mtm
+	blf--vkd
+	blf--cvg
+	blf--fbt
+	blf--qlv
+	bjm [color=red, shape=circle]
+	bjm--mtm
+	bjm--qkp
+	bjm--lph
+	bjm--drv
+	bjm--tht
+	bzc [color=red, shape=circle]
+	bzc--cfg
+	bzc--qdp
+	bzc--ssh
+	bzc--zrj
+	lpd [color=green, shape=circle]
+	lpd--snm
+	lpd--kpj
+	lpd--mds
+	lpd--kvn
+	kpj [color=green, shape=circle]
+	kpj--lpd
+	kpj--dxs
+	kpj--rzf
+	kpj--nnk
+	kpj--szh
+	brp [color=green, shape=circle]
+	brp--xzm
+	brp--ksx
+	brp--tsl
+	brp--lhq
+	brp--qph
+	bsk [color=red, shape=circle]
+	bsk--rbg
+	bsk--kvt
+	bsk--mxl
+	bsk--bdq
+	bsk--bpp
+	scr [color=green, shape=circle]
+	scr--mvr
+	scr--kkk
+	scr--sgx
+	scr--hnt
+	kkk [color=green, shape=circle]
+	kkk--scr
+	kkk--cpz
+	kkk--nnb
+	kkk--hrx
+	kkk--psg
+	qzl [color=red, shape=circle]
+	qzl--vgz
+	qzl--klh
+	qzl--jvr
+	qzl--lrq
+	rfq [color=red, shape=circle]
+	rfq--chj
+	rfq--kcb
+	rfq--sth
+	rfq--qkp
+	mnq [color=green, shape=circle]
+	mnq--mhs
+	mnq--ppz
+	mnq--nmr
+	mnq--ddl
+	xtf [color=green, shape=circle]
+	xtf--ghz
+	xtf--kdp
+	xtf--nbz
+	xtf--jfs
+	ptv [color=green, shape=circle]
+	ptv--jxp
+	ptv--dpc
+	ptv--hnr
+	ptv--tkx
+	tkx [color=green, shape=circle]
+	tkx--ptv
+	tkx--rlh
+	tkx--dhb
+	tkx--xqt
+	vvf [color=red, shape=circle]
+	vvf--bsz
+	vvf--tkp
+	vvf--cbq
+	vvf--vnd
+	nhd [color=red, shape=circle]
+	nhd--pcr
+	nhd--mpf
+	nhd--zpg
+	nhd--xfz
+	mqj [color=green, shape=circle]
+	mqj--vrn
+	mqj--drp
+	mqj--vrq
+	mqj--kdq
+	hts [color=green, shape=circle]
+	hts--xmg
+	hts--xkq
+	hts--dtz
+	hts--dqt
+	xfz [color=red, shape=circle]
+	xfz--khp
+	xfz--nhd
+	xfz--nns
+	xfz--xzr
+	zlf [color=green, shape=circle]
+	zlf--mft
+	zlf--bbl
+	zlf--dqg
+	zlf--xmh
+	zlf--nlr
+	jfd [color=green, shape=circle]
+	jfd--jqg
+	jfd--sds
+	jfd--rkt
+	jfd--xzp
+	mjs [color=green, shape=circle]
+	mjs--qns
+	mjs--dtz
+	mjs--zcq
+	mjs--jcs
+	xgb [color=red, shape=circle]
+	xgb--mpq
+	xgb--pdb
+	xgb--lrr
+	xgb--zsq
+	php [color=green, shape=circle]
+	php--mjn
+	php--rlv
+	php--fbp
+	php--vkb
+	php--gjt
+	pcs [color=red, shape=circle]
+	pcs--mvc
+	pcs--rfj
+	pcs--vvr
+	pcs--hbv
+	pbx [color=green, shape=circle]
+	pbx--jkq
+	pbx--ffp
+	pbx--kfs
+	pbx--dzb
+	pbx--kps
+	plb [color=red, shape=circle]
+	plb--rxj
+	plb--jgs
+	plb--dmg
+	plb--tps
+	plb--ddv
+	tmd [color=red, shape=circle]
+	tmd--skp
+	tmd--vzc
+	tmd--bfm
+	tmd--mkv
+	lmd [color=red, shape=circle]
+	lmd--qjh
+	lmd--zrj
+	lmd--ctm
+	lmd--nxg
+	lmd--dsd
+	dqj [color=red, shape=circle]
+	dqj--mch
+	dqj--ggt
+	dqj--szl
+	dqj--dbn
+	dqj--cpn
+	xtm [color=red, shape=circle]
+	xtm--kqj
+	xtm--qkp
+	xtm--mtf
+	xtm--dkd
+	xtm--tps
+	qkp [color=red, shape=circle]
+	qkp--xtm
+	qkp--bjm
+	qkp--qpg
+	qkp--rfq
+	tsp [color=green, shape=circle]
+	tsp--fnn
+	tsp--cnj
+	tsp--csp
+	tsp--dlg
+	lcf [color=red, shape=circle]
+	lcf--tzl
+	lcf--vjm
+	lcf--khn
+	lcf--lhn
+	lcf--ccx
+	khn [color=red, shape=circle]
+	khn--lcf
+	khn--ldq
+	khn--plk
+	khn--tkp
+	gzv [color=red, shape=circle]
+	gzv--zmg
+	gzv--hdf
+	gzv--bkk
+	gzv--mxf
+	fgn [color=red, shape=circle]
+	fgn--sxn
+	fgn--dcs
+	fgn--kxh
+	fgn--slb
+	fgn--stq
+	vss [color=red, shape=circle]
+	vss--qdl
+	vss--tqv
+	vss--fdp
+	vss--qln
+	vss--rlk
+	dxv [color=green, shape=circle]
+	dxv--zmk
+	dxv--jkq
+	dxv--jkj
+	dxv--jrx
+	dxv--gjc
+	dxv--jdn
+	scs [color=green, shape=circle]
+	scs--tnf
+	scs--pkq
+	scs--ndp
+	scs--nqb
+	djn [color=green, shape=circle]
+	djn--vrt
+	djn--tnd
+	djn--lsf
+	djn--qns
+	bbc [color=red, shape=circle]
+	bbc--rrn
+	bbc--nnf
+	bbc--zxj
+	bbc--lkb
+	rcb [color=red, shape=circle]
+	rcb--tbl
+	rcb--dqq
+	rcb--hdf
+	rcb--qcq
+	rcb--srj
+	qxx [color=green, shape=circle]
+	qxx--rlv
+	qxx--rxz
+	qxx--lhd
+	qxx--fph
+	mlt [color=red, shape=circle]
+	mlt--nqt
+	mlt--qbg
+	mlt--cth
+	mlt--ppg
+	fjc [color=green, shape=circle]
+	fjc--qbc
+	fjc--ksx
+	fjc--vrt
+	fjc--dlg
+	zhx [color=green, shape=circle]
+	zhx--phs
+	zhx--mjp
+	zhx--rfk
+	zhx--mmz
+	zhx--tdp
+	rbd [color=red, shape=circle]
+	rbd--nlb
+	rbd--fmv
+	rbd--sbt
+	rbd--bdb
+	rbd--ccx
+	bdb [color=red, shape=circle]
+	bdb--rbd
+	bdb--hfc
+	bdb--khp
+	bdb--tns
+	rcm [color=green, shape=circle]
+	rcm--hzk
+	rcm--jpp
+	rcm--xkq
+	rcm--clf
+	tpt [color=red, shape=circle]
+	tpt--sgt
+	tpt--xnk
+	tpt--kkt
+	tpt--cxz
+	gqj [color=red, shape=circle]
+	gqj--nsl
+	gqj--dhm
+	gqj--vbg
+	gqj--zkh
+	gqj--xkv
+	gkh [color=green, shape=circle]
+	gkh--znl
+	gkh--jbr
+	gkh--rff
+	gkh--vrt
+	gkh--xgf
+	gkh--htm
+	gkh--jkq
+	ftx [color=red, shape=circle]
+	ftx--xcs
+	ftx--sjs
+	ftx--gxd
+	ftx--ttj
+	mrg [color=red, shape=circle]
+	mrg--jph
+	mrg--vpp
+	mrg--cxf
+	mrg--mxl
+	mrg--kvc
+	mrg--mvh
+	cpj [color=green, shape=circle]
+	cpj--hnr
+	cpj--phs
+	cpj--cqk
+	cpj--rgr
+	cpf [color=red, shape=circle]
+	cpf--plt
+	cpf--jrs
+	cpf--fgj
+	cpf--qgv
+	mpr [color=green, shape=circle]
+	mpr--ptp
+	mpr--znl
+	mpr--xmh
+	mpr--jxp
+	ngl [color=red, shape=circle]
+	ngl--gtp
+	ngl--zfz
+	ngl--xbv
+	ngl--qlg
+	zlz [color=green, shape=circle]
+	zlz--jgp
+	zlz--nqr
+	zlz--htm
+	zlz--sgl
+	jtx [color=red, shape=circle]
+	jtx--pgf
+	jtx--vkl
+	jtx--kfd
+	jtx--pxg
+	xtt [color=red, shape=circle]
+	xtt--mgv
+	xtt--cht
+	xtt--pvr
+	xtt--rfm
+	rgc [color=red, shape=circle]
+	rgc--hqs
+	rgc--lbs
+	rgc--kdr
+	rgc--pvn
+	qqk [color=green, shape=circle]
+	qqk--xnp
+	qqk--ssc
+	qqk--jjk
+	qqk--xvp
+	zxj [color=red, shape=circle]
+	zxj--kcb
+	zxj--mch
+	zxj--crt
+	zxj--bbc
+	zxj--plj
+	ghq [color=red, shape=circle]
+	ghq--gds
+	ghq--bqf
+	ghq--fht
+	ghq--sgn
+	gds [color=red, shape=circle]
+	gds--ghq
+	gds--hzl
+	gds--mdl
+	gds--dtf
+	tcc [color=red, shape=circle]
+	tcc--mqd
+	tcc--pjk
+	tcc--mbk
+	tcc--lqj
+	cfs [color=red, shape=circle]
+	cfs--fmc
+	cfs--jgr
+	cfs--zcn
+	cfs--cgr
+	cfs--vvx
+	qkd [color=green, shape=circle]
+	qkd--zdd
+	qkd--pxx
+	qkd--lld
+	qkd--lvv
+	qkd--ppm
+	hkg [color=red, shape=circle]
+	hkg--vcg
+	hkg--xrm
+	hkg--krl
+	hkg--sng
+	ccx [color=red, shape=circle]
+	ccx--lcf
+	ccx--rxp
+	ccx--bbt
+	ccx--xrm
+	ccx--rbd
+	lmr [color=green, shape=circle]
+	lmr--ffb
+	lmr--gjh
+	lmr--lpv
+	lmr--gkk
+	qmm [color=green, shape=circle]
+	qmm--rdr
+	qmm--gxk
+	qmm--kcf
+	qmm--nxz
+	qmm--zfh
+	zvn [color=green, shape=circle]
+	zvn--vlp
+	zvn--dfj
+	zvn--trb
+	zvn--fsh
+	cvs [color=red, shape=circle]
+	cvs--gkm
+	cvs--pjv
+	cvs--gxv
+	cvs--sbt
+	cvs--ghs
+	gdc [color=red, shape=circle]
+	gdc--chp
+	gdc--gkb
+	gdc--dnr
+	gdc--skd
+	gdc--xqb
+	hdt [color=green, shape=circle]
+	hdt--klk
+	hdt--gts
+	hdt--zcx
+	hdt--ffp
+	hdt--hlk
+	ndp [color=green, shape=circle]
+	ndp--scs
+	ndp--plp
+	ndp--lpm
+	ndp--nnb
+	krj [color=red, shape=circle]
+	krj--zpb
+	krj--tqv
+	krj--tmk
+	krj--xzg
+	krj--sql
+	jqc [color=green, shape=circle]
+	jqc--xts
+	jqc--ndg
+	jqc--bfj
+	jqc--gxq
+	ddv [color=red, shape=circle]
+	ddv--bch
+	ddv--plb
+	ddv--mhc
+	ddv--tgs
+	fxs [color=green, shape=circle]
+	fxs--sgf
+	fxs--pxx
+	fxs--gzl
+	fxs--fjd
+	dqt [color=green, shape=circle]
+	dqt--jxl
+	dqt--lnh
+	dqt--rxt
+	dqt--hts
+	qrn [color=green, shape=circle]
+	qrn--ncp
+	qrn--psg
+	qrn--ccj
+	qrn--cph
+	fph [color=green, shape=circle]
+	fph--qnd
+	fph--scl
+	fph--qxx
+	fph--kjd
+	fph--hxt
+	jts [color=red, shape=circle]
+	jts--sfd
+	jts--fpq
+	jts--gsd
+	jts--xbc
+	kgv [color=green, shape=circle]
+	kgv--bsq
+	kgv--rsk
+	kgv--pnz
+	kgv--slk
+	hps [color=red, shape=circle]
+	hps--vzv
+	hps--bpq
+	hps--nvf
+	hps--nxv
+	pjj [color=red, shape=circle]
+	pjj--hzb
+	pjj--sjt
+	pjj--rrc
+	pjj--slv
+	tsm [color=green, shape=circle]
+	tsm--xjb
+	tsm--xcn
+	tsm--kvn
+	tsm--vkr
+	tsm--zrn
+	gkr [color=green, shape=circle]
+	gkr--gnk
+	gkr--jvt
+	gkr--hjq
+	gkr--tpb
+	rlr [color=red, shape=circle]
+	rlr--lnm
+	rlr--vzv
+	rlr--xsn
+	rlr--dxc
+	tvx [color=green, shape=circle]
+	tvx--jnl
+	tvx--scx
+	tvx--pch
+	tvx--trb
+	bjq [color=red, shape=circle]
+	bjq--krl
+	bjq--ssn
+	bjq--bqm
+	bjq--brj
+	dfp [color=red, shape=circle]
+	dfp--vct
+	dfp--ctg
+	dfp--rjl
+	dfp--sdn
+	mvv [color=red, shape=circle]
+	mvv--tgx
+	mvv--kqg
+	mvv--rkp
+	mvv--jdc
+	jhg [color=red, shape=circle]
+	jhg--mxf
+	jhg--zff
+	jhg--jmd
+	jhg--cqp
+}

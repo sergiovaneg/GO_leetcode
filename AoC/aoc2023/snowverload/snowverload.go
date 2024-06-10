@@ -2,13 +2,11 @@ package main
 
 import (
 	"bufio"
-	"errors"
 	"log"
-	"math"
+	"math/rand"
 	"os"
 	"regexp"
 	"slices"
-	"strings"
 
 	"github.com/sergiovaneg/GoStudy/utils"
 )
@@ -60,147 +58,90 @@ func (g *Graph) addNode(line string) {
 	}
 }
 
-type Edge [2]*Node
+func (g Graph) copy() Graph {
+	gCopy := make(Graph, len(g))
 
-func (g Graph) getLocalBetweenness(s, t *Node) map[Edge]float64 {
-	optimalPaths := make([][]*Node, 0)
-	thr := math.MaxInt
-	queue := [][]*Node{{s}}
-
-	var currentPath []*Node
-	for len(queue) > 0 {
-		currentPath, queue = queue[0], queue[1:]
-		for len(currentPath) < thr {
-			n := len(currentPath)
-
-			if slices.Contains(currentPath[n-1].adj, t) {
-				currentPath = append(currentPath, t)
-				if n == thr-1 {
-					optimalPaths = append(optimalPaths, currentPath)
-				} else {
-					thr = n + 1
-					optimalPaths = [][]*Node{currentPath}
-				}
-				break
-			}
-
-			nextNodes := make([]*Node, 0, len(currentPath[n-1].adj))
-			for _, candidate := range currentPath[n-1].adj {
-				if !slices.Contains(currentPath, candidate) {
-					nextNodes = append(nextNodes, candidate)
-				}
-			}
-
-			if len(nextNodes) == 0 {
-				break
-			}
-
-			for _, next := range nextNodes[1:] {
-				path := make([]*Node, n, n+1)
-				copy(path, currentPath)
-				path = append(path, next)
-				queue = append(queue, path)
-			}
-
-			currentPath = append(currentPath, nextNodes[0])
+	for idx, node := range g {
+		gCopy[idx] = &Node{
+			name: node.name,
+			adj:  make([]*Node, 0, len(node.adj)),
 		}
 	}
 
-	frequency := make(map[Edge]float64)
-	var vertex Edge
-	nPaths := float64(len(optimalPaths))
-	for _, path := range optimalPaths {
-		for idx, next := range path[1:] {
-			if strings.Compare(path[idx].name, next.name) > 0 {
-				vertex[0], vertex[1] = path[idx], next
-			} else {
-				vertex[0], vertex[1] = next, path[idx]
-			}
-			frequency[vertex] += 1. / nPaths
+	for srcIdx, src := range g {
+		for _, dst := range src.adj {
+			dstIdx := slices.IndexFunc(gCopy, func(x *Node) bool {
+				return x.name == dst.name
+			})
+			gCopy[srcIdx].adj = append(
+				gCopy[srcIdx].adj,
+				gCopy[dstIdx])
 		}
 	}
 
-	return frequency
+	return gCopy
 }
 
-func (g Graph) removeEdge(e Edge) error {
-	nodeA, nodeB := e[0], e[1]
-	idxA, idxB := slices.Index(nodeA.adj, e[1]), slices.Index(nodeB.adj, e[0])
-	if idxA == -1 || idxB == -1 {
-		return errors.New("edge not in graph")
+func (g *Graph) contract(idx int) {
+	src := (*g)[idx]                        // src == u
+	dst := src.adj[rand.Intn(len(src.adj))] // dst == v
+
+	srcdst := &Node{ // srcdst == uv
+		name: src.name + dst.name,
+		adj:  make([]*Node, 0, len(src.adj)+len(dst.adj)-2),
 	}
 
-	nodeA.adj = slices.Delete(nodeA.adj, idxA, idxA+1)
-	nodeB.adj = slices.Delete(nodeB.adj, idxB, idxB+1)
-
-	return nil
-}
-
-func (g Graph) getFullyConnected(node *Node) Graph {
-	gFC := make(Graph, 1, len(g))
-	gFC[0] = node
-
-	for idx := 0; idx < len(gFC); idx++ {
-		for _, candidate := range gFC[idx].adj {
-			if !slices.Contains(gFC, candidate) {
-				gFC = append(gFC, candidate)
-			}
+	// {w,u} -> {w,uv}
+	for _, aux := range src.adj {
+		if aux == dst {
+			continue
 		}
+
+		srcdst.adj = append(srcdst.adj, aux)
+		replaceIdx := slices.Index(aux.adj, src)
+		aux.adj[replaceIdx] = srcdst
 	}
 
-	return slices.Clip(gFC)
-}
-
-type EdgeBetweenness struct {
-	edge        Edge
-	betweenness float64
-}
-
-func (g Graph) getGlobalBetweenness() []EdgeBetweenness {
-	globalCentrality := make([]EdgeBetweenness, 0)
-
-	for sIdx, s := range g {
-		for _, t := range g[sIdx+1:] {
-			for vertex, centrality := range g.getLocalBetweenness(s, t) {
-				vIdx := slices.IndexFunc(globalCentrality,
-					func(x EdgeBetweenness) bool {
-						return x.edge == vertex
-					})
-
-				if vIdx == -1 {
-					globalCentrality = append(globalCentrality, EdgeBetweenness{
-						edge:        vertex,
-						betweenness: centrality,
-					})
-				} else {
-					globalCentrality[vIdx].betweenness += centrality
-				}
-			}
+	// {w,v} -> {w,uv}
+	for _, aux := range dst.adj {
+		if aux == src {
+			continue
 		}
+
+		srcdst.adj = append(srcdst.adj, aux)
+		replaceIdx := slices.Index(aux.adj, dst)
+		aux.adj[replaceIdx] = srcdst
 	}
 
-	return globalCentrality
+	// Clean-up
+	(*g)[idx] = srcdst // u -> uv
+	src = nil
+
+	*g = slices.DeleteFunc(*g, func(x *Node) bool { // v -> nil
+		return x == dst
+	})
+	dst = nil
 }
 
 func (g Graph) split() (g1, g2 Graph) {
+	var gAux Graph
+	for {
+		gAux = g.copy()
+		for len(gAux) > 2 {
+			gAux.contract(rand.Intn(len(gAux)))
+		}
 
-	for n := 0; n < nRemove; n++ {
-		globalCentrality := g.getGlobalBetweenness()
-
-		centralEdge := slices.MaxFunc(globalCentrality, func(a, b EdgeBetweenness) int {
-			return int(math.Round(a.betweenness - b.betweenness))
-		}).edge
-
-		err := g.removeEdge(centralEdge)
-		if err != nil {
-			log.Fatal(err)
+		if len(gAux[0].adj) == nRemove {
+			break
 		}
 	}
 
-	g1 = g.getFullyConnected(g[0])
-	g2 = make(Graph, 0, len(g)-len(g1))
+	names1 := regexp.MustCompile("([a-z]{3})").FindAllString(gAux[0].name, -1)
+	g1, g2 = make(Graph, 0, len(names1)), make(Graph, 0, len(g)-len(names1))
 	for _, node := range g {
-		if !slices.Contains(g1, node) {
+		if slices.Contains(names1, node.name) {
+			g1 = append(g1, node)
+		} else {
 			g2 = append(g2, node)
 		}
 	}
@@ -217,15 +158,31 @@ func (g Graph) toDot(g1, g2 Graph) {
 
 	file.WriteString("strict graph {\n")
 	for _, src := range g {
+		var srcGrp, dstGrp int
 		if slices.Contains(g1, src) {
+			srcGrp = 1
 			file.WriteString("\t" + src.name + " [color=green, shape=circle]\n")
 		} else if slices.Contains(g2, src) {
+			srcGrp = 2
 			file.WriteString("\t" + src.name + " [color=red, shape=circle]\n")
 		} else {
+			srcGrp = 0
 			file.WriteString("\t" + src.name + " [color=blue, shape=circle]\n")
 		}
 		for _, dst := range src.adj {
+			if slices.Contains(g1, dst) {
+				dstGrp = 1
+			} else if slices.Contains(g2, src) {
+				dstGrp = 2
+			} else {
+				dstGrp = 0
+			}
+
 			file.WriteString("\t" + src.name + "--" + dst.name)
+			if srcGrp != dstGrp {
+				file.WriteString(" [style=\"dotted\"]")
+			}
+			file.WriteString("\n")
 		}
 	}
 	file.WriteString("}\n")
