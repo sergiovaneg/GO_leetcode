@@ -7,6 +7,7 @@ import (
 	"os"
 	"regexp"
 	"slices"
+	"sync"
 
 	"github.com/sergiovaneg/GoStudy/utils"
 )
@@ -61,23 +62,34 @@ func (g *Graph) addNode(line string) {
 func (g Graph) copy() Graph {
 	gCopy := make(Graph, len(g))
 
+	var wg sync.WaitGroup
+	wg.Add(len(g))
 	for idx, node := range g {
-		gCopy[idx] = &Node{
-			name: node.name,
-			adj:  make([]*Node, 0, len(node.adj)),
-		}
+		go func(idx int, node *Node) {
+			defer wg.Done()
+			gCopy[idx] = &Node{
+				name: node.name,
+				adj:  make([]*Node, 0, len(node.adj)),
+			}
+		}(idx, node)
 	}
+	wg.Wait()
 
+	wg.Add(len(g))
 	for srcIdx, src := range g {
-		for _, dst := range src.adj {
-			dstIdx := slices.IndexFunc(gCopy, func(x *Node) bool {
-				return x.name == dst.name
-			})
-			gCopy[srcIdx].adj = append(
-				gCopy[srcIdx].adj,
-				gCopy[dstIdx])
-		}
+		go func(srcIdx int, src *Node) {
+			defer wg.Done()
+			for _, dst := range src.adj {
+				dstIdx := slices.IndexFunc(gCopy, func(x *Node) bool {
+					return x.name == dst.name
+				})
+				gCopy[srcIdx].adj = append(
+					gCopy[srcIdx].adj,
+					gCopy[dstIdx])
+			}
+		}(srcIdx, src)
 	}
+	wg.Wait()
 
 	return gCopy
 }
@@ -114,12 +126,11 @@ func (g *Graph) contract(idx int) {
 	}
 
 	// Clean-up
-	(*g)[idx] = srcdst // u -> uv
-	src = nil
-
+	(*g)[idx] = srcdst                              // u -> uv
 	*g = slices.DeleteFunc(*g, func(x *Node) bool { // v -> nil
 		return x == dst
 	})
+	src = nil
 	dst = nil
 }
 
