@@ -6,16 +6,11 @@ import (
 	"log"
 	"os"
 	"regexp"
-	"slices"
 	"strconv"
 	"sync"
 
 	"github.com/sergiovaneg/GoStudy/utils"
 )
-
-func isDigit(r byte) bool {
-	return r >= '0' && r <= '9'
-}
 
 func matchNumber(num string) int {
 	switch num {
@@ -42,47 +37,45 @@ func matchNumber(num string) int {
 	}
 }
 
-func getValue(byteArray []byte) int {
-	re_fwd := regexp.MustCompile(
-		"(?:f(?:ive|our)|s(?:even|ix)|t(?:hree|wo)|(?:ni|o)ne|eight)")
-	re_bwd := regexp.MustCompile(
-		"(?:(?:evi|ruo)f|(?:neve|xi)s|(?:eerh|ow)t|en(?:in|o)|thgie)")
-
+func getValue(line string) int {
 	var d0, d1 int
-	var match []byte
 
-	idx := slices.IndexFunc(byteArray, isDigit)
-	if idx != -1 {
-		match = re_fwd.Find(byteArray[:idx])
-		if match != nil {
-			d0 = matchNumber(string(match))
+	dLoc := regexp.MustCompile("([0-9]{1})").FindAllStringIndex(line, -1)
+	dN := len(dLoc)
+
+	litRe := regexp.MustCompile(
+		"(?:f(?:ive|our)|s(?:even|ix)|t(?:hree|wo)|(?:ni|o)ne|eight)")
+	litLoc, j, litN := make([][]int, 0, 2), 0, 0
+	for {
+		if loc := litRe.FindStringIndex(line[j:]); loc == nil {
+			break
 		} else {
-			d0, _ = strconv.Atoi(string(byteArray[idx]))
+			j, loc[0], loc[1] = j+loc[0]+1, loc[0]+j, loc[1]+j
+			if litN < 2 {
+				litLoc = append(litLoc, loc)
+				litN++
+			} else {
+				litLoc[1] = loc
+			}
 		}
-
-		slices.Reverse(byteArray)
-		idx = slices.IndexFunc(byteArray, isDigit)
-
-		match = re_bwd.Find(byteArray[:idx])
-		if match != nil {
-			aux := make([]byte, len(match))
-			copy(aux, match)
-			slices.Reverse(aux)
-			d1 = matchNumber(string(aux))
-		} else {
-			d1, _ = strconv.Atoi(string(byteArray[idx]))
-		}
-	} else {
-		d0 = matchNumber(string(re_fwd.Find(byteArray)))
-		slices.Reverse(byteArray)
-
-		match := re_bwd.Find(byteArray)
-		aux := make([]byte, len(match))
-		copy(aux, match)
-		slices.Reverse(aux)
-		d1 = matchNumber(string(aux))
 	}
 
+	if litN == 0 {
+		d0, _ = strconv.Atoi(line[dLoc[0][0]:dLoc[0][1]])
+		d1, _ = strconv.Atoi(line[dLoc[dN-1][0]:dLoc[dN-1][1]])
+	} else {
+		if dLoc[0][0] < litLoc[0][0] {
+			d0, _ = strconv.Atoi(line[dLoc[0][0]:dLoc[0][1]])
+		} else {
+			d0 = matchNumber(line[litLoc[0][0]:litLoc[0][1]])
+		}
+
+		if dLoc[dN-1][0] > litLoc[litN-1][0] {
+			d1, _ = strconv.Atoi(line[dLoc[dN-1][0]:dLoc[dN-1][1]])
+		} else {
+			d1 = matchNumber(line[litLoc[litN-1][0]:litLoc[litN-1][1]])
+		}
+	}
 	return d0*10 + d1
 }
 
@@ -104,7 +97,7 @@ func main() {
 		wg.Add(1)
 		go func(line string) {
 			defer wg.Done()
-			c <- getValue([]byte(line))
+			c <- getValue(line)
 		}(scanner.Text())
 	}
 	wg.Wait()
