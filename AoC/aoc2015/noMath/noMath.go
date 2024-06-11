@@ -19,7 +19,7 @@ func getMaterialDims(line string) (int, int) {
 	slices.Sort(dims)
 
 	sides := [3]int{dims[0] * dims[1], dims[1] * dims[2], dims[0] * dims[2]}
-	paper := (sides[0]+sides[1]+sides[2])<<1 + min(sides[0], sides[1], sides[2])
+	paper := (sides[0]+sides[1]+sides[2])<<1 + sides[0]
 	ribbon := (dims[0]+dims[1])<<1 + sides[0]*dims[2]
 
 	return paper, ribbon
