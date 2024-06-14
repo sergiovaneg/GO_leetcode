@@ -8,6 +8,8 @@ import (
 	"slices"
 	"strconv"
 	"strings"
+
+	"github.com/sergiovaneg/GoStudy/utils"
 )
 
 type Instruction struct {
@@ -16,12 +18,12 @@ type Instruction struct {
 	dst       string
 }
 
-type Circuit map[string]func() uint16
+type Circuit map[string]uint16
 
 func parseInstruction(line string) Instruction {
 	arrowIdx := strings.Index(line, "->")
 	dst := line[arrowIdx+3:]
-	operands := strings.Split(line[:arrowIdx], " ")
+	operands := strings.Split(line[:arrowIdx-1], " ")
 
 	re := regexp.MustCompile("([A-Z]+)")
 	operation := ""
@@ -40,152 +42,54 @@ func parseInstruction(line string) Instruction {
 	}
 }
 
-func (circuit *Circuit) install(inst Instruction) {
-	reDigits := regexp.MustCompile("([0-9]+)")
-	switch inst.operation {
-	case "AND":
-		isDigit := [2]bool{
-			reDigits.MatchString(inst.operands[0]),
-			reDigits.MatchString(inst.operands[1]),
+func install(instSet []Instruction) (circuit Circuit) {
+	circuit = make(Circuit, len(instSet))
+
+	queue := make([]Instruction, len(instSet))
+	copy(queue, instSet)
+
+	reDigit := regexp.MustCompile("([0-9]+)")
+	var current Instruction
+
+	for len(queue) > 0 {
+		current, queue = queue[0], queue[1:]
+
+		operands, ready := make([]uint16, len(current.operands)), true
+		for idx, tag := range current.operands {
+			if reDigit.MatchString(tag) {
+				aux, _ := strconv.Atoi(tag)
+				operands[idx] = uint16(aux)
+			} else if aux, ok := circuit[tag]; ok {
+				operands[idx] = aux
+			} else {
+				ready = false
+				break
+			}
 		}
-		if isDigit[0] && isDigit[1] {
-			a, _ := strconv.Atoi(inst.operands[0])
-			b, _ := strconv.Atoi(inst.operands[1])
-			val := uint16(a) & uint16(b)
-			(*circuit)[inst.dst] = func() uint16 {
-				return val
+
+		if ready {
+			var result uint16
+			switch current.operation {
+			case "AND":
+				result = operands[0] & operands[1]
+			case "OR":
+				result = operands[0] | operands[1]
+			case "NOT":
+				result = operands[0] ^ 0xFFFF
+			case "LSHIFT":
+				result = operands[0] << operands[1]
+			case "RSHIFT":
+				result = operands[0] >> operands[1]
+			default:
+				result = operands[0]
 			}
-		} else if isDigit[0] {
-			a, _ := strconv.Atoi(inst.operands[0])
-			val := uint16(a)
-			(*circuit)[inst.dst] = func() uint16 {
-				return val & (*circuit)[inst.operands[1]]()
-			}
-		} else if isDigit[1] {
-			a, _ := strconv.Atoi(inst.operands[1])
-			val := uint16(a)
-			(*circuit)[inst.dst] = func() uint16 {
-				return val & (*circuit)[inst.operands[0]]()
-			}
+			circuit[current.dst] = result
 		} else {
-			(*circuit)[inst.dst] = func() uint16 {
-				return (*circuit)[inst.operands[0]]() & (*circuit)[inst.operands[1]]()
-			}
-		}
-	case "OR":
-		isDigit := [2]bool{
-			reDigits.MatchString(inst.operands[0]),
-			reDigits.MatchString(inst.operands[1]),
-		}
-		if isDigit[0] && isDigit[1] {
-			a, _ := strconv.Atoi(inst.operands[0])
-			b, _ := strconv.Atoi(inst.operands[1])
-			val := uint16(a) | uint16(b)
-			(*circuit)[inst.dst] = func() uint16 {
-				return val
-			}
-		} else if isDigit[0] {
-			a, _ := strconv.Atoi(inst.operands[0])
-			val := uint16(a)
-			(*circuit)[inst.dst] = func() uint16 {
-				return val | (*circuit)[inst.operands[1]]()
-			}
-		} else if isDigit[1] {
-			a, _ := strconv.Atoi(inst.operands[1])
-			val := uint16(a)
-			(*circuit)[inst.dst] = func() uint16 {
-				return val | (*circuit)[inst.operands[0]]()
-			}
-		} else {
-			(*circuit)[inst.dst] = func() uint16 {
-				return (*circuit)[inst.operands[0]]() | (*circuit)[inst.operands[1]]()
-			}
-		}
-	case "LSHIFT":
-		isDigit := [2]bool{
-			reDigits.MatchString(inst.operands[0]),
-			reDigits.MatchString(inst.operands[1]),
-		}
-		if isDigit[0] && isDigit[1] {
-			a, _ := strconv.Atoi(inst.operands[0])
-			b, _ := strconv.Atoi(inst.operands[1])
-			val := uint16(a) << uint16(b)
-			(*circuit)[inst.dst] = func() uint16 {
-				return val
-			}
-		} else if isDigit[0] {
-			a, _ := strconv.Atoi(inst.operands[0])
-			val := uint16(a)
-			(*circuit)[inst.dst] = func() uint16 {
-				return val << (*circuit)[inst.operands[1]]()
-			}
-		} else if isDigit[1] {
-			a, _ := strconv.Atoi(inst.operands[1])
-			val := uint16(a)
-			(*circuit)[inst.dst] = func() uint16 {
-				return val << (*circuit)[inst.operands[0]]()
-			}
-		} else {
-			(*circuit)[inst.dst] = func() uint16 {
-				return (*circuit)[inst.operands[0]]() << (*circuit)[inst.operands[1]]()
-			}
-		}
-	case "RSHIFT":
-		isDigit := [2]bool{
-			reDigits.MatchString(inst.operands[0]),
-			reDigits.MatchString(inst.operands[1]),
-		}
-		if isDigit[0] && isDigit[1] {
-			a, _ := strconv.Atoi(inst.operands[0])
-			b, _ := strconv.Atoi(inst.operands[1])
-			val := uint16(a) >> uint16(b)
-			(*circuit)[inst.dst] = func() uint16 {
-				return val
-			}
-		} else if isDigit[0] {
-			a, _ := strconv.Atoi(inst.operands[0])
-			val := uint16(a)
-			(*circuit)[inst.dst] = func() uint16 {
-				return val >> (*circuit)[inst.operands[1]]()
-			}
-		} else if isDigit[1] {
-			a, _ := strconv.Atoi(inst.operands[1])
-			val := uint16(a)
-			(*circuit)[inst.dst] = func() uint16 {
-				return val >> (*circuit)[inst.operands[0]]()
-			}
-		} else {
-			(*circuit)[inst.dst] = func() uint16 {
-				return (*circuit)[inst.operands[0]]() >> (*circuit)[inst.operands[1]]()
-			}
-		}
-	case "NOT":
-		isDigit := reDigits.MatchString(inst.operands[0])
-		if isDigit {
-			a, _ := strconv.Atoi(inst.operands[0])
-			val := uint16(a) ^ 0xFFFF
-			(*circuit)[inst.dst] = func() uint16 {
-				return val
-			}
-		} else {
-			(*circuit)[inst.dst] = func() uint16 {
-				return (*circuit)[inst.operands[0]]() ^ 0xFFFF
-			}
-		}
-	default:
-		isDigit := reDigits.MatchString(inst.operands[0])
-		if isDigit {
-			a, _ := strconv.Atoi(inst.operands[0])
-			val := uint16(a)
-			(*circuit)[inst.dst] = func() uint16 {
-				return val
-			}
-		} else {
-			(*circuit)[inst.dst] = func() uint16 {
-				return (*circuit)[inst.operands[0]]()
-			}
+			queue = append(queue, current)
 		}
 	}
+
+	return
 }
 
 func main() {
@@ -195,10 +99,33 @@ func main() {
 	}
 	defer file.Close()
 
-	scanner := bufio.NewScanner(file)
-	circuit := make(Circuit)
-	for scanner.Scan() {
-		circuit.install(parseInstruction(scanner.Text()))
+	n, err := utils.LineCounter(file)
+	if err != nil {
+		log.Fatal(err)
 	}
-	println(circuit["i"]())
+
+	scanner := bufio.NewScanner(file)
+	instSet := make([]Instruction, 0, n)
+	for scanner.Scan() {
+		instSet = append(
+			instSet,
+			parseInstruction(scanner.Text()))
+	}
+
+	// Part 1
+	aValue := install(instSet)["a"]
+	println(aValue)
+
+	// Part 2
+	overrideIdx := slices.IndexFunc(instSet, func(x Instruction) bool {
+		return x.dst == "b"
+	})
+	instSet[overrideIdx] = Instruction{
+		dst:       "b",
+		operands:  []string{strconv.Itoa(int(aValue))},
+		operation: "",
+	}
+
+	aValue = install(instSet)["a"]
+	println(aValue)
 }
