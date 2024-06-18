@@ -3,7 +3,9 @@ package main
 import (
 	"bufio"
 	"log"
+	"math"
 	"os"
+	"slices"
 	"strconv"
 	"strings"
 )
@@ -45,6 +47,76 @@ func (g *Graph) addEdge(line string) {
 	nodeB.dist = append(nodeB.dist, uint(dist))
 }
 
+func (g Graph) recursiveMinimize(path []*Node,
+	pathLen uint, currentBest *uint) {
+	if pathLen >= *currentBest {
+		return
+	}
+
+	n := len(path)
+	if n == len(g) {
+		*currentBest = pathLen
+		return
+	}
+
+	current := path[n-1]
+	for idx, next := range current.adj {
+		if slices.Contains(path, next) {
+			continue
+		}
+
+		g.recursiveMinimize(
+			append(path, next),
+			pathLen+current.dist[idx],
+			currentBest)
+	}
+}
+
+func (g Graph) minimize() uint {
+	best := uint(math.MaxUint)
+	path := make([]*Node, 1, len(g))
+	for _, node := range g {
+		path[0] = node
+		g.recursiveMinimize(path, 0, &best)
+	}
+
+	return best
+}
+
+func (g Graph) recursiveMaximize(path []*Node,
+	pathLen uint, currentBest *uint) {
+	n := len(path)
+	if n == len(g) {
+		if pathLen > *currentBest {
+			*currentBest = pathLen
+		}
+		return
+	}
+
+	current := path[n-1]
+	for idx, next := range current.adj {
+		if slices.Contains(path, next) {
+			continue
+		}
+
+		g.recursiveMaximize(
+			append(path, next),
+			pathLen+current.dist[idx],
+			currentBest)
+	}
+}
+
+func (g Graph) maximize() uint {
+	best := uint(0)
+	path := make([]*Node, 1, len(g))
+	for _, node := range g {
+		path[0] = node
+		g.recursiveMaximize(path, 0, &best)
+	}
+
+	return best
+}
+
 func main() {
 	file, err := os.Open("./input.txt")
 	if err != nil {
@@ -57,4 +129,7 @@ func main() {
 	for scanner.Scan() {
 		g.addEdge(scanner.Text())
 	}
+
+	println(g.minimize())
+	println(g.maximize())
 }
