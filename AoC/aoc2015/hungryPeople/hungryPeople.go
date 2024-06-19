@@ -8,6 +8,7 @@ import (
 	"os"
 	"regexp"
 	"strconv"
+	"sync"
 
 	"github.com/sergiovaneg/GoStudy/utils"
 )
@@ -15,6 +16,7 @@ import (
 const CAPACITY = 100
 const CALORYTARGET = 500
 const LAMBDA = 1e18
+const WORKERS = 12
 
 type Ingredient []int
 
@@ -146,31 +148,51 @@ func (r Recipe) getNext(scoringFunction func(r Recipe) int) Recipe {
 	return bestR
 }
 
+func getLocalOptimum(ingredients []Ingredient, localPatience int,
+	scoringFunction func(Recipe) int) Recipe {
+	localR := getRandomRecipe(ingredients)
+	for localCounter := 0; localCounter <= localPatience; {
+		nextR := localR.getNext(scoringFunction)
+		if nextR == nil {
+			break
+		}
+		if scoringFunction(nextR) == scoringFunction(localR) {
+			localCounter++
+		} else {
+			localCounter = 0
+		}
+		localR = nextR
+	}
+	return localR
+}
+
 func getOptimalRecipe(
 	ingredients []Ingredient,
 	globalPatience, localPatience int,
 	scoringFunction func(Recipe) int) Recipe {
 	bestR := getRandomRecipe(ingredients)
 
+	var wg sync.WaitGroup
+
 	for globalCounter := 0; globalCounter <= globalPatience; {
-		localR := getRandomRecipe(ingredients)
-		for localCounter := 0; localCounter <= localPatience; {
-			nextR := localR.getNext(scoringFunction)
-			if nextR == nil {
-				break
-			}
-			if scoringFunction(nextR) == scoringFunction(localR) {
-				localCounter++
-			} else {
-				localCounter = 0
-			}
-			localR = nextR
+		c := make(chan Recipe, WORKERS)
+		wg.Add(WORKERS)
+		for range WORKERS {
+			go func() {
+				defer wg.Done()
+				c <- getLocalOptimum(ingredients, localPatience, scoringFunction)
+			}()
 		}
-		if scoringFunction(localR) > scoringFunction(bestR) {
-			bestR = localR
-			globalCounter = 0
-		} else {
-			globalCounter++
+		wg.Wait()
+		close(c)
+
+		for localR := range c {
+			if scoringFunction(localR) > scoringFunction(bestR) {
+				bestR = localR
+				globalCounter = 0
+			} else {
+				globalCounter++
+			}
 		}
 	}
 
