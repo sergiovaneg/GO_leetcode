@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"log"
+	"math"
 	"os"
 	"regexp"
 	"strings"
@@ -30,29 +31,65 @@ func (p Plant) mapSingleStep(initialMolecule string) map[string]bool {
 	return record
 }
 
+func countAtoms(molecule string) int {
+	return len(regexp.MustCompile("([A-Z][a-z]*)").FindAllString(molecule, -1))
+}
+
+func pruneRecord(queue []string, record map[string]bool) map[string]bool {
+	thr := math.MaxInt
+	for _, molecule := range queue {
+		if l := countAtoms(molecule); l < thr {
+			thr = l
+		}
+	}
+
+	for molecule := range record {
+		if countAtoms(molecule) < thr {
+			delete(record, molecule)
+		}
+	}
+
+	return record
+}
+
 func (p Plant) getMinSteps(target string) int {
+	moleculeLengthLimit := countAtoms(target)
+
 	var mu sync.RWMutex
 	var wg sync.WaitGroup
-	stepsMap := map[string]int{
-		"e": 0,
+	record := map[string]bool{
+		"e": true,
 	}
 	moleculeQueue := []string{"e"}
-	for steps := 0; stepsMap[target] == 0; steps++ {
+
+	minSteps := new(int)
+
+	for steps := 0; *minSteps == 0; steps++ {
+		// Remove unreachable from record
+		record = pruneRecord(moleculeQueue, record)
+
 		wg.Add(len(moleculeQueue))
 		nextQueue := new([]string)
+
 		for _, initialMolecule := range moleculeQueue {
 			go func(initialMolecule string) {
 				defer wg.Done()
 				for next := range p.mapSingleStep(initialMolecule) {
 					mu.RLock()
-					_, ok := stepsMap[next]
+					ok := record[next]
 					mu.RUnlock()
 					if ok {
 						continue
 					}
+
 					mu.Lock()
-					stepsMap[next] = steps + 1
-					*nextQueue = append(*nextQueue, next)
+					record[next] = true
+					if countAtoms(next) <= moleculeLengthLimit {
+						*nextQueue = append(*nextQueue, next)
+					}
+					if next == target {
+						*minSteps = steps + 1
+					}
 					mu.Unlock()
 				}
 			}(initialMolecule)
@@ -61,7 +98,7 @@ func (p Plant) getMinSteps(target string) int {
 		moleculeQueue = *nextQueue
 	}
 
-	return stepsMap[target]
+	return *minSteps
 }
 
 func main() {
