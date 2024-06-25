@@ -6,6 +6,7 @@ import (
 	"os"
 	"regexp"
 	"strings"
+	"sync"
 )
 
 type Plant map[string][]string
@@ -30,22 +31,34 @@ func (p Plant) mapSingleStep(initialMolecule string) map[string]bool {
 }
 
 func (p Plant) getMinSteps(target string) int {
-
+	var mu sync.RWMutex
+	var wg sync.WaitGroup
 	stepsMap := map[string]int{
 		"e": 0,
 	}
+	moleculeQueue := []string{"e"}
 	for steps := 0; stepsMap[target] == 0; steps++ {
-		for initialMolecule, recordedSteps := range stepsMap {
-			if recordedSteps < steps {
-				continue
-			}
-			nextMolecules := p.mapSingleStep(initialMolecule)
-			for next := range nextMolecules {
-				if _, ok := stepsMap[next]; !ok {
+		wg.Add(len(moleculeQueue))
+		nextQueue := new([]string)
+		for _, initialMolecule := range moleculeQueue {
+			go func(initialMolecule string) {
+				defer wg.Done()
+				for next := range p.mapSingleStep(initialMolecule) {
+					mu.RLock()
+					_, ok := stepsMap[next]
+					mu.RUnlock()
+					if ok {
+						continue
+					}
+					mu.Lock()
 					stepsMap[next] = steps + 1
+					*nextQueue = append(*nextQueue, next)
+					mu.Unlock()
 				}
-			}
+			}(initialMolecule)
 		}
+		wg.Wait()
+		moleculeQueue = *nextQueue
 	}
 
 	return stepsMap[target]
