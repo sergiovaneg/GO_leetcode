@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"log"
 	"math"
 	"os"
@@ -84,7 +85,7 @@ func (p Plant) getMinSteps(target string) int {
 
 					mu.Lock()
 					record[next] = true
-					if countAtoms(next) <= moleculeLengthLimit {
+					if countAtoms(next) < moleculeLengthLimit {
 						*nextQueue = append(*nextQueue, next)
 					}
 					if next == target {
@@ -99,6 +100,22 @@ func (p Plant) getMinSteps(target string) int {
 	}
 
 	return *minSteps
+}
+
+func characterizeMolecule(molecule string) {
+	n := countAtoms(molecule)
+	fmt.Printf("Number of Symbols: %v\n", n)
+
+	nRn := len(regexp.MustCompile("(Rn)").FindAllString(molecule, -1))
+	fmt.Printf("Number of Rn: %v\n", nRn)
+
+	nAr := len(regexp.MustCompile("(Ar)").FindAllString(molecule, -1))
+	fmt.Printf("Number of Ar: %v\n", nAr)
+
+	nY := len(regexp.MustCompile("(Y)").FindAllString(molecule, -1))
+	fmt.Printf("Number of Y: %v\n", nY)
+
+	fmt.Printf("Result: %v\n", n-nRn-nAr-2*nY-1)
 }
 
 func main() {
@@ -119,5 +136,6 @@ func main() {
 
 	scanner.Scan()
 	println(len(p.mapSingleStep(scanner.Text())))
+	characterizeMolecule(scanner.Text())
 	println(p.getMinSteps(scanner.Text()))
 }
